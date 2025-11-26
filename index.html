@@ -1,0 +1,100 @@
+--- a/workspaces/personal-portfolio/index.html
++++ b/workspaces/personal-portfolio/index.html
+@@ -1,1 +1,93 @@
+-Hello World
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>
++        <span lang="en">My Portfolio</span>
++        <span lang="zh" class="hidden">我的作品集</span>
++        <span lang="fr" class="hidden">Mon Portfolio</span>
++    </title>
++    <link rel="stylesheet" href="css/style.css">
++</head>
++<body>
++
++    <header>
++        <div class="container">
++            <div class="name">
++                <h1>
++                    <span lang="en">Your Name</span>
++                    <span lang="zh" class="hidden">你的名字</span>
++                    <span lang="fr" class="hidden">Votre Nom</span>
++                </h1>
++                <p>
++                    <span lang="en">Web Developer</span>
++                    <span lang="zh" class="hidden">网页开发者</span>
++                    <span lang="fr" class="hidden">Développeur Web</span>
++                </p>
++            </div>
++            <nav class="language-switcher">
++                <button data-lang="zh">中文</button>
++                <button data-lang="fr">FR</button>
++                <button data-lang="en" class="active">EN</button>
++            </nav>
++        </div>
++    </header>
++
++    <main class="container">
++        <section id="about">
++            <h2>
++                <span lang="en">About Me</span>
++                <span lang="zh" class="hidden">关于我</span>
++                <span lang="fr" class="hidden">À Propos de Moi</span>
++            </h2>
++            <p>
++                <span lang="en">Hello! I'm a passionate web developer with experience in creating modern and responsive web applications. I love learning new technologies and solving complex problems.</span>
++                <span lang="zh" class="hidden">你好！我是一名充满热情的网页开发者，在创建现代化和响应式Web应用方面拥有丰富的经验。我热爱学习新技术和解决复杂问题。</span>
++                <span lang="fr" class="hidden">Bonjour! Je suis un développeur web passionné avec de l'expérience dans la création d'applications web modernes et réactives. J'aime apprendre de nouvelles technologies et résoudre des problèmes complexes.</span>
++            </p>
++        </section>
++
++        <section id="projects">
++            <h2>
++                <span lang="en">Projects</span>
++                <span lang="zh" class="hidden">我的项目</span>
++                <span lang="fr" class="hidden">Mes Projets</span>
++            </h2>
++            <div class="project-card">
++                <h3>
++                    <span lang="en">Project One</span>
++                    <span lang="zh" class="hidden">项目一</span>
++                    <span lang="fr" class="hidden">Projet Un</span>
++                </h3>
++                <p>
++                    <span lang="en">Description of the first project. Explain the technology used and the main features.</span>
++                    <span lang="zh" class="hidden">第一个项目的描述。说明所使用的技术和主要功能。</span>
++                    <span lang="fr" class="hidden">Description du premier projet. Expliquez la technologie utilisée et les principales fonctionnalités.</span>
++                </p>
++            </div>
++            <div class="project-card">
++                <h3>
++                    <span lang="en">Project Two</span>
++                    <span lang="zh" class="hidden">项目二</span>
++                    <span lang="fr" class="hidden">Projet Deux</span>
++                </h3>
++                <p>
++                    <span lang="en">Description of the second project. Explain the technology used and the main features.</span>
++                    <span lang="zh" class="hidden">第二个项目的描述。说明所使用的技术和主要功能。</span>
++                    <span lang="fr" class="hidden">Description du deuxième projet. Expliquez la technologie utilisée et les principales fonctionnalités.</span>
++                </p>
++            </div>
++        </section>
++
++        <section id="contact">
++            <h2>
++                <span lang="en">Contact</span>
++                <span lang="zh" class="hidden">联系我</span>
++                <span lang="fr" class="hidden">Contact</span>
++            </h2>
++            <p><span lang="en">You can reach me at:</span><span lang="zh" class="hidden">您可以通过以下方式联系我：</span><span lang="fr" class="hidden">Vous pouvez me joindre à :</span> email@example.com</p>
++        </section>
++    </main>
++
++    <script src="js/script.js"></script>
++</body>
++</html>
+
