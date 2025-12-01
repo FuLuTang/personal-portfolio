@@ -77,7 +77,7 @@ header .container {
     color: var(--text-secondary);
 }
 
-.language-switcher button {
+.language-switcher a {
     background: transparent;
     border: 1px solid var(--surface-color);
     color: var(--text-secondary);
@@ -86,10 +86,12 @@ header .container {
     cursor: pointer;
     transition: all var(--transition-speed);
     font-size: 0.875rem;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.language-switcher button:hover,
-.language-switcher button.active {
+.language-switcher a:hover,
+.language-switcher a.active {
     background: var(--surface-color);
     color: var(--primary-color);
     border-color: var(--primary-color);
