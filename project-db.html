@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <span class="lang-en">Real Estate DB - Haochen Tang</span>
+        <span class="lang-cn">房产管理数据库 - 唐浩晨</span>
+        <span class="lang-fr">B.D.D. Immobilière - Haochen Tang</span>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="name">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>
+                        <span class="lang-en">HAOCHEN TANG</span>
+                        <span class="lang-cn">唐 浩晨</span>
+                        <span class="lang-fr">HAOCHEN TANG</span>
+                    </h1>
+                </a>
+                <p>
+                    <span class="lang-en">Computer Scientist / Developer</span>
+                    <span class="lang-cn">计算机科学 / 开发者</span>
+                    <span class="lang-fr">Informaticien / Développeur</span>
+                </p>
+            </div>
+            <nav class="language-switcher">
+                <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <a href="index.html"
+                style="color: var(--primary-color); text-decoration: none; margin-bottom: 1rem; display: inline-block;">
+                &larr;
+                <span class="lang-en">Back to Home</span>
+                <span class="lang-cn">返回主页</span>
+                <span class="lang-fr">Retour à l'accueil</span>
+            </a>
+
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+                <span class="lang-en">Real Estate DB</span>
+                <span class="lang-cn">房产管理数据库</span>
+                <span class="lang-fr">Base de Données Immobilière</span>
+            </h1>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">SQLite</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">SQL</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Data
+                    Modeling</span>
+            </div>
+
+            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem;">
+                    <span class="lang-en">I created a database for real estate management using SQLite. This project
+                        significantly strengthened my skills in SQL and data structures, focusing on efficient data
+                        modeling and query optimization.</span>
+                    <span class="lang-cn">我使用 SQLite 创建了一个用于房地产管理的数据库。该项目显著增强了我的 SQL 和数据结构技能，重点在于有效的数据建模和查询优化。</span>
+                    <span class="lang-fr">J'ai créé une base de données pour la gestion immobilière sous SQLite. Ce
+                        projet a considérablement renforcé mes compétences en SQL et en structures de données, en se
+                        concentrant sur la modélisation efficace des données et l'optimisation des requêtes.</span>
+                </p>
+
+                <h3>
+                    <span class="lang-en">Technical Highlights</span>
+                    <span class="lang-cn">技术亮点</span>
+                    <span class="lang-fr">Points Techniques</span>
+                </h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li>
+                        <span class="lang-en">Relational Schema Design.</span>
+                        <span class="lang-cn">关系型模式设计。</span>
+                        <span class="lang-fr">Conception de Schéma Relationnel.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Complex SQL Queries.</span>
+                        <span class="lang-cn">复杂 SQL 查询。</span>
+                        <span class="lang-fr">Requêtes SQL complexes.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Data Integrity constraints.</span>
+                        <span class="lang-cn">数据完整性约束。</span>
+                        <span class="lang-fr">Contraintes d'intégrité des données.</span>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+</body>
+
+</html>

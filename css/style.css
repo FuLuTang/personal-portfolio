@@ -233,3 +233,120 @@ h2::after {
 :lang(fr) .lang-cn {
     display: none !important;
 }
+
+/* Timeline (Education) */
+.timeline {
+    border-left: 2px solid var(--surface-color);
+    padding-left: var(--spacing-md);
+    margin-left: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.timeline-item {
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--spacing-md) - 6px);
+    /* 2px border + 5px radius approx */
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+}
+
+.timeline-item .date {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* Skills */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.skill-category h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    color: var(--text-primary);
+    border-left: 3px solid var(--secondary-color);
+    transition: transform 0.2s ease;
+}
+
+.skill-category li:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Split Section (Interests & Languages) */
+.split-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.split-section ul {
+    list-style: none;
+}
+
+.split-section li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.split-section li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.25rem;
+    line-height: 1;
+}
+
+/* Project Cards Link Reset */
+a.project-card {
+    text-decoration: none;
+    display: block;
+    /* Ensure it behaves like a block */
+}
+
+a.project-card h3 {
+    text-decoration: none;
+}
+
+/* Ambitions */
+#ambitions p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    background: var(--surface-color);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+}

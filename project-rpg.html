@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <span class="lang-en">2D RPG Game - Haochen Tang</span>
+        <span class="lang-cn">2D RPG 游戏 - 唐浩晨</span>
+        <span class="lang-fr">Jeu RPG 2D - Haochen Tang</span>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="name">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>
+                        <span class="lang-en">HAOCHEN TANG</span>
+                        <span class="lang-cn">唐 浩晨</span>
+                        <span class="lang-fr">HAOCHEN TANG</span>
+                    </h1>
+                </a>
+                <p>
+                    <span class="lang-en">Computer Scientist / Developer</span>
+                    <span class="lang-cn">计算机科学 / 开发者</span>
+                    <span class="lang-fr">Informaticien / Développeur</span>
+                </p>
+            </div>
+            <nav class="language-switcher">
+                <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <a href="index.html"
+                style="color: var(--primary-color); text-decoration: none; margin-bottom: 1rem; display: inline-block;">
+                &larr;
+                <span class="lang-en">Back to Home</span>
+                <span class="lang-cn">返回主页</span>
+                <span class="lang-fr">Retour à l'accueil</span>
+            </a>
+
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+                <span class="lang-en">2D RPG Game</span>
+                <span class="lang-cn">2D RPG 游戏</span>
+                <span class="lang-fr">Jeu Vidéo RPG 2D</span>
+            </h1>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">C++</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">SDL2</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Game
+                    Engine</span>
+            </div>
+
+            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem;">
+                    <span class="lang-en">I developed a 2D RPG game engine autonomously using C++ and SDL2. This project
+                        involved implementing a rendering engine from scratch, designing complex enemy AI logic, and
+                        creating a dynamic camera system that follows the player smoothly.</span>
+                    <span class="lang-cn">我使用 C++ 和 SDL2 自主开发了一个 2D RPG 游戏引擎。该项目涉及从零开始实现渲染引擎，设计复杂的敌人 AI
+                        逻辑，以及创建一个能够平滑跟随玩家的动态摄像机系统。</span>
+                    <span class="lang-fr">J'ai développé de manière autonome un jeu RPG 2D en utilisant C++ et SDL2. Ce
+                        projet comprenait l'implémentation d'un moteur de rendu, la conception d'une logique d'ennemis
+                        complexe et la création d'un système de caméra dynamique qui suit le joueur de manière
+                        fluide.</span>
+                </p>
+
+                <h3>
+                    <span class="lang-en">Key Features</span>
+                    <span class="lang-cn">主要功能</span>
+                    <span class="lang-fr">Fonctionnalités Clés</span>
+                </h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li>
+                        <span class="lang-en">Custom Rendering Engine with SDL2.</span>
+                        <span class="lang-cn">基于 SDL2 的自定义渲染引擎。</span>
+                        <span class="lang-fr">Moteur de rendu personnalisé avec SDL2.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Enemy AI with state machines.</span>
+                        <span class="lang-cn">基于状态机的敌人 AI。</span>
+                        <span class="lang-fr">IA ennemie avec machines à états.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Dynamic Camera System.</span>
+                        <span class="lang-cn">动态摄像机系统。</span>
+                        <span class="lang-fr">Système de caméra dynamique.</span>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+</body>
+
+</html>

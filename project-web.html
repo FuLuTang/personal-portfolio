@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <span class="lang-en">Tourism Website - Haochen Tang</span>
+        <span class="lang-cn">旅游网站前端 - 唐浩晨</span>
+        <span class="lang-fr">Site Touristique - Haochen Tang</span>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="name">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>
+                        <span class="lang-en">HAOCHEN TANG</span>
+                        <span class="lang-cn">唐 浩晨</span>
+                        <span class="lang-fr">HAOCHEN TANG</span>
+                    </h1>
+                </a>
+                <p>
+                    <span class="lang-en">Computer Scientist / Developer</span>
+                    <span class="lang-cn">计算机科学 / 开发者</span>
+                    <span class="lang-fr">Informaticien / Développeur</span>
+                </p>
+            </div>
+            <nav class="language-switcher">
+                <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <a href="index.html"
+                style="color: var(--primary-color); text-decoration: none; margin-bottom: 1rem; display: inline-block;">
+                &larr;
+                <span class="lang-en">Back to Home</span>
+                <span class="lang-cn">返回主页</span>
+                <span class="lang-fr">Retour à l'accueil</span>
+            </a>
+
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+                <span class="lang-en">Tourism Website</span>
+                <span class="lang-cn">旅游网站前端</span>
+                <span class="lang-fr">Intégration Web Front-end</span>
+            </h1>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">HTML5</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">CSS3</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Responsive</span>
+            </div>
+
+            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem;">
+                    <span class="lang-en">I developed a responsive tourism website using HTML and CSS. The project
+                        enforced strict adherence to W3C standards and focused on integrating key components for a
+                        seamless user experience across devices.</span>
+                    <span class="lang-cn">我使用 HTML 和 CSS 开发了一个响应式旅游网站。该项目严格遵守 W3C 标准，并专注于集成关键组件，以在不同设备上提供无缝的用户体验。</span>
+                    <span class="lang-fr">J'ai développé un site touristique responsive en utilisant HTML et CSS. Le
+                        projet a respecté les normes W3C et s'est concentré sur l'intégration de composants clés pour
+                        une expérience utilisateur fluide sur tous les appareils.</span>
+                </p>
+
+                <h3>
+                    <span class="lang-en">Key Aspects</span>
+                    <span class="lang-cn">主要方面</span>
+                    <span class="lang-fr">Aspects Clés</span>
+                </h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li>
+                        <span class="lang-en">Responsive Design (Mobile First).</span>
+                        <span class="lang-cn">响应式设计（移动优先）。</span>
+                        <span class="lang-fr">Design Responsive (Mobile First).</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">W3C Compliance.</span>
+                        <span class="lang-cn">符合 W3C 标准。</span>
+                        <span class="lang-fr">Respect des normes W3C.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Semantic HTML structure.</span>
+                        <span class="lang-cn">语义化 HTML 结构。</span>
+                        <span class="lang-fr">Structure HTML sémantique.</span>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+</body>
+
+</html>

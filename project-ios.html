@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <span class="lang-en">iOS Task App - Haochen Tang</span>
+        <span class="lang-cn">iOS 任务管理 - 唐浩晨</span>
+        <span class="lang-fr">App iOS - Haochen Tang</span>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="name">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>
+                        <span class="lang-en">HAOCHEN TANG</span>
+                        <span class="lang-cn">唐 浩晨</span>
+                        <span class="lang-fr">HAOCHEN TANG</span>
+                    </h1>
+                </a>
+                <p>
+                    <span class="lang-en">Computer Scientist / Developer</span>
+                    <span class="lang-cn">计算机科学 / 开发者</span>
+                    <span class="lang-fr">Informaticien / Développeur</span>
+                </p>
+            </div>
+            <nav class="language-switcher">
+                <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <a href="index.html"
+                style="color: var(--primary-color); text-decoration: none; margin-bottom: 1rem; display: inline-block;">
+                &larr;
+                <span class="lang-en">Back to Home</span>
+                <span class="lang-cn">返回主页</span>
+                <span class="lang-fr">Retour à l'accueil</span>
+            </a>
+
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+                <span class="lang-en">iOS Task App</span>
+                <span class="lang-cn">iOS 任务管理应用</span>
+                <span class="lang-fr">Application Mobile iOS</span>
+            </h1>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">SwiftUI</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">iOS</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Productivity</span>
+            </div>
+
+            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem;">
+                    <span class="lang-en">I developed a solo project for a task management tool based on the
+                        Urgency/Importance classification (Eisenhower Matrix). This project demonstrated my mastery of
+                        SwiftUI and Front-end/UI practices. (Planned for App Store release.)</span>
+                    <span class="lang-cn">我独立开发了一个基于紧急/重要分类法（艾森豪威尔矩阵）的任务管理工具。该项目展示了我对 SwiftUI 和前端/UI 实践的掌握。（计划发布于 App
+                        Store。）</span>
+                    <span class="lang-fr">J'ai développé en solo un outil de gestion des tâches basé sur la
+                        classification Urgence/Importance. Ce projet a démontré ma maîtrise de SwiftUI et des pratiques
+                        Front-end/UI. (Publication App Store prévue.)</span>
+                </p>
+
+                <h3>
+                    <span class="lang-en">App Overview</span>
+                    <span class="lang-cn">应用概览</span>
+                    <span class="lang-fr">Aperçu de l'Application</span>
+                </h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li>
+                        <span class="lang-en">Task Classification Logic.</span>
+                        <span class="lang-cn">任务分类逻辑。</span>
+                        <span class="lang-fr">Logique de Classification des Tâches.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Modern SwiftUI Interface.</span>
+                        <span class="lang-cn">现代化 SwiftUI 界面。</span>
+                        <span class="lang-fr">Interface SwiftUI moderne.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Local Data Persistence.</span>
+                        <span class="lang-cn">本地数据持久化。</span>
+                        <span class="lang-fr">Persistance des Données Locales.</span>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+</body>
+
+</html>
