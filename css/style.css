@@ -216,3 +216,20 @@ h2::after {
         font-size: 1.75rem;
     }
 }
+
+/* --- Language Visibility Logic --- */
+/* By default, hide all language specific spans if they are not the active language */
+:lang(en) .lang-cn,
+:lang(en) .lang-fr {
+    display: none !important;
+}
+
+:lang(cn) .lang-en,
+:lang(cn) .lang-fr {
+    display: none !important;
+}
+
+:lang(fr) .lang-en,
+:lang(fr) .lang-cn {
+    display: none !important;
+}

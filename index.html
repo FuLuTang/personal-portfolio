@@ -3,12 +3,128 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=en/">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <span class="lang-en">My Portfolio</span>
+        <span class="lang-cn">我的作品集</span>
+        <span class="lang-fr">Mon Portfolio</span>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <p>Redirecting to <a href="en/">English version</a>...</p>
+
+    <header>
+        <div class="container">
+            <div class="name">
+                <h1>
+                    <span class="lang-en">Your Name</span>
+                    <span class="lang-cn">你的名字</span>
+                    <span class="lang-fr">Votre Nom</span>
+                </h1>
+                <p>
+                    <span class="lang-en">Web Developer</span>
+                    <span class="lang-cn">网页开发者</span>
+                    <span class="lang-fr">Développeur Web</span>
+                </p>
+            </div>
+            <nav class="language-switcher">
+                <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>
+                <span class="lang-en">About Me</span>
+                <span class="lang-cn">关于我</span>
+                <span class="lang-fr">À Propos de Moi</span>
+            </h2>
+            <p>
+                <span class="lang-en">Hello! I'm a passionate web developer with experience in creating modern and
+                    responsive web applications. I love learning new technologies and solving complex problems.</span>
+                <span class="lang-cn">你好！我是一名充满热情的网页开发者，在创建现代化和响应式Web应用方面拥有丰富的经验。我热爱学习新技术和解决复杂问题。</span>
+                <span class="lang-fr">Bonjour! Je suis un développeur web passionné avec de l'expérience dans la
+                    création d'applications web modernes et réactives. J'aime apprendre de nouvelles technologies et
+                    résoudre des problèmes complexes.</span>
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>
+                <span class="lang-en">Projects</span>
+                <span class="lang-cn">我的项目</span>
+                <span class="lang-fr">Mes Projets</span>
+            </h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>
+                        <span class="lang-en">Project One</span>
+                        <span class="lang-cn">项目一</span>
+                        <span class="lang-fr">Projet Un</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Description of the first project. Explain the technology used and the main
+                            features.</span>
+                        <span class="lang-cn">第一个项目的描述。说明所使用的技术和主要功能。</span>
+                        <span class="lang-fr">Description du premier projet. Expliquez la technologie utilisée et les
+                            principales fonctionnalités.</span>
+                    </p>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        <span class="lang-en">Project Two</span>
+                        <span class="lang-cn">项目二</span>
+                        <span class="lang-fr">Projet Deux</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Description of the second project. Explain the technology used and the
+                            main features.</span>
+                        <span class="lang-cn">第二个项目的描述。说明所使用的技术和主要功能。</span>
+                        <span class="lang-fr">Description du deuxième projet. Expliquez la technologie utilisée et les
+                            principales fonctionnalités.</span>
+                    </p>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        <span class="lang-en">Project Three</span>
+                        <span class="lang-cn">项目三</span>
+                        <span class="lang-fr">Projet Trois</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Description of the third project. Showcase your versatility and skills
+                            here.</span>
+                        <span class="lang-cn">第三个项目的描述。在这里展示你的多才多艺和技能。</span>
+                        <span class="lang-fr">Description du troisième projet. Montrez votre polyvalence et vos
+                            compétences ici.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>
+                <span class="lang-en">Contact</span>
+                <span class="lang-cn">联系我</span>
+                <span class="lang-fr">Contact</span>
+            </h2>
+            <p>
+                <span class="lang-en">You can reach me at: <a
+                        href="mailto:email@example.com">email@example.com</a></span>
+                <span class="lang-cn">您可以通过以下方式联系我： <a href="mailto:email@example.com">email@example.com</a></span>
+                <span class="lang-fr">Vous pouvez me joindre à : <a
+                        href="mailto:email@example.com">email@example.com</a></span>
+            </p>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
 </body>
 
 </html>
