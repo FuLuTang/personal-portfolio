@@ -5,10 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const switcher = document.querySelector('.switcher');
-    const projectWrappers = {
-        school: document.getElementById('school-projects-wrapper'),
-        personal: document.getElementById('personal-projects-wrapper')
-    };
 
     if (switcher) {
         trackPrevious(switcher);
@@ -23,21 +19,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Filters the project sections based on the selected category.
+     * Filters the project cards based on the selected category.
      * @param {string} category - 'all', 'school', or 'personal'
      */
     function filterProjects(category) {
-        // Simple fade out effect could be added here, but for now we toggle display
-        if (category === 'all') {
-            if (projectWrappers.school) projectWrappers.school.classList.remove('hidden');
-            if (projectWrappers.personal) projectWrappers.personal.classList.remove('hidden');
-        } else if (category === 'school') {
-            if (projectWrappers.school) projectWrappers.school.classList.remove('hidden');
-            if (projectWrappers.personal) projectWrappers.personal.classList.add('hidden');
-        } else if (category === 'personal') {
-            if (projectWrappers.school) projectWrappers.school.classList.add('hidden');
-            if (projectWrappers.personal) projectWrappers.personal.classList.remove('hidden');
-        }
+        const cards = document.querySelectorAll('.project-card');
+
+        cards.forEach(card => {
+            if (category === 'all') {
+                card.style.display = ''; // Reset inline display style
+                card.classList.remove('hidden');
+            } else {
+                const cardCategory = card.getAttribute('data-category');
+                if (cardCategory === category) {
+                    card.style.display = ''; // Reset inline display style
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            }
+        });
     }
 
     /**
