@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <span class="lang-en">AI Mail Summarizer - Haochen Tang</span>
+        <span class="lang-cn">邮件智能摘要助手 - 唐浩晨</span>
+        <span class="lang-fr">Résumeur de Mails IA - Haochen Tang</span>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="name">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>
+                        <span class="lang-en">Haochen TANG</span>
+                        <span class="lang-cn">唐颢宸</span>
+                        <span class="lang-fr">Haochen TANG</span>
+                    </h1>
+                </a>
+                <p>
+                    <span class="lang-en">Computer Scientist / Developer</span>
+                    <span class="lang-cn">计算机科学 / 开发者</span>
+                    <span class="lang-fr">Informaticien / Développeur</span>
+                </p>
+            </div>
+            <nav class="language-switcher">
+                <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <a href="index.html" class="back-button">
+                &larr;
+                <span class="lang-en">Back to Home</span>
+                <span class="lang-cn">返回主页</span>
+                <span class="lang-fr">Retour à l'accueil</span>
+            </a>
+
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+                <span class="lang-en">AI Chatting Mail Summarizer</span>
+                <span class="lang-cn">邮件智能摘要助手</span>
+                <span class="lang-fr">Résumeur de Mails IA</span>
+            </h1>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Thunderbird</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">JavaScript</span>
+                <span
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">AI
+                    Integration</span>
+            </div>
+
+            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem;">
+                    <span class="lang-en">This Thunderbird extension leverages the WebExtension API and advanced
+                        asynchronous JavaScript to integrate local (Ollama) and cloud (OpenAI) LLMs directly into the
+                        email client. The architecture features a modular backend for handling AI requests and a
+                        responsive frontend for real-time user interaction. Notably, this project was built using "Vibe
+                        Coding" methodology, allowing for rapid iteration and deployment—the first functional release
+                        was published in just under 8 hours of development.</span>
+                    <span class="lang-cn">此 Thunderbird 扩展利用 WebExtension API 和高级异步
+                        JavaScript，将本地（Ollama）和云端（OpenAI）大语言模型直接集成到邮件客户端中。架构采用模块化后端处理 AI
+                        请求，并配备响应式前端以实现实时用户交互。值得一提的是，该项目采用“Vibe Coding”方法构建，实现了极速迭代与部署——仅用约 8 小时开发时间便发布了第一个可用版本。</span>
+                    <span class="lang-fr">Cette extension Thunderbird exploite l'API WebExtension et JavaScript
+                        asynchrone avancé pour intégrer des LLM locaux (Ollama) et cloud (OpenAI) directement dans le
+                        client de messagerie. L'architecture comprend un backend modulaire pour gérer les requêtes IA et
+                        un frontend réactif pour une interaction utilisateur en temps réel. Notamment, ce projet a été
+                        construit en utilisant la méthodologie "Vibe Coding", permettant une itération et un déploiement
+                        rapides : la première version fonctionnelle a été publiée en moins de 8 heures de
+                        développement.</span>
+                </p>
+
+                <p style="margin-bottom: 1.5rem;">
+                    <strong>GitHub:</strong> <a href="https://github.com/FuLuTang/tb-ai-summary"
+                        target="_blank">https://github.com/FuLuTang/tb-ai-summary</a><br>
+                    <strong>Download:</strong> <a
+                        href="https://addons.thunderbird.net/en-US/thunderbird/addon/ai-chatting-mail-summarizer/"
+                        target="_blank">Thunderbird Add-ons</a>
+                </p>
+
+                <h3>
+                    <span class="lang-en">Key Features</span>
+                    <span class="lang-cn">主要功能</span>
+                    <span class="lang-fr">Fonctionnalités Clés</span>
+                </h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li>
+                        <span class="lang-en">Context-aware AI Chat for individual emails.</span>
+                        <span class="lang-cn">基于上下文的单封邮件 AI 对话。</span>
+                        <span class="lang-fr">Chat IA contextuel pour les e-mails individuels.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Support for Ollama (Local) and OpenAI (Cloud).</span>
+                        <span class="lang-cn">支持 Ollama（本地）和 OpenAI（云端）。</span>
+                        <span class="lang-fr">Support pour Ollama (Local) et OpenAI (Cloud).</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Unread Email Briefing & Smart Categorization.</span>
+                        <span class="lang-cn">未读邮件简报与智能分类。</span>
+                        <span class="lang-fr">Briefing des e-mails non lus et catégorisation intelligente.</span>
+                    </li>
+                </ul>
+
+                <h3>
+                    <span class="lang-en">Project Gallery</span>
+                    <span class="lang-cn">项目展示</span>
+                    <span class="lang-fr">Galerie du Projet</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem;">
+                    <img src="assets/tb-ai-summary_main.png" alt="Main Interface"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <img src="assets/tb-ai-summary_briefing.png" alt="Briefing Feature"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <img src="assets/tb-ai-summary_setting.png" alt="Settings Page"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+</body>
+
+</html>
