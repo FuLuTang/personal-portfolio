@@ -65,7 +65,11 @@
             </h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <span class="date">2025 (Expected)</span>
+                    <span class="date">
+                        <span class="lang-en">2025 (Expected)</span>
+                        <span class="lang-cn">2025 (预计)</span>
+                        <span class="lang-fr">2025 (Expected)</span>
+                    </span>
                     <h3>
                         <span class="lang-en">University of Paris-Saclay - IUT d'Orsay</span>
                         <span class="lang-cn">巴黎萨克雷大学 - 奥赛IUT</span>
@@ -155,7 +159,7 @@
             </svg>
 
             <!-- Project Filter Switcher -->
-            <fieldset class="switcher">
+            <fieldset class="switcher" style="margin-bottom: 0rem;">
                 <legend class="switcher__legend">Choose project category</legend>
                 <label class="switcher__option">
                     <input class="switcher__input" type="radio" name="filter" value="all" c-option="1" checked />
@@ -177,7 +181,7 @@
                 </label>
             </fieldset>
 
-            <div class="project-grid" style="margin-top: 2rem;">
+            <div class="project-grid" style="margin-top: 0rem;">
                 <!-- School Project 1: RPG -->
                 <a href="project-rpg.html" class="project-card" data-category="school">
                     <img src="assets/2DGame_gameing.webp" alt="RPG Game"
@@ -306,6 +310,18 @@
                     </p>
                 </a>
             </div>
+
+            <div style="margin-top: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--text-primary);">
+                    <span class="lang-en">My GitHub Contributions</span>
+                    <span class="lang-cn">我的 GitHub 贡献</span>
+                    <span class="lang-fr">Mes Contributions GitHub</span>
+                </h3>
+                <a href="https://github.com/FuLuTang" target="_blank" title="Visit GitHub Profile">
+                    <img src="https://ghchart.rshah.org/395699/FuLuTang" alt="FuLuTang's GitHub Contributions"
+                        style="width: 100%; height: auto; border-radius: 8px; opacity: 0.9; background-color: white; padding: 8px;">
+                </a>
+            </div>
         </section>
 
         <section id="ambitions">
@@ -396,6 +412,7 @@
                                 vidéo</span>
                         </li>
                     </ul>
+
                 </div>
                 <div>
                     <h2>
@@ -443,22 +460,25 @@
 
     <script src="js/lang.js"></script>
     <script src="js/filter.js"></script>
-  <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
-    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
-      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
-      <feComponentTransfer in="turbulence" result="mapped">
-        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
-        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
-        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
-      </feComponentTransfer>
-      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
-      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
-        <fePointLight x="-200" y="-200" z="300" />
-      </feSpecularLighting>
-      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
-      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" role="presentation"
+        style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
+        <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+            <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17"
+                result="turbulence" />
+            <feComponentTransfer in="turbulence" result="mapped">
+                <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+                <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+                <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+            </feComponentTransfer>
+            <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+            <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100"
+                lighting-color="white" result="specLight">
+                <fePointLight x="-200" y="-200" z="300" />
+            </feSpecularLighting>
+            <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+            <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
 </body>
 
 </html>
