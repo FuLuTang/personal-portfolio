@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <span class="lang-en">AI Mail Summarizer - Haochen Tang</span>
-        <span class="lang-cn">邮件智能摘要助手 - 唐浩晨</span>
+        <span class="lang-cn">邮件智能摘要助手 - 唐颢宸</span>
         <span class="lang-fr">Résumeur de Mails IA - Haochen Tang</span>
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,9 +33,9 @@
                 </p>
             </div>
             <nav class="language-switcher">
+                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
                 <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
                 <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
-                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
             </nav>
         </div>
     </header>
@@ -56,33 +56,33 @@
             </h1>
 
             <div class="project-tags" style="margin-bottom: 2rem;">
-                <span
-                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Thunderbird</span>
-                <span
-                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">JavaScript</span>
-                <span
-                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">AI
-                    Integration</span>
+                <span>Thunderbird</span>
+                <span>JavaScript</span>
+                <span>AI Integration</span>
             </div>
 
             <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
                 <p style="margin-bottom: 1.5rem;">
                     <span class="lang-en">This Thunderbird extension leverages the WebExtension API and advanced
-                        asynchronous JavaScript to integrate local (Ollama) and cloud (OpenAI) LLMs directly into the
+                        asynchronous JavaScript to integrate LLMs (by OpenAI or other providers' APIs) directly into the
                         email client. The architecture features a modular backend for handling AI requests and a
-                        responsive frontend for real-time user interaction. Notably, this project was built using "Vibe
-                        Coding" methodology, allowing for rapid iteration and deployment—the first functional release
-                        was published in just under 8 hours of development.</span>
+                        responsive frontend for real-time user interaction.
+                        <br>Notably, this project was built using "Vibe Coding" methodology, allowing for rapid
+                        iteration
+                        and deployment—the first functional release was published in just under 8 hours of
+                        development.</span>
                     <span class="lang-cn">此 Thunderbird 扩展利用 WebExtension API 和高级异步
-                        JavaScript，将本地（Ollama）和云端（OpenAI）大语言模型直接集成到邮件客户端中。架构采用模块化后端处理 AI
-                        请求，并配备响应式前端以实现实时用户交互。值得一提的是，该项目采用“Vibe Coding”方法构建，实现了极速迭代与部署——仅用约 8 小时开发时间便发布了第一个可用版本。</span>
+                        JavaScript，将本地大语言模型直接集成到邮件客户端中（使用LLM API如OpenAI、Ollama等）。架构采用模块化后端处理 AI
+                        请求，并配备响应式前端以实现实时用户交互。
+                        <br>值得一提的是，该项目采用“Vibe Coding”方法构建，实现了极速迭代与部署——仅用约 8 小时开发时间便发布了第一个可用版本。</span>
                     <span class="lang-fr">Cette extension Thunderbird exploite l'API WebExtension et JavaScript
-                        asynchrone avancé pour intégrer des LLM locaux (Ollama) et cloud (OpenAI) directement dans le
+                        asynchrone avancé pour intégrer des LLMs (par OpenAI ou les API des autres fournisseurs)
+                        directement dans le
                         client de messagerie. L'architecture comprend un backend modulaire pour gérer les requêtes IA et
-                        un frontend réactif pour une interaction utilisateur en temps réel. Notamment, ce projet a été
-                        construit en utilisant la méthodologie "Vibe Coding", permettant une itération et un déploiement
-                        rapides : la première version fonctionnelle a été publiée en moins de 8 heures de
-                        développement.</span>
+                        un frontend réactif pour une interaction utilisateur en temps réel.
+                        <br>Notamment, ce projet a été construit en utilisant la méthodologie "Vibe Coding", permettant
+                        une itération et un déploiement rapides : la première version fonctionnelle a été publiée en
+                        moins de 8 heures de développement.</span>
                 </p>
 
                 <p style="margin-bottom: 1.5rem;">
@@ -134,6 +134,22 @@
     </main>
 
     <script src="js/lang.js"></script>
+  <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+      </feComponentTransfer>
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+        <fePointLight x="-200" y="-200" z="300" />
+      </feSpecularLighting>
+      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
 </body>
 
 </html>
