@@ -119,8 +119,10 @@ header .container {
 }
 
 /* Main Content */
-main {
-    padding: var(--spacing-lg) 0;
+main.container {
+    padding-top: 2rem;
+    /* Extra space to clear the sticky header */
+    padding-bottom: var(--spacing-lg);
 }
 
 section {
@@ -643,6 +645,7 @@ a.project-card h3 {
     border-left: 4px solid var(--accent-color);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
+
 /* Project Detail Article */
 .project-detail-article {
     background: var(--surface-color);
@@ -745,14 +748,37 @@ details summary:hover {
 }
 
 /* Staggered section entrance animations */
-section:nth-child(1)  { animation-delay: 0.05s; }
-section:nth-child(2)  { animation-delay: 0.10s; }
-section:nth-child(3)  { animation-delay: 0.15s; }
-section:nth-child(4)  { animation-delay: 0.20s; }
-section:nth-child(5)  { animation-delay: 0.25s; }
-section:nth-child(6)  { animation-delay: 0.30s; }
-section:nth-child(7)  { animation-delay: 0.35s; }
-section:nth-child(8)  { animation-delay: 0.40s; }
+section:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+section:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+section:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+section:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+section:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+section:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+section:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+section:nth-child(8) {
+    animation-delay: 0.40s;
+}
 
 /* Hint text next to section headings */
 .section-hint {
