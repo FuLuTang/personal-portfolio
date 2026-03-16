@@ -1,14 +1,14 @@
 :root {
-    /* Color Palette */
-    --bg-color: #0f172a;
-    --surface-color: #1e293b;
-    --surface-light: #243352;
-    --primary-color: #38bdf8;
-    --secondary-color: #818cf8;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --accent-color: #f472b6;
-    --border-color: rgba(255, 255, 255, 0.1);
+    /* Color Palette — Light Theme */
+    --bg-color: #f0f4f8;
+    --surface-color: #ffffff;
+    --surface-light: #f8fafc;
+    --primary-color: #0284c7;
+    --secondary-color: #6366f1;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --accent-color: #db2777;
+    --border-color: rgba(0, 0, 0, 0.08);
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -50,13 +50,15 @@ body {
 
 /* Header & Nav */
 header {
-    background-color: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(10px);
+    background-color: rgba(240, 244, 248, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 header .container {
@@ -85,11 +87,11 @@ header .container {
     gap: 4px;
     padding: 6px;
     border-radius: 99em;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.7);
     -webkit-backdrop-filter: blur(8px) saturate(150%);
     backdrop-filter: blur(8px) saturate(150%);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-        0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.08);
 }
 
 .language-switcher a {
@@ -107,12 +109,12 @@ header .container {
 
 .language-switcher a:hover {
     color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .language-switcher a.active {
     background: var(--text-primary);
-    color: var(--bg-color);
+    color: var(--surface-color);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -181,12 +183,13 @@ h2::after {
     padding: var(--spacing-md);
     border-radius: 12px;
     border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
     border-color: var(--primary-color);
 }
 
@@ -218,15 +221,14 @@ h2::after {
     position: relative;
     isolation: isolate;
 
-    /* Glass Base */
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    text-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+    /* Glass Base — light mode */
+    background-color: rgba(255, 255, 255, 0.72) !important;
+    text-shadow: none;
     box-shadow:
-        0 6px 6px rgb(0 0 0 / 20%),
-        0 0 20px rgb(0 0 0 / 10%),
-        inset 2px 2px 1px 0 rgb(255 255 255 / 30%),
-        inset -1px -1px 1px 1px rgb(255 255 255 / 10%);
-    /* Shine restored via box-shadow */
+        0 4px 8px rgb(0 0 0 / 10%),
+        0 0 16px rgb(0 0 0 / 5%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 90%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 6%);
     border: none !important;
     cursor: default;
     user-select: none;
@@ -249,7 +251,7 @@ h2::after {
 
 /* Hover State */
 .project-tags span:hover {
-    background-color: rgba(255, 255, 255, 0.25) !important;
+    background-color: rgba(255, 255, 255, 0.92) !important;
     transform: translateY(-2px);
     transition: all 0.3s ease;
 }
@@ -269,12 +271,12 @@ h2::after {
     position: relative;
     isolation: isolate;
 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.68);
     box-shadow:
-        0 6px 6px rgb(0 0 0 / 20%),
-        0 0 20px rgb(0 0 0 / 10%),
-        inset 2px 2px 1px 0 rgb(255 255 255 / 30%),
-        inset -1px -1px 1px 1px rgb(255 255 255 / 10%);
+        0 4px 8px rgb(0 0 0 / 10%),
+        0 0 16px rgb(0 0 0 / 5%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 90%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 6%);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     overflow: hidden;
@@ -294,7 +296,7 @@ h2::after {
 .back-button:hover {
     color: var(--text-primary);
     transform: translateY(-2px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.92);
 }
 
 /* 3. Skill Items (Highlight Boxes) */
@@ -307,13 +309,12 @@ h2::after {
     position: relative;
     isolation: isolate;
 
-    background-color: rgba(255, 255, 255, 0.08);
-    /* Slightly more transparent */
+    background-color: rgba(255, 255, 255, 0.62);
     box-shadow:
-        0 6px 6px rgb(0 0 0 / 20%),
-        0 0 20px rgb(0 0 0 / 10%),
-        inset 2px 2px 1px 0 rgb(255 255 255 / 20%),
-        inset -1px -1px 1px 1px rgb(255 255 255 / 10%);
+        0 4px 8px rgb(0 0 0 / 8%),
+        0 0 16px rgb(0 0 0 / 4%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 80%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 5%);
 
     transition: all 0.3s ease;
     border: none;
@@ -335,7 +336,7 @@ h2::after {
 
 .skill-category li:hover {
     transform: translateX(5px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.92);
     color: var(--text-primary);
     font-weight: 600;
 }
@@ -358,14 +359,13 @@ h2::after {
     font-weight: 600;
     isolation: isolate;
 
-    /* Liquid Glass Background */
-    background-color: rgba(255, 255, 255, 0.15);
-    /* Shine effect on the container itself */
+    /* Liquid Glass Background — light mode */
+    background-color: rgba(255, 255, 255, 0.62);
     box-shadow:
-        0 6px 6px rgb(0 0 0 / 20%),
-        0 0 20px rgb(0 0 0 / 10%),
-        inset 2px 2px 1px 0 rgb(255 255 255 / 30%),
-        inset -1px -1px 1px 1px rgb(255 255 255 / 10%);
+        0 4px 8px rgb(0 0 0 / 10%),
+        0 0 16px rgb(0 0 0 / 5%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 80%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 5%);
 
     z-index: 10;
 }
@@ -424,23 +424,16 @@ h2::after {
 
 .switcher__option:hover {
     color: var(--text-primary);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .switcher__option:has(input:checked) {
-    color: #1e293b;
-    /* Dark text for contrast on the light pill */
+    color: var(--surface-color);
+    /* White text on primary-color pill */
     cursor: default;
     font-weight: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-    .switcher__option:has(input:checked) {
-        color: #000;
-    }
-}
-
-/* Sliding Background (The Pill) - Kept clean, maybe add slight gloss? */
+/* Sliding Background (The Pill) */
 .switcher::after {
     content: '';
     position: absolute;
@@ -451,14 +444,13 @@ h2::after {
     width: 100px;
     /* Matched to option width */
     border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 0.9);
-    /* Solid white-ish pill */
+    background-color: var(--primary-color);
+    /* Primary color pill */
     z-index: 1;
     /* Below text, above container bg */
     box-shadow:
-        0px 2px 4px 0px rgba(0, 0, 0, 0.2),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-    /* Subtle depth on the pill itself */
+        0px 2px 6px 0px rgba(2, 132, 199, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 /* Transitions */
@@ -477,13 +469,34 @@ h2::after {
     transition: translate 400ms cubic-bezier(1, 0.0, 0.4, 1);
 }
 
-/* Contact Section */
+/* Contact Section — Liquid Glass */
 #contact {
     text-align: center;
-    background: linear-gradient(135deg, var(--surface-color) 0%, rgba(56, 189, 248, 0.05) 100%);
     padding: var(--spacing-lg) var(--spacing-md);
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background-color: rgba(255, 255, 255, 0.58);
+    box-shadow:
+        0 8px 20px rgb(0 0 0 / 10%),
+        0 0 40px rgb(0 0 0 / 5%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 90%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 5%);
+    border: none;
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    filter: url(#glass-distortion);
+    opacity: 0.85;
 }
 
 #contact p {
@@ -551,7 +564,7 @@ h2::after {
     height: 10px;
     background: var(--primary-color);
     border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
 }
 
 .timeline-item .date {
@@ -573,7 +586,7 @@ h2::after {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-sm);
     color: var(--primary-color);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
 
@@ -628,6 +641,7 @@ a.project-card h3 {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     border-left: 4px solid var(--accent-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 /* Project Detail Article */
 .project-detail-article {
@@ -636,6 +650,7 @@ a.project-card h3 {
     border-radius: 12px;
     line-height: 1.8;
     border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .project-detail-article h3 {
@@ -725,7 +740,7 @@ details summary:hover {
     height: auto;
     border-radius: 8px;
     opacity: 0.9;
-    background-color: white;
+    background-color: var(--surface-color);
     padding: 8px;
 }
 
