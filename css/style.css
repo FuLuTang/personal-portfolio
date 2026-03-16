@@ -1,12 +1,14 @@
 :root {
-    /* Color Palette */
-    --bg-color: #0f172a;
-    --surface-color: #1e293b;
-    --primary-color: #38bdf8;
-    --secondary-color: #818cf8;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --accent-color: #f472b6;
+    /* Color Palette — Light Theme */
+    --bg-color: #f0f4f8;
+    --surface-color: #ffffff;
+    --surface-light: #f8fafc;
+    --primary-color: #0284c7;
+    --secondary-color: #6366f1;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --accent-color: #db2777;
+    --border-color: rgba(0, 0, 0, 0.08);
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -48,13 +50,15 @@ body {
 
 /* Header & Nav */
 header {
-    background-color: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(10px);
+    background-color: rgba(240, 244, 248, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 header .container {
@@ -83,11 +87,11 @@ header .container {
     gap: 4px;
     padding: 6px;
     border-radius: 99em;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.7);
     -webkit-backdrop-filter: blur(8px) saturate(150%);
     backdrop-filter: blur(8px) saturate(150%);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-        0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.08);
 }
 
 .language-switcher a {
@@ -105,40 +109,13 @@ header .container {
 
 .language-switcher a:hover {
     color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .language-switcher a.active {
     background: var(--text-primary);
-    color: var(--bg-color);
+    color: var(--surface-color);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-}
-
-/* Back Button */
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--text-secondary);
-    padding: 0.75rem 1.5rem;
-    border-radius: 99em;
-    margin-bottom: 2rem;
-    font-weight: 600;
-
-    /* Glass Effect */
-    background-color: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(8px) saturate(150%);
-    backdrop-filter: blur(8px) saturate(150%);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-        0px 1px 5px 0px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.back-button:hover {
-    background-color: var(--text-primary);
-    color: var(--bg-color);
-    transform: translateX(-5px);
 }
 
 /* Main Content */
@@ -178,7 +155,7 @@ h2::after {
     left: 0;
     width: 50%;
     height: 3px;
-    background: var(--primary-color);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
 }
 
@@ -205,13 +182,14 @@ h2::after {
     background: var(--surface-color);
     padding: var(--spacing-md);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
     border-color: var(--primary-color);
 }
 
@@ -243,15 +221,14 @@ h2::after {
     position: relative;
     isolation: isolate;
 
-    /* Glass Base */
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    text-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+    /* Glass Base — light mode */
+    background-color: rgba(255, 255, 255, 0.72) !important;
+    text-shadow: none;
     box-shadow:
-        0 6px 6px rgb(0 0 0 / 20%),
-        0 0 20px rgb(0 0 0 / 10%),
-        inset 2px 2px 1px 0 rgb(255 255 255 / 30%),
-        inset -1px -1px 1px 1px rgb(255 255 255 / 10%);
-    /* Shine restored via box-shadow */
+        0 4px 8px rgb(0 0 0 / 10%),
+        0 0 16px rgb(0 0 0 / 5%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 90%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 6%);
     border: none !important;
     cursor: default;
     user-select: none;
@@ -274,7 +251,7 @@ h2::after {
 
 /* Hover State */
 .project-tags span:hover {
-    background-color: rgba(255, 255, 255, 0.25) !important;
+    background-color: rgba(255, 255, 255, 0.92) !important;
     transform: translateY(-2px);
     transition: all 0.3s ease;
 }
@@ -294,12 +271,12 @@ h2::after {
     position: relative;
     isolation: isolate;
 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.68);
     box-shadow:
-        0 6px 6px rgb(0 0 0 / 20%),
-        0 0 20px rgb(0 0 0 / 10%),
-        inset 2px 2px 1px 0 rgb(255 255 255 / 30%),
-        inset -1px -1px 1px 1px rgb(255 255 255 / 10%);
+        0 4px 8px rgb(0 0 0 / 10%),
+        0 0 16px rgb(0 0 0 / 5%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 90%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 6%);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     overflow: hidden;
@@ -319,7 +296,7 @@ h2::after {
 .back-button:hover {
     color: var(--text-primary);
     transform: translateY(-2px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.92);
 }
 
 /* 3. Skill Items (Highlight Boxes) */
@@ -332,13 +309,12 @@ h2::after {
     position: relative;
     isolation: isolate;
 
-    background-color: rgba(255, 255, 255, 0.08);
-    /* Slightly more transparent */
+    background-color: rgba(255, 255, 255, 0.62);
     box-shadow:
-        0 6px 6px rgb(0 0 0 / 20%),
-        0 0 20px rgb(0 0 0 / 10%),
-        inset 2px 2px 1px 0 rgb(255 255 255 / 20%),
-        inset -1px -1px 1px 1px rgb(255 255 255 / 10%);
+        0 4px 8px rgb(0 0 0 / 8%),
+        0 0 16px rgb(0 0 0 / 4%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 80%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 5%);
 
     transition: all 0.3s ease;
     border: none;
@@ -360,7 +336,7 @@ h2::after {
 
 .skill-category li:hover {
     transform: translateX(5px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.92);
     color: var(--text-primary);
     font-weight: 600;
 }
@@ -383,14 +359,13 @@ h2::after {
     font-weight: 600;
     isolation: isolate;
 
-    /* Liquid Glass Background */
-    background-color: rgba(255, 255, 255, 0.15);
-    /* Shine effect on the container itself */
+    /* Liquid Glass Background — light mode */
+    background-color: rgba(255, 255, 255, 0.62);
     box-shadow:
-        0 6px 6px rgb(0 0 0 / 20%),
-        0 0 20px rgb(0 0 0 / 10%),
-        inset 2px 2px 1px 0 rgb(255 255 255 / 30%),
-        inset -1px -1px 1px 1px rgb(255 255 255 / 10%);
+        0 4px 8px rgb(0 0 0 / 10%),
+        0 0 16px rgb(0 0 0 / 5%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 80%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 5%);
 
     z-index: 10;
 }
@@ -449,23 +424,16 @@ h2::after {
 
 .switcher__option:hover {
     color: var(--text-primary);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .switcher__option:has(input:checked) {
-    color: #1e293b;
-    /* Dark text for contrast on the light pill */
+    color: var(--surface-color);
+    /* White text on primary-color pill */
     cursor: default;
     font-weight: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-    .switcher__option:has(input:checked) {
-        color: #000;
-    }
-}
-
-/* Sliding Background (The Pill) - Kept clean, maybe add slight gloss? */
+/* Sliding Background (The Pill) */
 .switcher::after {
     content: '';
     position: absolute;
@@ -476,14 +444,13 @@ h2::after {
     width: 100px;
     /* Matched to option width */
     border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 0.9);
-    /* Solid white-ish pill */
+    background-color: var(--primary-color);
+    /* Primary color pill */
     z-index: 1;
     /* Below text, above container bg */
     box-shadow:
-        0px 2px 4px 0px rgba(0, 0, 0, 0.2),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-    /* Subtle depth on the pill itself */
+        0px 2px 6px 0px rgba(2, 132, 199, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 /* Transitions */
@@ -502,12 +469,34 @@ h2::after {
     transition: translate 400ms cubic-bezier(1, 0.0, 0.4, 1);
 }
 
-/* Contact Section */
+/* Contact Section — Liquid Glass */
 #contact {
     text-align: center;
-    background: linear-gradient(180deg, var(--surface-color) 0%, var(--bg-color) 100%);
     padding: var(--spacing-lg) var(--spacing-md);
     border-radius: 20px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background-color: rgba(255, 255, 255, 0.58);
+    box-shadow:
+        0 8px 20px rgb(0 0 0 / 10%),
+        0 0 40px rgb(0 0 0 / 5%),
+        inset 2px 2px 1px 0 rgb(255 255 255 / 90%),
+        inset -1px -1px 1px 1px rgb(0 0 0 / 5%);
+    border: none;
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    filter: url(#glass-distortion);
+    opacity: 0.85;
 }
 
 #contact p {
@@ -549,23 +538,13 @@ h2::after {
 }
 
 :lang(fr) .lang-en,
-:lang(cn) .lang-cn {
-    /* Typo fix in original file: :lang(cn) was repeated or :lang(fr) logic was incomplete?
-       Actually original was:
-       :lang(fr) .lang-en,
-       :lang(fr) .lang-cn { display: none !important; }
-       Let's keep it safe.
-    */
-}
-
-:lang(fr) .lang-en,
 :lang(fr) .lang-cn {
     display: none !important;
 }
 
 /* Timeline (Education) */
 .timeline {
-    border-left: 2px solid var(--surface-color);
+    border-left: 2px solid var(--border-color);
     padding-left: var(--spacing-md);
     margin-left: var(--spacing-sm);
     margin-top: var(--spacing-sm);
@@ -585,7 +564,7 @@ h2::after {
     height: 10px;
     background: var(--primary-color);
     border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
 }
 
 .timeline-item .date {
@@ -600,14 +579,14 @@ h2::after {
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
 }
 
 .skill-category h3 {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-sm);
     color: var(--primary-color);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
 
@@ -660,5 +639,132 @@ a.project-card h3 {
     background: var(--surface-color);
     padding: var(--spacing-md);
     border-radius: 12px;
+    border: 1px solid var(--border-color);
     border-left: 4px solid var(--accent-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+/* Project Detail Article */
+.project-detail-article {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    line-height: 1.8;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.project-detail-article h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    color: var(--primary-color);
+}
+
+.project-detail-article h3:first-child {
+    margin-top: 0;
+}
+
+.project-detail-article p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.project-detail-article ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.project-detail-article li {
+    margin-bottom: 0.25rem;
+}
+
+/* Project Detail Gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* Project Title (on detail pages) */
+.project-page-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+/* GitHub Stats Details */
+details {
+    border-radius: 10px;
+    padding: 0.5rem 0;
+}
+
+details summary {
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    user-select: none;
+    transition: color var(--transition-speed);
+}
+
+details summary:hover {
+    color: var(--text-primary);
+}
+
+/* GitHub Contributions block */
+.github-section {
+    background: var(--surface-color);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-top: var(--spacing-md);
+}
+
+.github-section h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.github-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.9;
+    background-color: var(--surface-color);
+    padding: 8px;
+}
+
+/* Staggered section entrance animations */
+section:nth-child(1)  { animation-delay: 0.05s; }
+section:nth-child(2)  { animation-delay: 0.10s; }
+section:nth-child(3)  { animation-delay: 0.15s; }
+section:nth-child(4)  { animation-delay: 0.20s; }
+section:nth-child(5)  { animation-delay: 0.25s; }
+section:nth-child(6)  { animation-delay: 0.30s; }
+section:nth-child(7)  { animation-delay: 0.35s; }
+section:nth-child(8)  { animation-delay: 0.40s; }
+
+/* Hint text next to section headings */
+.section-hint {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+    margin-left: 1rem;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+/* About section subtle highlight */
+#about p {
+    line-height: 1.9;
 }
