@@ -57,7 +57,8 @@
 
             <div class="project-tags" style="margin-bottom: 2rem;">
                 <span
-                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Penpot</span>
+                    style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Figma
+                    / Penpot</span>
                 <span
                     style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Personas</span>
                 <span
@@ -68,12 +69,14 @@
                 <p style="margin-bottom: 1.5rem;">
                     <span class="lang-en">I prototyped a user interface for managing student residences. This process
                         utilized standard UX methodologies, including the creation of Personas to understand user needs,
-                        and using Penpot for high-fidelity prototyping.</span>
-                    <span class="lang-cn">我为学生公寓管理系统制作了用户界面原型。该过程采用了标准的 UX 方法论，包括创建用户画像（Personas）以理解用户需求，并使用 Penpot
+                        and using Figma / Penpot for high-fidelity prototyping.</span>
+                    <span class="lang-cn">我为学生公寓管理系统制作了用户界面原型。该过程采用了标准的 UX 方法论，包括创建用户画像（Personas）以理解用户需求，并使用 Figma /
+                        Penpot
                         进行高保真原型设计。</span>
                     <span class="lang-fr">J'ai réalisé le prototypage de l'interface utilisateur pour la gestion de
                         résidences étudiantes. Ce processus a utilisé des méthodologies UX standard, y compris la
-                        création de Personas pour comprendre les besoins des utilisateurs, et l'utilisation de Penpot
+                        création de Personas pour comprendre les besoins des utilisateurs, et l'utilisation de Figma /
+                        Penpot
                         pour le prototypage haute fidélité.</span>
                 </p>
 
@@ -94,32 +97,45 @@
                         <span class="lang-fr">Wireframing et planification de la mise en page.</span>
                     </li>
                     <li>
-                        <span class="lang-en">High-fidelity prototype in Penpot.</span>
-                        <span class="lang-cn">Penpot 高保真原型。</span>
-                        <span class="lang-fr">Prototype haute fidélité sur Penpot.</span>
+                        <span class="lang-en">High-fidelity prototype in Figma / Penpot.</span>
+                        <span class="lang-cn">Figma / Penpot 高保真原型。</span>
+                        <span class="lang-fr">Prototype haute fidélité sur Figma / Penpot.</span>
                     </li>
                 </ul>
+
+                <h3>
+                    <span class="lang-en">Project Gallery</span>
+                    <span class="lang-cn">项目展示</span>
+                    <span class="lang-fr">Galerie du Projet</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem;">
+                    <img src="assets/StudentResidence_penpot.jpg" alt="UI/UX Design in Penpot"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                </div>
             </article>
         </section>
     </main>
 
     <script src="js/lang.js"></script>
-  <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
-    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
-      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
-      <feComponentTransfer in="turbulence" result="mapped">
-        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
-        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
-        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
-      </feComponentTransfer>
-      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
-      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
-        <fePointLight x="-200" y="-200" z="300" />
-      </feSpecularLighting>
-      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
-      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" role="presentation"
+        style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
+        <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+            <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17"
+                result="turbulence" />
+            <feComponentTransfer in="turbulence" result="mapped">
+                <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+                <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+                <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+            </feComponentTransfer>
+            <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+            <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100"
+                lighting-color="white" result="specLight">
+                <fePointLight x="-200" y="-200" z="300" />
+            </feSpecularLighting>
+            <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+            <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
 </body>
 
 </html>
