@@ -31,11 +31,14 @@
                     <span class="lang-fr">Informaticien / Développeur</span>
                 </p>
             </div>
-            <nav class="language-switcher">
-                <a href="#" onclick="setLanguage('en'); return false;">EN</a>
-                <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
-                <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
-            </nav>
+            <div class="header-actions">
+                <nav class="language-switcher">
+                    <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+                    <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                    <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                </nav>
+                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode">🌙</button>
+            </div>
         </div>
     </header>
 
@@ -518,6 +521,7 @@
     </main>
 
     <script src="js/lang.js"></script>
+    <script src="js/theme.js"></script>
     <script src="js/filter.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" role="presentation"
         style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
