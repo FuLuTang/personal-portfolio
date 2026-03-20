@@ -270,6 +270,25 @@ h2::after {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-sm);
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.project-card h3::after {
+    content: '→';
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    opacity: 0.55;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
+}
+
+.project-card:hover h3::after {
+    transform: translateX(5px);
+    opacity: 1;
+    color: var(--primary-color);
 }
 
 .project-card p {

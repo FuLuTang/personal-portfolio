@@ -1,0 +1,12 @@
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /assets/task_ios_4categories.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /assets/tb-ai-summary_main.png HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /assets/SubtitleTool_p1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /assets/2DGame_gameing.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /js/lang.js HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /assets/db_cdm.webp HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /js/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /js/filter.js HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /assets/StudentResidence_penpot.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [20/Mar/2026 10:47:46] "GET /assets/website.webp HTTP/1.1" 200 -
