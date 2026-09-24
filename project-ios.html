@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-title-en="iOS Task App — Haochen Tang" data-title-zh="iOS 任务管理应用 — 唐颢宸" data-title-fr="Application iOS — Haochen Tang">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <span class="lang-en">iOS Task App - Haochen Tang</span>
-        <span class="lang-cn">iOS 任务管理 - 唐浩晨</span>
-        <span class="lang-fr">App iOS - Haochen Tang</span>
-    </title>
+    <title>iOS Task App — Haochen Tang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,12 +29,12 @@
                 </p>
             </div>
             <div class="header-actions">
-                <nav class="language-switcher">
-                    <a href="#" onclick="setLanguage('en'); return false;">EN</a>
-                    <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
-                    <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <nav class="language-switcher" aria-label="Language selection">
+                    <a href="#" data-language="en" hreflang="en">EN</a>
+                    <a href="#" data-language="zh" hreflang="zh">中文</a>
+                    <a href="#" data-language="fr" hreflang="fr">FR</a>
                 </nav>
-                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode">🌙</button>
+                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">🌙</button>
             </div>
         </div>
     </header>
@@ -52,7 +48,7 @@
                 <span class="lang-fr">Retour à l'accueil</span>
             </a>
 
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+            <h1 class="project-page-title">
                 <span class="lang-en">iOS Task App</span>
                 <span class="lang-cn">iOS 任务管理应用</span>
                 <span class="lang-fr">Application Mobile iOS</span>
@@ -67,7 +63,7 @@
                     style="background: rgba(56, 189, 248, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.875rem; margin-right: 0.5rem;">Productivity</span>
             </div>
 
-            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+            <article class="project-detail-article">
                 <p style="margin-bottom: 1.5rem;">
                     <span class="lang-en">This is a task management software. It allows tasks to be executed more
                         efficiently by classifying them into 4 categories according to their urgency and importance.

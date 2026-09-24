@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-title-en="AI Mail Summarizer — Haochen Tang" data-title-zh="邮件智能摘要助手 — 唐颢宸" data-title-fr="Résumeur de mails IA — Haochen Tang">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <span class="lang-en">AI Mail Summarizer - Haochen Tang</span>
-        <span class="lang-cn">邮件智能摘要助手 - 唐颢宸</span>
-        <span class="lang-fr">Résumeur de Mails IA - Haochen Tang</span>
-    </title>
+    <title>AI Mail Summarizer — Haochen Tang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,12 +29,12 @@
                 </p>
             </div>
             <div class="header-actions">
-                <nav class="language-switcher">
-                    <a href="#" onclick="setLanguage('en'); return false;">EN</a>
-                    <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
-                    <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <nav class="language-switcher" aria-label="Language selection">
+                    <a href="#" data-language="en" hreflang="en">EN</a>
+                    <a href="#" data-language="zh" hreflang="zh">中文</a>
+                    <a href="#" data-language="fr" hreflang="fr">FR</a>
                 </nav>
-                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode">🌙</button>
+                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">🌙</button>
             </div>
         </div>
     </header>
@@ -52,7 +48,7 @@
                 <span class="lang-fr">Retour à l'accueil</span>
             </a>
 
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+            <h1 class="project-page-title">
                 <span class="lang-en">AI Chatting Mail Summarizer</span>
                 <span class="lang-cn">邮件智能摘要助手</span>
                 <span class="lang-fr">Résumeur de Mails IA</span>
@@ -64,7 +60,7 @@
                 <span>AI Integration</span>
             </div>
 
-            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+            <article class="project-detail-article">
                 <p style="margin-bottom: 1.5rem;">
                     <span class="lang-en">This Thunderbird extension leverages the WebExtension API and advanced
                         asynchronous JavaScript to integrate LLMs (by OpenAI or other providers' APIs) directly into the
@@ -90,10 +86,10 @@
 
                 <p style="margin-bottom: 1.5rem;">
                     <strong>GitHub:</strong> <a href="https://github.com/FuLuTang/tb-ai-summary"
-                        target="_blank">https://github.com/FuLuTang/tb-ai-summary</a><br>
+                        target="_blank" rel="noopener noreferrer">https://github.com/FuLuTang/tb-ai-summary</a><br>
                     <strong>Download:</strong> <a
                         href="https://addons.thunderbird.net/en-US/thunderbird/addon/ai-chatting-mail-summarizer/"
-                        target="_blank">Thunderbird Add-ons</a>
+                        target="_blank" rel="noopener noreferrer">Thunderbird Add-ons</a>
                 </p>
 
                 <h3>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-title-en="Haochen Tang — Portfolio" data-title-zh="唐颢宸 — 作品集" data-title-fr="Haochen Tang — Portfolio">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <span class="lang-en">My Portfolio</span>
-        <span class="lang-cn">我的作品集</span>
-        <span class="lang-fr">Mon Portfolio</span>
-    </title>
+    <title>Haochen Tang — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,12 +28,12 @@
                 </p>
             </div>
             <div class="header-actions">
-                <nav class="language-switcher">
-                    <a href="#" onclick="setLanguage('en'); return false;">EN</a>
-                    <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
-                    <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <nav class="language-switcher" aria-label="Language selection">
+                    <a href="#" data-language="en" hreflang="en">EN</a>
+                    <a href="#" data-language="zh" hreflang="zh">中文</a>
+                    <a href="#" data-language="fr" hreflang="fr">FR</a>
                 </nav>
-                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode">🌙</button>
+                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">🌙</button>
             </div>
         </div>
     </header>
@@ -161,7 +157,7 @@
             </svg>
 
             <!-- Project Filter Switcher -->
-            <fieldset class="switcher" style="margin-bottom: 0rem;">
+            <fieldset class="switcher" data-project-filter>
                 <legend class="switcher__legend">Choose project category</legend>
                 <label class="switcher__option">
                     <input class="switcher__input" type="radio" name="filter" value="all" c-option="1" checked />
@@ -183,7 +179,7 @@
                 </label>
             </fieldset>
 
-            <div class="project-grid" style="margin-top: 0rem;">
+            <div class="project-grid" data-project-grid>
                 <!-- Personal Project 1: iOS -->
                 <a href="project-ios.html" class="project-card" data-category="personal">
                     <img src="assets/task_ios_4categories.webp" alt="iOS App"
@@ -364,7 +360,7 @@
                     <span class="lang-cn">我的 GitHub 贡献</span>
                     <span class="lang-fr">Mes Contributions GitHub</span>
                 </h3>
-                <a href="https://github.com/FuLuTang" target="_blank" title="Visit GitHub Profile">
+                <a href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer" title="Visit GitHub Profile">
                     <img src="https://ghchart.rshah.org/395699/FuLuTang" alt="FuLuTang's GitHub Contributions"
                         style="width: 100%; height: auto; border-radius: 8px; opacity: 0.9; background-color: white; padding: 8px;">
                 </a>
@@ -377,7 +373,7 @@
                         <span class="lang-fr">Plus de stats GitHub</span>
                     </summary>
 
-                    <a href="https://github.com/FuLuTang" target="_blank" title="Visit GitHub Profile">
+                    <a href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer" title="Visit GitHub Profile">
                         <img src="https://raw.githubusercontent.com/FuLuTang/FuLuTang/main/github-metrics.svg"
                             alt="FuLuTang's GitHub Metrics" loading="lazy"
                             style="width: 100%; height: auto; border-radius: 8px; background-color: white; padding: 8px; margin-top: 0.75rem;" />
@@ -522,6 +518,7 @@
 
     <script src="js/lang.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/projects.js"></script>
     <script src="js/filter.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" role="presentation"
         style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">

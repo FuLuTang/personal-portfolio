@@ -1,68 +1,27 @@
-/**
- * Project Filter Switcher Logic
- * Handles the "sliding liquid" animation tracking and the actual filtering of project sections.
- */
+(() => {
+    'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const switcher = document.querySelector('.switcher');
-
-    if (switcher) {
-        trackPrevious(switcher);
-
-        // Add change listeners to inputs
-        const radios = switcher.querySelectorAll('input[type="radio"]');
-        radios.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                filterProjects(e.target.value);
-            });
-        });
-    }
-
-    /**
-     * Filters the project cards based on the selected category.
-     * @param {string} category - 'all', 'school', or 'personal'
-     */
-    function filterProjects(category) {
+    function initializeProjectFilter() {
+        const switcher = document.querySelector('[data-project-filter]');
         const cards = document.querySelectorAll('.project-card');
+        if (!switcher || !cards.length) return;
 
-        cards.forEach(card => {
-            if (category === 'all') {
-                card.style.display = ''; // Reset inline display style
-                card.classList.remove('hidden');
-            } else {
-                const cardCategory = card.getAttribute('data-category');
-                if (cardCategory === category) {
-                    card.style.display = ''; // Reset inline display style
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
+        function filterProjects(category) {
+            cards.forEach((card) => {
+                const matches = category === 'all' || card.dataset.category === category;
+                card.classList.toggle('hidden', !matches);
+            });
+        }
+
+        const checkedInput = switcher.querySelector('input[type="radio"]:checked');
+        filterProjects(checkedInput ? checkedInput.value : 'all');
+
+        switcher.addEventListener('change', (event) => {
+            if (event.target.matches('input[type="radio"]')) {
+                filterProjects(event.target.value);
             }
         });
     }
 
-    /**
-     * Tracks the previous selection to enable the "direction-aware" sliding animation.
-     * Adapted from the user's provided snippet.
-     */
-    function trackPrevious(el) {
-        const radios = el.querySelectorAll('input[type="radio"]');
-        let previousValue = null;
-
-        // Find initially checked
-        const initiallyChecked = el.querySelector('input[type="radio"]:checked');
-        if (initiallyChecked) {
-            previousValue = initiallyChecked.getAttribute("c-option");
-            el.setAttribute('c-previous', previousValue);
-        }
-
-        radios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                if (radio.checked) {
-                    el.setAttribute('c-previous', previousValue ?? '');
-                    previousValue = radio.getAttribute("c-option");
-                }
-            });
-        });
-    }
-});
+    document.addEventListener('DOMContentLoaded', initializeProjectFilter);
+})();

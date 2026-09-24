@@ -624,8 +624,8 @@ h2::after {
     display: none !important;
 }
 
-:lang(cn) .lang-en,
-:lang(cn) .lang-fr {
+:lang(zh) .lang-en,
+:lang(zh) .lang-fr {
     display: none !important;
 }
 
@@ -883,4 +883,106 @@ section:nth-child(8) {
 /* About section subtle highlight */
 #about p {
     line-height: 1.9;
+}
+
+/* Shared project-detail components */
+.project-page-title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-tags span {
+    margin: 0;
+}
+
+.project-card-image {
+    display: block;
+    width: 100%;
+    height: 160px;
+    margin: -0.5rem 0 1rem;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+}
+
+.project-detail-article {
+    padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.project-detail-article > p:first-child {
+    margin-bottom: 1.5rem;
+}
+
+.project-gallery--columns {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.name a {
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-inline: 0.875rem;
+    }
+
+    .language-switcher a {
+        padding: 0.45rem 0.65rem;
+    }
+
+    .switcher {
+        width: 100%;
+        height: auto;
+        padding: 4px;
+    }
+
+    .switcher__option {
+        min-width: 0;
+        flex: 1;
+        padding: 0.75rem 0.25rem;
+    }
+
+    .switcher::after {
+        display: none;
+    }
+
+    .switcher__option:has(input:checked) {
+        background: var(--primary-color);
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+    .language-switcher,
+    #theme-toggle,
+    .switcher,
+    #contact,
+    .project-tags span,
+    .back-button,
+    .skill-category li {
+        background-color: var(--surface-color);
+    }
 }

@@ -1,35 +1,55 @@
-// Theme (dark / light) toggle
-// Supported themes — stored as a variable just like language options in lang.js
-const SUPPORTED_THEMES = ['light', 'dark'];
-const THEME_ICONS = {
-    light: '☀️',   // shown when switching TO light (i.e. current theme is dark)
-    dark: '🌙'     // shown when switching TO dark  (i.e. current theme is light)
-};
+(() => {
+    'use strict';
 
-function setTheme(theme) {
-    if (SUPPORTED_THEMES.indexOf(theme) === -1) return;
+    const SUPPORTED_THEMES = ['light', 'dark'];
+    const THEME_LABELS = {
+        light: 'Switch to dark mode',
+        dark: 'Switch to light mode'
+    };
+    const THEME_ICONS = { light: '🌙', dark: '☀️' };
 
-    document.documentElement.setAttribute('data-theme', theme);
-
-    const btn = document.getElementById('theme-toggle');
-    if (btn) {
-        // Icon shows what you'll switch TO
-        btn.textContent = theme === 'dark' ? THEME_ICONS.light : THEME_ICONS.dark;
-        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    function getStoredTheme() {
+        try {
+            const theme = localStorage.getItem('preferredTheme');
+            return SUPPORTED_THEMES.includes(theme) ? theme : null;
+        } catch (_) {
+            return null;
+        }
     }
 
-    localStorage.setItem('preferredTheme', theme);
-}
+    function setTheme(theme, { persist = true } = {}) {
+        if (!SUPPORTED_THEMES.includes(theme)) return;
 
-function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme') || 'light';
-    setTheme(current === 'dark' ? 'light' : 'dark');
-}
+        document.documentElement.dataset.theme = theme;
+        const button = document.querySelector('[data-theme-toggle]');
+        if (button) {
+            button.textContent = THEME_ICONS[theme];
+            button.setAttribute('aria-label', THEME_LABELS[theme]);
+            button.setAttribute('title', THEME_LABELS[theme]);
+        }
 
-// Initialize on load
-document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('preferredTheme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const defaultTheme = saved || (systemDark ? 'dark' : 'light');
-    setTheme(defaultTheme);
-});
+        if (persist) {
+            try {
+                localStorage.setItem('preferredTheme', theme);
+            } catch (_) {
+                // Storage can be unavailable in privacy-restricted contexts.
+            }
+        }
+    }
+
+    function toggleTheme() {
+        const currentTheme = document.documentElement.dataset.theme || 'light';
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    }
+
+    function initializeTheme() {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(getStoredTheme() || (prefersDark ? 'dark' : 'light'));
+
+        const button = document.querySelector('[data-theme-toggle]');
+        if (button) button.addEventListener('click', toggleTheme);
+    }
+
+    window.toggleTheme = toggleTheme;
+    document.addEventListener('DOMContentLoaded', initializeTheme);
+})();

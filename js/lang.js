@@ -1,28 +1,64 @@
-function setLanguage(lang) {
-    if (['en', 'cn', 'fr'].indexOf(lang) === -1) return;
+(() => {
+    'use strict';
 
-    // Update HTML lang attribute (this triggers the CSS)
-    document.documentElement.lang = lang;
+    const SUPPORTED_LANGUAGES = ['en', 'zh', 'fr'];
+    const LEGACY_LANGUAGE_MAP = { cn: 'zh' };
 
-    // Update active state in switcher
-    document.querySelectorAll('.language-switcher a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('onclick').includes(`'${lang}'`)) {
-            link.classList.add('active');
+    function normalizeLanguage(language) {
+        const normalized = String(language || '').toLowerCase().split('-')[0];
+        const mapped = LEGACY_LANGUAGE_MAP[normalized] || normalized;
+        return SUPPORTED_LANGUAGES.includes(mapped) ? mapped : null;
+    }
+
+    function getStoredLanguage() {
+        try {
+            return normalizeLanguage(localStorage.getItem('preferredLanguage'));
+        } catch (_) {
+            return null;
         }
-    });
+    }
 
-    // Save preference
-    localStorage.setItem('preferredLanguage', lang);
-}
+    function setDocumentTitle(language) {
+        const title = document.title;
+        const localizedTitle = document.documentElement.dataset[`title${language.charAt(0).toUpperCase()}${language.slice(1)}`];
+        if (localizedTitle) document.title = localizedTitle;
+        return title;
+    }
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLanguage');
-    const browserLang = navigator.language.slice(0, 2);
-    // Support English, Chinese, French. Default to English.
-    const supportedLangs = ['en', 'cn', 'fr'];
-    const defaultLang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'en');
+    function setLanguage(language, { persist = true } = {}) {
+        const selectedLanguage = normalizeLanguage(language);
+        if (!selectedLanguage) return;
 
-    setLanguage(defaultLang);
-});
+        document.documentElement.lang = selectedLanguage;
+        setDocumentTitle(selectedLanguage);
+
+        document.querySelectorAll('[data-language]').forEach((control) => {
+            const isActive = normalizeLanguage(control.dataset.language) === selectedLanguage;
+            control.classList.toggle('active', isActive);
+            control.setAttribute('aria-current', isActive ? 'true' : 'false');
+        });
+
+        if (persist) {
+            try {
+                localStorage.setItem('preferredLanguage', selectedLanguage);
+            } catch (_) {
+                // Storage can be unavailable in privacy-restricted contexts.
+            }
+        }
+    }
+
+    function initializeLanguage() {
+        const browserLanguage = normalizeLanguage(navigator.language);
+        setLanguage(getStoredLanguage() || browserLanguage || 'en');
+
+        document.querySelectorAll('[data-language]').forEach((control) => {
+            control.addEventListener('click', (event) => {
+                event.preventDefault();
+                setLanguage(control.dataset.language);
+            });
+        });
+    }
+
+    window.setLanguage = setLanguage;
+    document.addEventListener('DOMContentLoaded', initializeLanguage);
+})();

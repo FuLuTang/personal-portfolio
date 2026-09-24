@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-title-en="Tourism Website — Haochen Tang" data-title-zh="旅游网站前端 — 唐颢宸" data-title-fr="Site touristique — Haochen Tang">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <span class="lang-en">Tourism Website - Haochen Tang</span>
-        <span class="lang-cn">旅游网站前端 - 唐浩晨</span>
-        <span class="lang-fr">Site Touristique - Haochen Tang</span>
-    </title>
+    <title>Tourism Website — Haochen Tang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,12 +29,12 @@
                 </p>
             </div>
             <div class="header-actions">
-                <nav class="language-switcher">
-                    <a href="#" onclick="setLanguage('en'); return false;">EN</a>
-                    <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
-                    <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                <nav class="language-switcher" aria-label="Language selection">
+                    <a href="#" data-language="en" hreflang="en">EN</a>
+                    <a href="#" data-language="zh" hreflang="zh">中文</a>
+                    <a href="#" data-language="fr" hreflang="fr">FR</a>
                 </nav>
-                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode">🌙</button>
+                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">🌙</button>
             </div>
         </div>
     </header>
@@ -52,7 +48,7 @@
                 <span class="lang-fr">Retour à l'accueil</span>
             </a>
 
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+            <h1 class="project-page-title">
                 <span class="lang-en">Tourism Website</span>
                 <span class="lang-cn">旅游网站前端</span>
                 <span class="lang-fr">Intégration Web Front-end</span>
@@ -64,7 +60,7 @@
                 <span>Responsive</span>
             </div>
 
-            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+            <article class="project-detail-article">
                 <p style="margin-bottom: 1.5rem;">
                     <span class="lang-en">Creation of a website in a group, using HTML and CSS. This is a web
                         development project to present a tourist site. Realized in collaboration with two classmates, I
