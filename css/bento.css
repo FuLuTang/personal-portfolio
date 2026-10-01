@@ -1,0 +1,1024 @@
+/* ==========================================================================
+   Variant A — Light Bento
+   Warm cream field · forest green anchor · amber labels
+   Standalone stylesheet for variants/a-bento/index.html
+   (shares no selectors with the root css/style.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+    /* surfaces — warm cream field, pure white tiles */
+    --bg: #FAF7F2;
+    --bg-tint: #F2EBE0;
+    --surface: #FFFFFF;
+    --surface-2: #FCFAF6;
+    --line: #ECE6DB;
+    --line-2: #DCD3C4;
+
+    /* ink — warm near-black brown */
+    --ink: #1C1917;
+    --ink-2: #78716C;
+
+    /* brand — deep forest green */
+    --forest: #1F6F5C;
+    --forest-deep: #17564A;
+    --forest-wash: #E6F0EC;
+    --hero-bg: #1F6F5C;
+    --on-hero: #FBF7F0;
+    --on-hero-2: #D6E6DF;
+    --hero-panel-bg: rgba(255, 255, 255, 0.09);
+    --hero-panel-line: rgba(255, 255, 255, 0.24);
+
+    /* CSS-drawn wireframe grid (Unity tile) — strong enough to read at a glance */
+    --wire-line: rgba(28, 25, 23, 0.2);
+
+    /* accent — amber orange */
+    --amber: #D97706;
+    --amber-ink: #9A4A0A;
+    --amber-wash: #FBEFDD;
+    --amber-soft: #F2C489;
+
+    /* inverted pill (active language / active filter) */
+    --pill-fg: #FBF7F0;
+
+    /* chrome */
+    --header-bg: rgba(250, 247, 242, 0.84);
+    --shadow-1: 0 1px 2px rgba(28, 25, 23, 0.05);
+    --shadow-2: 0 18px 36px -22px rgba(28, 25, 23, 0.38);
+
+    /* geometry — tiles are deliberately not uniform */
+    --r-hero: 24px;
+    --r-tile: 16px;
+    --r-sm: 10px;
+    --gap: clamp(0.8rem, 1.35vw, 1.15rem);
+
+    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    /* icons drawn as CSS masks so theme.js can keep writing text into the button */
+    --icon-moon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/%3E%3C/svg%3E");
+    --icon-sun: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4.2'/%3E%3Cpath d='M12 2.4v2.2M12 19.4v2.2M4.2 12H2M22 12h-2.2M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M17.5 6.5l1.6-1.6M4.9 19.1l1.6-1.6'/%3E%3C/svg%3E");
+}
+
+/* warm dark theme — never a cold uniform black */
+[data-theme="dark"] {
+    --bg: #14120E;
+    --bg-tint: #221F1A;
+    --surface: #1C1917;
+    --surface-2: #211E19;
+    --line: #2E2A24;
+    --line-2: #3D372F;
+
+    --ink: #F4EFE7;
+    --ink-2: #B4ADA6;
+
+    --forest: #4FAE93;
+    --forest-deep: #6CC4A9;
+    --forest-wash: #1B2E28;
+    --hero-bg: #17352C;
+    --on-hero: #F4EFE7;
+    --on-hero-2: #C7DAD3;
+    --hero-panel-bg: rgba(255, 255, 255, 0.055);
+    --hero-panel-line: rgba(255, 255, 255, 0.16);
+
+    --wire-line: rgba(244, 239, 231, 0.2);
+
+    --amber: #E8A03C;
+    --amber-ink: #F0C08A;
+    --amber-wash: #33261A;
+    --amber-soft: #E8A03C;
+
+    --pill-fg: #14120E;
+
+    --header-bg: rgba(20, 18, 14, 0.84);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-2: 0 18px 36px -22px rgba(0, 0, 0, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   2. Language visibility (required by js/lang.js)
+   -------------------------------------------------------------------------- */
+:lang(en) .lang-cn, :lang(en) .lang-fr { display: none !important; }
+:lang(zh) .lang-en, :lang(zh) .lang-fr { display: none !important; }
+:lang(fr) .lang-en, :lang(fr) .lang-cn { display: none !important; }
+
+/* --------------------------------------------------------------------------
+   3. Base
+   -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#projects,
+#contact {
+    scroll-margin-top: 4.75rem;
+}
+
+:where(a, button, input, label):focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. Utility rail (was a fat sticky header)
+   -------------------------------------------------------------------------- */
+.rail {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+}
+
+.rail__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.55rem clamp(1rem, 3vw, 1.75rem);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.rail__brand {
+    margin-right: auto;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.rail__brand:hover {
+    color: var(--forest-deep);
+}
+
+.rail__nav {
+    display: flex;
+    gap: 0.15rem;
+}
+
+.rail__nav a {
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink-2);
+    text-decoration: none;
+}
+
+.rail__nav a:hover {
+    color: var(--ink);
+    background-color: var(--bg-tint);
+}
+
+.rail__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    padding: 0.15rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background-color: var(--surface);
+}
+
+.language-switcher a {
+    padding: 0.3rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink-2);
+    text-decoration: none;
+}
+
+.language-switcher a:hover {
+    color: var(--ink);
+    background-color: var(--bg-tint);
+}
+
+.language-switcher a.active,
+.language-switcher a[aria-current="true"] {
+    background-color: var(--forest);
+    color: var(--pill-fg);
+}
+
+/* theme.js writes an emoji into this button; the visible glyph is the mask */
+#theme-toggle {
+    width: 2.1rem;
+    height: 2.1rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background-color: var(--surface);
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+#theme-toggle::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--ink);
+    -webkit-mask: var(--icon-moon) center / contain no-repeat;
+    mask: var(--icon-moon) center / contain no-repeat;
+}
+
+[data-theme="dark"] #theme-toggle::before {
+    -webkit-mask-image: var(--icon-sun);
+    mask-image: var(--icon-sun);
+}
+
+#theme-toggle:hover {
+    border-color: var(--line-2);
+    background-color: var(--bg-tint);
+}
+
+/* --------------------------------------------------------------------------
+   5. Page shell + matrix
+   -------------------------------------------------------------------------- */
+.shell {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: clamp(1rem, 2.4vw, 1.6rem) clamp(1rem, 3vw, 1.75rem) 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.bento {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-flow: row dense;
+    gap: var(--gap);
+}
+
+.bento--profile {
+    grid-auto-rows: minmax(6.4rem, auto);
+}
+
+.bento--projects {
+    grid-auto-rows: minmax(6rem, auto);
+}
+
+/* ---------- tiles ---------- */
+.tile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: clamp(1rem, 1.5vw, 1.3rem);
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-tile);
+    animation: rise 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 45ms);
+}
+
+.tile--wide {
+    grid-column: span 2;
+}
+
+.tile--tall {
+    grid-row: span 2;
+}
+
+.tile--tinted {
+    background-color: var(--surface-2);
+}
+
+/* hero: compact, centred business card.
+   `margin-block: auto` on the outer two children centres the block without the
+   hard clipping that `justify-content: center` causes when content overflows. */
+.tile--hero {
+    grid-column: span 2;
+    grid-row: span 2;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: clamp(1.25rem, 2vw, 1.7rem);
+    background-color: var(--hero-bg);
+    border-color: transparent;
+    border-radius: var(--r-hero);
+    color: var(--on-hero);
+    box-shadow: var(--shadow-2);
+}
+
+.tile--hero > .tile__label {
+    margin-top: auto;
+}
+
+.tile--hero > .hero__panel {
+    margin-bottom: auto;
+}
+
+.tile__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+}
+
+.tile__label--onDark {
+    color: var(--on-hero-2);
+}
+
+.tile__title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.012em;
+}
+
+.tile__title--spaced {
+    margin-top: 0.45rem;
+}
+
+.tile__body {
+    font-size: 0.95rem;
+    color: var(--ink-2);
+}
+
+.tile__body--strong {
+    color: var(--ink);
+}
+
+.tile__body--small {
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.tile__body--foot {
+    margin-top: auto;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--line);
+}
+
+/* ---------- hero tile ---------- */
+.hero__name {
+    font-size: clamp(2.1rem, 4.6vw, 3.35rem);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+}
+
+.hero__role {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--on-hero-2);
+}
+
+.hero__rule {
+    width: 3rem;
+    height: 2px;
+    border: 0;
+    border-radius: 2px;
+    background-color: var(--amber-soft);
+}
+
+/* the facts sit in an inset panel so the lower half of the green tile reads as
+   a solid card body instead of loose text floating on colour */
+.hero__panel {
+    margin-top: 0.15rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--hero-panel-line);
+    border-radius: var(--r-tile);
+    background-color: var(--hero-panel-bg);
+}
+
+.hero__facts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.32rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--on-hero-2);
+}
+
+.hero__facts li {
+    padding-left: 0.75rem;
+    text-indent: -0.75rem;
+}
+
+.hero__facts li::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-right: 0.45rem;
+    border-radius: 1px;
+    background-color: var(--amber-soft);
+    vertical-align: 0.18em;
+}
+
+/* ---------- shared list patterns ---------- */
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.stack--tight {
+    gap: 0.4rem;
+}
+
+.stack__row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+}
+
+.stack__meta {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+}
+
+.stack__main {
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.stack__sub {
+    font-size: 0.82rem;
+    color: var(--ink-2);
+}
+
+/* languages: the tile is stretched by the taller Education tile next to it, so
+   the three rows expand to fill the height instead of pooling at the bottom */
+.levels {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.4rem;
+    padding-block: 0.15rem;
+}
+
+.levels__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.32rem;
+}
+
+.levels__row:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.levels__row dt {
+    color: var(--ink-2);
+}
+
+.levels__row dd {
+    font-weight: 700;
+    color: var(--forest);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: auto;
+}
+
+.tags li {
+    padding: 0.22rem 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background-color: var(--surface-2);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--ink-2);
+}
+
+/* skills tile (hard + soft): one item per line, equal width, ruled — never a
+   wrap-dependent mix of "two chips on a line, one chip on the next" */
+.specs {
+    display: flex;
+    flex-direction: column;
+}
+
+.specs li {
+    position: relative;
+    padding: 0.34rem 0 0.34rem 0.95rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.84rem;
+    line-height: 1.35;
+}
+
+.specs li:last-child {
+    border-bottom: 0;
+}
+
+.specs li::before {
+    content: "";
+    position: absolute;
+    top: 0.72rem;
+    left: 0.05rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    background-color: var(--amber);
+}
+
+.roadmap {
+    display: flex;
+    flex-direction: column;
+    margin: 0.2rem 0 0.9rem 0.35rem;
+    padding-left: 0.9rem;
+    border-left: 1px solid var(--line-2);
+}
+
+.roadmap__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.85rem;
+}
+
+.roadmap__item::before {
+    content: "";
+    position: absolute;
+    top: 0.42rem;
+    left: calc(-0.9rem - 3.5px);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--amber);
+}
+
+.roadmap__item:last-child {
+    padding-bottom: 0;
+}
+
+.roadmap__item:last-child::before {
+    background-color: var(--forest);
+}
+
+.roadmap__date {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+}
+
+.roadmap__text {
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: auto;
+}
+
+.links__item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.5rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    background-color: var(--surface-2);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.links__item:hover {
+    border-color: var(--forest);
+    background-color: var(--forest-wash);
+}
+
+.links__item:hover .links__value {
+    color: var(--forest-deep);
+}
+
+.links__key {
+    min-width: 3.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+}
+
+.links__value {
+    font-weight: 600;
+    color: var(--forest);
+    overflow-wrap: anywhere;
+}
+
+.chart {
+    display: block;
+    margin-top: auto;
+    padding: 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    background-color: var(--surface-2);
+}
+
+.chart img {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   6. Project section head + filter
+   -------------------------------------------------------------------------- */
+.section__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem 1rem;
+}
+
+.section__title {
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.section__hint {
+    margin-right: auto;
+    font-size: 0.8rem;
+    color: var(--ink-2);
+}
+
+.switcher {
+    display: inline-flex;
+    gap: 0.15rem;
+    padding: 0.2rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background-color: var(--surface);
+}
+
+.switcher__legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.switcher__option {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.38rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-2);
+    cursor: pointer;
+}
+
+.switcher__option:hover {
+    color: var(--ink);
+    background-color: var(--bg-tint);
+}
+
+.switcher__option:has(input:checked) {
+    background-color: var(--forest);
+    color: var(--pill-fg);
+}
+
+.switcher__option:has(input:focus-visible) {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+}
+
+.switcher__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. Project tiles
+   -------------------------------------------------------------------------- */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: var(--r-tile);
+    background-color: var(--surface);
+    text-decoration: none;
+    animation: rise 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 45ms);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--line-2);
+    box-shadow: var(--shadow-2);
+}
+
+/* Screenshots are content, not wallpaper: every image box uses `contain` on a
+   tinted plate so the whole screenshot stays visible. The box ratio is chosen
+   per tile size; measured originals run from 0.72 (portrait phone UI) to 1.47
+   (Penpot canvas), and every box stays within 2x of its original ratio. */
+.project-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--r-sm);
+    object-fit: contain;
+    background-color: var(--bg-tint);
+    box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.project-card--lg {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 0.75rem;
+    border-radius: var(--r-hero);
+    box-shadow: var(--shadow-1);
+}
+
+/* the big tile is the tallest thing in its two rows; letting the image plate
+   grow keeps that leftover height inside the picture instead of as dead space */
+.project-card--lg img {
+    flex: 1 1 auto;
+}
+
+.project-card--lg .project-card__title {
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+}
+
+.project-card--wide {
+    grid-column: span 2;
+}
+
+/* wide tiles are twice as wide, so their plate is wider too: 3:2 keeps the
+   1.19–1.34 originals filling ~80% of the plate width (a 4:3 plate here would
+   be ~450px tall and blow up the whole row) */
+.project-card--wide img {
+    aspect-ratio: 3 / 2;
+}
+
+.project-card:not(.project-card--lg):not(.project-card--wide) img {
+    aspect-ratio: 4 / 3;
+}
+
+/* 3D Scenography has no screenshot in the repo. Reduced to 1x1 so the 2x2 slot
+   goes to a project that does have a real screenshot, and given a CSS-drawn
+   perspective grid that fills the whole tile — an obvious graphic tile, never
+   an empty plate that reads as a broken image. */
+.project-card--wire {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--surface-2);
+}
+
+.project-card--wire > *:not(.wire) {
+    position: relative;
+    z-index: 1;
+}
+
+.project-card--wire .wire {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        repeating-linear-gradient(to right, var(--wire-line) 0 1px, transparent 1px 20px),
+        repeating-linear-gradient(to bottom, var(--wire-line) 0 1px, transparent 1px 20px);
+    transform: perspective(250px) rotateX(30deg) scale(1.3);
+    transform-origin: 50% 100%;
+    -webkit-mask-image: linear-gradient(to top, #000 74%, transparent 100%);
+    mask-image: linear-gradient(to top, #000 74%, transparent 100%);
+}
+
+.project-card--wire::after {
+    content: "";
+    position: absolute;
+    right: 8%;
+    bottom: 18%;
+    left: 8%;
+    height: 1px;
+    background-color: var(--amber);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.project-card--wire .project-card__title {
+    font-size: 1.06rem;
+    letter-spacing: -0.02em;
+}
+
+/* keep the wire tile's text block compact instead of letting the shared
+   bottom-aligned tag row pull it apart */
+.project-card--wire .tags {
+    margin-top: 0.35rem;
+}
+
+.project-card__kind {
+    align-self: flex-start;
+    padding: 0.16rem 0.45rem;
+    border-radius: 6px;
+    background-color: var(--amber-wash);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+}
+
+.project-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.project-card__body {
+    font-size: 0.85rem;
+    color: var(--ink-2);
+}
+
+.project-card .tags {
+    margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   8. Footer
+   -------------------------------------------------------------------------- */
+.foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink-2);
+}
+
+.foot__top {
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: none;
+}
+
+.foot__top:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   9. Motion
+   -------------------------------------------------------------------------- */
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.001ms !important;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsive — 4 cols → 2 cols → 1 col
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .bento {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bento--profile {
+        grid-auto-rows: minmax(5.5rem, auto);
+    }
+
+    .tile--hero,
+    .tile--wide,
+    .project-card--lg,
+    .project-card--wide {
+        grid-column: span 2;
+    }
+
+    .tile--hero,
+    .tile--tall,
+    .project-card--lg {
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .bento {
+        grid-template-columns: minmax(0, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    .bento > * {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .rail__nav {
+        display: none;
+    }
+
+    .hero__name {
+        font-size: clamp(2.2rem, 11vw, 3rem);
+    }
+
+    /* one column: a 2:1 plate would be a sliver, so wide tiles use the 4:3
+       plate as well (still within 2x of the 1.19–1.34 originals) */
+    .project-card--wide img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (max-width: 380px) {
+    .rail__brand {
+        font-size: 0.8rem;
+    }
+
+    .language-switcher a {
+        padding: 0.28rem 0.42rem;
+    }
+}

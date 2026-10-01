@@ -1,21 +1,21 @@
 :root {
     /* Color Palette — Light Theme */
-    --bg-color: #f0f4f8;
-    --surface-color: #ffffff;
-    --surface-light: #f8fafc;
-    --primary-color: #0284c7;
-    --secondary-color: #6366f1;
-    --text-primary: #0f172a;
-    --text-secondary: #64748b;
-    --accent-color: #db2777;
-    --border-color: rgba(0, 0, 0, 0.08);
+    --bg-color: #FAF7F2;
+    --surface-color: #FFFFFF;
+    --surface-light: #FCFAF6;
+    --primary-color: #1F6F5C;
+    --secondary-color: #4FAE93;
+    --text-primary: #1C1917;
+    --text-secondary: #78716C;
+    --accent-color: #D97706;
+    --border-color: rgba(28, 25, 23, 0.08);
 
     /* Glass element bases — Light Theme */
     --glass-bg: rgba(255, 255, 255, 0.72);
     --glass-bg-hover: rgba(255, 255, 255, 0.92);
     --glass-shadow-inset-hi: rgb(255 255 255 / 90%);
     --glass-shadow-inset-lo: rgb(0 0 0 / 6%);
-    --header-bg: rgba(240, 244, 248, 0.85);
+    --header-bg: rgba(250, 247, 242, 0.85);
     --switcher-bg: rgba(255, 255, 255, 0.7);
     --switcher-ring: rgba(0, 0, 0, 0.08);
     --switcher-shadow: rgba(0, 0, 0, 0.08);
@@ -37,22 +37,22 @@
 /* ===== Dark Theme ===== */
 [data-theme="dark"] {
     /* Color Palette — Dark Theme */
-    --bg-color: #0f1117;
-    --surface-color: #1a1f2e;
-    --surface-light: #1e2538;
-    --primary-color: #38bdf8;
-    --secondary-color: #818cf8;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --accent-color: #f472b6;
-    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-color: #14120E;
+    --surface-color: #1C1917;
+    --surface-light: #211E19;
+    --primary-color: #4FAE93;
+    --secondary-color: #6CC4A9;
+    --text-primary: #F4EFE7;
+    --text-secondary: #B4ADA6;
+    --accent-color: #E8A03C;
+    --border-color: rgba(244, 239, 231, 0.08);
 
     /* Glass element bases — Dark Theme */
     --glass-bg: rgba(255, 255, 255, 0.06);
     --glass-bg-hover: rgba(255, 255, 255, 0.12);
     --glass-shadow-inset-hi: rgb(255 255 255 / 10%);
     --glass-shadow-inset-lo: rgb(0 0 0 / 30%);
-    --header-bg: rgba(15, 17, 23, 0.88);
+    --header-bg: rgba(20, 18, 14, 0.88);
     --switcher-bg: rgba(255, 255, 255, 0.08);
     --switcher-ring: rgba(255, 255, 255, 0.1);
     --switcher-shadow: rgba(0, 0, 0, 0.3);
