@@ -8,67 +8,68 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bento.css">
+    <link rel="stylesheet" href="css/detail.css">
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="name">
-                <a href="index.html" style="text-decoration: none;">
-                    <h1>
-                        <span class="lang-en">Haochen TANG</span>
-                        <span class="lang-cn">唐颢宸</span>
-                        <span class="lang-fr">Haochen TANG</span>
-                    </h1>
+<body id="top">
+
+    <header class="rail">
+        <div class="rail__inner">
+            <a class="rail__brand" href="index.html">
+                <span class="lang-en">Haochen TANG</span>
+                <span class="lang-cn">唐 颢宸</span>
+                <span class="lang-fr">Haochen TANG</span>
+            </a>
+
+            <nav class="rail__nav" aria-label="Project navigation">
+                <a href="index.html">
+                    <span class="lang-en">&larr; All projects</span>
+                    <span class="lang-cn">&larr; 全部项目</span>
+                    <span class="lang-fr">&larr; Tous les projets</span>
                 </a>
-                <p>
-                    <span class="lang-en">Computer Scientist / Developer</span>
-                    <span class="lang-cn">计算机科学 / 开发者</span>
-                    <span class="lang-fr">Informaticien / Développeur</span>
-                </p>
-            </div>
-            <div class="header-actions">
+            </nav>
+
+            <div class="rail__actions">
                 <nav class="language-switcher" aria-label="Language selection">
                     <a href="#" data-language="en" hreflang="en">EN</a>
                     <a href="#" data-language="zh" hreflang="zh">中文</a>
                     <a href="#" data-language="fr" hreflang="fr">FR</a>
                 </nav>
-                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">🌙</button>
+                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"></button>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <a href="index.html" class="back-button">
-                &larr;
-                <span class="lang-en">Back to Home</span>
-                <span class="lang-cn">返回主页</span>
-                <span class="lang-fr">Retour à l'accueil</span>
-            </a>
+    <main class="shell detail">
 
-            <h1 class="project-page-title">
+        <section class="detail__hero">
+            <p class="detail__kind">
+                <span class="lang-en">Personal project</span>
+                <span class="lang-cn">个人项目</span>
+                <span class="lang-fr">Projet personnel</span>
+            </p>
+            <h1 class="detail__title">
                 <span class="lang-en">AI Chatting Mail Summarizer</span>
                 <span class="lang-cn">邮件智能摘要助手</span>
                 <span class="lang-fr">Résumeur de Mails IA</span>
             </h1>
-
-            <div class="project-tags" style="margin-bottom: 2rem;">
+            <div class="detail__tags">
                 <span>Thunderbird</span>
                 <span>JavaScript</span>
                 <span>AI Integration</span>
             </div>
+        </section>
 
-            <article class="project-detail-article">
-                <p style="margin-bottom: 1.5rem;">
+        <div class="detail__grid">
+            <article class="detail__card">
+                <p class="detail__lead">
                     <span class="lang-en">This Thunderbird extension leverages the WebExtension API and advanced
                         asynchronous JavaScript to integrate LLMs (by OpenAI or other providers' APIs) directly into the
                         email client. The architecture features a modular backend for handling AI requests and a
                         responsive frontend for real-time user interaction.
                         <br>Notably, this project was built using "Vibe Coding" methodology, allowing for rapid
-                        iteration
-                        and deployment—the first functional release was published in just under 8 hours of
+                        iteration and deployment—the first functional release was published in just under 8 hours of
                         development.</span>
                     <span class="lang-cn">此 Thunderbird 扩展利用 WebExtension API 和高级异步
                         JavaScript，将本地大语言模型直接集成到邮件客户端中（使用LLM API如OpenAI、Ollama等）。架构采用模块化后端处理 AI
@@ -76,28 +77,19 @@
                         <br>值得一提的是，该项目采用“Vibe Coding”方法构建，实现了极速迭代与部署——仅用约 8 小时开发时间便发布了第一个可用版本。</span>
                     <span class="lang-fr">Cette extension Thunderbird exploite l'API WebExtension et JavaScript
                         asynchrone avancé pour intégrer des LLMs (par OpenAI ou les API des autres fournisseurs)
-                        directement dans le
-                        client de messagerie. L'architecture comprend un backend modulaire pour gérer les requêtes IA et
-                        un frontend réactif pour une interaction utilisateur en temps réel.
+                        directement dans le client de messagerie. L'architecture comprend un backend modulaire pour
+                        gérer les requêtes IA et un frontend réactif pour une interaction utilisateur en temps réel.
                         <br>Notamment, ce projet a été construit en utilisant la méthodologie "Vibe Coding", permettant
                         une itération et un déploiement rapides : la première version fonctionnelle a été publiée en
                         moins de 8 heures de développement.</span>
                 </p>
 
-                <p style="margin-bottom: 1.5rem;">
-                    <strong>GitHub:</strong> <a href="https://github.com/FuLuTang/tb-ai-summary"
-                        target="_blank" rel="noopener noreferrer">https://github.com/FuLuTang/tb-ai-summary</a><br>
-                    <strong>Download:</strong> <a
-                        href="https://addons.thunderbird.net/en-US/thunderbird/addon/ai-chatting-mail-summarizer/"
-                        target="_blank" rel="noopener noreferrer">Thunderbird Add-ons</a>
-                </p>
-
-                <h3>
+                <h2 class="detail__h">
                     <span class="lang-en">Key Features</span>
                     <span class="lang-cn">主要功能</span>
                     <span class="lang-fr">Fonctionnalités Clés</span>
-                </h3>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                </h2>
+                <ul class="detail__list">
                     <li>
                         <span class="lang-en">Context-aware AI Chat for individual emails.</span>
                         <span class="lang-cn">基于上下文的单封邮件 AI 对话。</span>
@@ -114,42 +106,94 @@
                         <span class="lang-fr">Briefing des e-mails non lus et catégorisation intelligente.</span>
                     </li>
                 </ul>
-
-                <h3>
-                    <span class="lang-en">Project Gallery</span>
-                    <span class="lang-cn">项目展示</span>
-                    <span class="lang-fr">Galerie du Projet</span>
-                </h3>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem;">
-                    <img src="assets/tb-ai-summary_main.png" alt="Main Interface"
-                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <img src="assets/tb-ai-summary_briefing.png" alt="Briefing Feature"
-                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <img src="assets/tb-ai-summary_setting.png" alt="Settings Page"
-                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
-                </div>
             </article>
+
+            <aside class="detail__card">
+                <h2 class="detail__h">
+                    <span class="lang-en">Project info</span>
+                    <span class="lang-cn">项目信息</span>
+                    <span class="lang-fr">Fiche projet</span>
+                </h2>
+                <dl class="detail__facts">
+                    <div>
+                        <dt>
+                            <span class="lang-en">Category</span>
+                            <span class="lang-cn">分类</span>
+                            <span class="lang-fr">Catégorie</span>
+                        </dt>
+                        <dd>
+                            <span class="lang-en">Personal</span>
+                            <span class="lang-cn">个人</span>
+                            <span class="lang-fr">Personnel</span>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>
+                            <span class="lang-en">Stack</span>
+                            <span class="lang-cn">技术栈</span>
+                            <span class="lang-fr">Technologies</span>
+                        </dt>
+                        <dd>Thunderbird, JavaScript, AI Integration</dd>
+                    </div>
+                    <div>
+                        <dt>
+                            <span class="lang-en">Status</span>
+                            <span class="lang-cn">状态</span>
+                            <span class="lang-fr">Statut</span>
+                        </dt>
+                        <dd>
+                            <span class="lang-en">Published on Thunderbird Add-ons</span>
+                            <span class="lang-cn">已发布至 Thunderbird 扩展商店</span>
+                            <span class="lang-fr">Publié sur Thunderbird Add-ons</span>
+                        </dd>
+                    </div>
+                </dl>
+
+                <div class="detail__links">
+                    <a class="detail__link" href="https://github.com/FuLuTang/tb-ai-summary" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="lang-en">GitHub</span>
+                        <span class="lang-cn">GitHub</span>
+                        <span class="lang-fr">GitHub</span>
+                    </a>
+                    <a class="detail__link"
+                        href="https://addons.thunderbird.net/en-US/thunderbird/addon/ai-chatting-mail-summarizer/"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="lang-en">Thunderbird Add-ons</span>
+                        <span class="lang-cn">Thunderbird 扩展商店</span>
+                        <span class="lang-fr">Modules Thunderbird</span>
+                    </a>
+                    <a class="detail__link" href="index.html#projects">
+                        <span class="lang-en">&larr; All projects</span>
+                        <span class="lang-cn">&larr; 全部项目</span>
+                        <span class="lang-fr">&larr; Tous les projets</span>
+                    </a>
+                    <a class="detail__link" href="index.html#contact">
+                        <span class="lang-en">Get in touch</span>
+                        <span class="lang-cn">联系我</span>
+                        <span class="lang-fr">Me contacter</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <section class="detail__gallery">
+            <h2 class="detail__h">
+                <span class="lang-en">Project gallery</span>
+                <span class="lang-cn">项目展示</span>
+                <span class="lang-fr">Galerie du projet</span>
+            </h2>
+            <div class="detail__shots">
+                <img class="detail__shot" src="assets/tb-ai-summary_main.png" alt="Main Interface">
+                <img class="detail__shot" src="assets/tb-ai-summary_briefing.png" alt="Briefing Feature"
+                    loading="lazy">
+                <img class="detail__shot" src="assets/tb-ai-summary_setting.png" alt="Settings Page" loading="lazy">
+            </div>
         </section>
     </main>
 
     <script src="js/lang.js"></script>
     <script src="js/theme.js"></script>
-  <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
-    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
-      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
-      <feComponentTransfer in="turbulence" result="mapped">
-        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
-        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
-        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
-      </feComponentTransfer>
-      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
-      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
-        <fePointLight x="-200" y="-200" z="300" />
-      </feSpecularLighting>
-      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
-      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
 </body>
 
 </html>

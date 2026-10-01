@@ -8,61 +8,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bento.css">
+    <link rel="stylesheet" href="css/detail.css">
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="name">
-                <a href="index.html" style="text-decoration: none;">
-                    <h1>
-                        <span class="lang-en">Haochen TANG</span>
-                        <span class="lang-cn">唐颢宸</span>
-                        <span class="lang-fr">Haochen TANG</span>
-                    </h1>
+<body id="top">
+
+    <header class="rail">
+        <div class="rail__inner">
+            <a class="rail__brand" href="index.html">
+                <span class="lang-en">Haochen TANG</span>
+                <span class="lang-cn">唐 颢宸</span>
+                <span class="lang-fr">Haochen TANG</span>
+            </a>
+
+            <nav class="rail__nav" aria-label="Project navigation">
+                <a href="index.html">
+                    <span class="lang-en">&larr; All projects</span>
+                    <span class="lang-cn">&larr; 全部项目</span>
+                    <span class="lang-fr">&larr; Tous les projets</span>
                 </a>
-                <p>
-                    <span class="lang-en">Computer Scientist / Developer</span>
-                    <span class="lang-cn">计算机科学 / 开发者</span>
-                    <span class="lang-fr">Informaticien / Développeur</span>
-                </p>
-            </div>
-            <div class="header-actions">
+            </nav>
+
+            <div class="rail__actions">
                 <nav class="language-switcher" aria-label="Language selection">
                     <a href="#" data-language="en" hreflang="en">EN</a>
                     <a href="#" data-language="zh" hreflang="zh">中文</a>
                     <a href="#" data-language="fr" hreflang="fr">FR</a>
                 </nav>
-                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">🌙</button>
+                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"></button>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <a href="index.html" class="back-button">
-                &larr;
-                <span class="lang-en">Back to Home</span>
-                <span class="lang-cn">返回主页</span>
-                <span class="lang-fr">Retour à l'accueil</span>
-            </a>
+    <main class="shell detail">
 
-            <h1 class="project-page-title">
+        <section class="detail__hero">
+            <p class="detail__kind">
+                <span class="lang-en">Personal project</span>
+                <span class="lang-cn">个人项目</span>
+                <span class="lang-fr">Projet personnel</span>
+            </p>
+            <h1 class="detail__title">
                 <span class="lang-en">Subtitle Tool</span>
                 <span class="lang-cn">字幕处理工具</span>
                 <span class="lang-fr">Outil de Traitement de Sous-titres</span>
             </h1>
-
-            <div class="project-tags" style="margin-bottom: 2rem;">
+            <div class="detail__tags">
                 <span>Python</span>
                 <span>Tkinter</span>
-                <span>AI
-                    API</span>
+                <span>AI API</span>
             </div>
+        </section>
 
-            <article class="project-detail-article">
-                <p style="margin-bottom: 1.5rem;">
+        <div class="detail__grid">
+            <article class="detail__card">
+                <p class="detail__lead">
                     <span class="lang-en">I built a multi-platform application in Python 3.7+ using Tkinter GUI. The
                         tool features modular architecture and multithreading. It handles various subtitle formats
                         (JSON, SRT, LRC) and integrates AI APIs for text and audio processing.</span>
@@ -74,12 +75,12 @@
                         texte/audio.</span>
                 </p>
 
-                <h3>
+                <h2 class="detail__h">
                     <span class="lang-en">Features</span>
                     <span class="lang-cn">功能</span>
                     <span class="lang-fr">Fonctionnalités</span>
-                </h3>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                </h2>
+                <ul class="detail__list">
                     <li>
                         <span class="lang-en">Multithreading for smooth UI.</span>
                         <span class="lang-cn">多线程保证界面流畅。</span>
@@ -96,40 +97,68 @@
                         <span class="lang-fr">Intégration IA (Texte/Audio).</span>
                     </li>
                 </ul>
-
-                <h3>
-                    <span class="lang-en">Project Gallery</span>
-                    <span class="lang-cn">项目展示</span>
-                    <span class="lang-fr">Galerie du Projet</span>
-                </h3>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem;">
-                    <img src="assets/SubtitleTool_p1.jpg" alt="Subtitle Tool Screenshot 1"
-                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <img src="assets/SubtitleTool_p2.jpg" alt="Subtitle Tool Screenshot 2"
-                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
-                </div>
             </article>
+
+            <aside class="detail__card">
+                <h2 class="detail__h">
+                    <span class="lang-en">Project info</span>
+                    <span class="lang-cn">项目信息</span>
+                    <span class="lang-fr">Fiche projet</span>
+                </h2>
+                <dl class="detail__facts">
+                    <div>
+                        <dt>
+                            <span class="lang-en">Category</span>
+                            <span class="lang-cn">分类</span>
+                            <span class="lang-fr">Catégorie</span>
+                        </dt>
+                        <dd>
+                            <span class="lang-en">Personal</span>
+                            <span class="lang-cn">个人</span>
+                            <span class="lang-fr">Personnel</span>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>
+                            <span class="lang-en">Stack</span>
+                            <span class="lang-cn">技术栈</span>
+                            <span class="lang-fr">Technologies</span>
+                        </dt>
+                        <dd>Python, Tkinter, AI API</dd>
+                    </div>
+                </dl>
+
+                <div class="detail__links">
+                    <a class="detail__link" href="index.html#projects">
+                        <span class="lang-en">&larr; All projects</span>
+                        <span class="lang-cn">&larr; 全部项目</span>
+                        <span class="lang-fr">&larr; Tous les projets</span>
+                    </a>
+                    <a class="detail__link" href="index.html#contact">
+                        <span class="lang-en">Get in touch</span>
+                        <span class="lang-cn">联系我</span>
+                        <span class="lang-fr">Me contacter</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <section class="detail__gallery">
+            <h2 class="detail__h">
+                <span class="lang-en">Project gallery</span>
+                <span class="lang-cn">项目展示</span>
+                <span class="lang-fr">Galerie du projet</span>
+            </h2>
+            <div class="detail__shots">
+                <img class="detail__shot" src="assets/SubtitleTool_p1.jpg" alt="Subtitle Tool Screenshot 1">
+                <img class="detail__shot" src="assets/SubtitleTool_p2.jpg" alt="Subtitle Tool Screenshot 2"
+                    loading="lazy">
+            </div>
         </section>
     </main>
 
     <script src="js/lang.js"></script>
     <script src="js/theme.js"></script>
-  <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
-    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
-      <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
-      <feComponentTransfer in="turbulence" result="mapped">
-        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
-        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
-        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
-      </feComponentTransfer>
-      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
-      <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
-        <fePointLight x="-200" y="-200" z="300" />
-      </feSpecularLighting>
-      <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
-      <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
 </body>
 
 </html>
