@@ -28,7 +28,7 @@
 
 - **三语切换** —— 英语 / 中文 / 法语，切换时同步更新 `<html lang>` 与浏览器标签标题，选择写入 `localStorage`
 - **明暗主题** —— 默认跟随系统偏好，可手动切换并持久化（首页与详情页共用同一套状态）
-- **项目筛选** —— 首页全部 / 校内 / 个人，基于 `data-category` + CSS class，无框架依赖
+- **项目筛选** —— 首页全部 / 实习 / 校内 / 个人，基于 `data-category` + CSS class，无框架依赖
 - **响应式** —— 桌面 4 列格子矩阵与两栏详情页 → 平板 2 列 → 手机单列；全断点无横向溢出
 - **无障碍** —— 键盘焦点可见（`:focus-visible`）、图片带语义 `alt`、`prefers-reduced-motion` 降级、跳转正文链接
 
@@ -36,7 +36,7 @@
 
 ```text
 index.html          首页（Bento 格子矩阵）
-project-*.html      8 个项目详情页（统一模板：Hero + 两栏 + 画廊）
+project-*.html      9 个项目详情页（统一模板：Hero + 两栏 + 画廊）
 css/bento.css       设计 token + 工具条 + 首页格子样式
 css/detail.css      详情页布局（Hero / 两栏 / 画廊网格 / 无图占位）
 js/lang.js          多语言切换
@@ -55,6 +55,12 @@ python3 -m http.server 8088
 ## 部署
 
 推送到 `main` 分支后由 GitHub Pages 自动发布，无构建产物、无额外配置。
+
+## ERP AI 实习项目
+
+`project-erp-ai.html` 展示 2026 年 ERP AI 实习的三个模块、系统架构、个人职责及技术限制，支持英语、中文和法语。首页使用 `professional` 分类，可通过“实习”筛选。
+
+内容依据实习报告和公开仓库 [AI-Store-Analysis-System](https://github.com/FuLuTang/AI-Store-Analysis-System) 整理。页面区分实习报告中的原生 Web 前端与当前仓库的 Vue 版本；价格推荐描述以公开实现的观测点排序及程序化计算为准，不宣称已验证的最优定价或业务收益。公开页不链接实习报告、内部资料或生产入口，不使用未经确认可公开的截图。
 
 ## 版本记录
 
