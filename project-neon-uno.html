@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="NEON-UNO — Haochen Tang" data-title-zh="霓虹 UNO — 唐颢宸" data-title-fr="NEON-UNO — Haochen Tang">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON-UNO — Haochen Tang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bento.css">
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+
+<body id="top">
+
+    <header class="rail">
+        <div class="rail__inner">
+            <a class="rail__brand" href="index.html">
+                <span class="lang-en">Haochen TANG</span>
+                <span class="lang-cn">唐 颢宸</span>
+                <span class="lang-fr">Haochen TANG</span>
+            </a>
+
+            <nav class="rail__nav" aria-label="Project navigation">
+                <a href="index.html">
+                    <span class="lang-en">&larr; All projects</span>
+                    <span class="lang-cn">&larr; 全部项目</span>
+                    <span class="lang-fr">&larr; Tous les projets</span>
+                </a>
+            </nav>
+
+            <div class="rail__actions">
+                <nav class="language-switcher" aria-label="Language selection">
+                    <a href="#" data-language="en" hreflang="en">EN</a>
+                    <a href="#" data-language="zh" hreflang="zh">中文</a>
+                    <a href="#" data-language="fr" hreflang="fr">FR</a>
+                </nav>
+                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="shell detail">
+
+        <section class="detail__hero">
+            <p class="detail__kind">
+                <span class="lang-en">University team project</span>
+                <span class="lang-cn">大学团队项目</span>
+                <span class="lang-fr">Projet universitaire en équipe</span>
+            </p>
+            <h1 class="detail__title">
+                <span class="lang-en">NEON-UNO</span>
+                <span class="lang-cn">霓虹 UNO</span>
+                <span class="lang-fr">NEON-UNO</span>
+            </h1>
+            <div class="detail__tags">
+                <span>Vue 3</span>
+                <span>Node.js</span>
+                <span>Socket.io</span>
+                <span>AI Bots</span>
+            </div>
+        </section>
+
+        <div class="detail__grid">
+            <article class="detail__card">
+                <p class="detail__lead">
+                    <span class="lang-en">NEON-UNO is a massive multiplayer colocalized card game inspired by the
+                        classic UNO. Designed for social gatherings, it uses a large screen (projector or monitor) as
+                        the common game arena while players use their own smartphones as individual controllers.</span>
+                    <span class="lang-cn">NEON-UNO 是一款受经典 UNO 启发的超大规模多人共玩卡牌游戏。专为线下社交聚会设计，它利用大屏幕（投影仪或显示器）作为公共竞技场，而玩家则使用自己的智能手机作为个人游戏手柄。</span>
+                    <span class="lang-fr">NEON-UNO est un jeu de cartes multijoueur colocalisé inspiré du UNO
+                        classique. Conçu pour les rassemblements, il utilise un grand écran (projecteur ou moniteur)
+                        comme arène commune, tandis que les joueurs utilisent leur smartphone comme manette.</span>
+                </p>
+
+                <h2 class="detail__h">
+                    <span class="lang-en">Key Features</span>
+                    <span class="lang-cn">核心功能</span>
+                    <span class="lang-fr">Fonctionnalités Clés</span>
+                </h2>
+                <ul class="detail__list">
+                    <li>
+                        <span class="lang-en">Main screen on a projector; everyone plays simultaneously in two teams,
+                            with AI bots at several difficulty levels.</span>
+                        <span class="lang-cn">主画面投影到大屏，所有玩家分两队同时出牌，并提供多种难度的 AI 机器人。</span>
+                        <span class="lang-fr">Écran principal projeté ; tous les joueurs jouent simultanément en deux
+                            équipes, avec des bots IA de plusieurs niveaux de difficulté.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Colocalized experience: scan a QR code to join, with real-time
+                            interaction powered by Socket.io.</span>
+                        <span class="lang-cn">线下同步体验：扫码即刻加入，基于 Socket.io 的实时交互。</span>
+                        <span class="lang-fr">Expérience colocalisée : rejoindre en scannant un QR code, interaction
+                            en temps réel via Socket.io.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Neon aesthetics: blue and pink team themes, floating score feedback and
+                            particle effects.</span>
+                        <span class="lang-cn">霓虹视觉：蓝粉团队主题设计，包含漂浮分数反馈与粒子特效。</span>
+                        <span class="lang-fr">Esthétique néon : thèmes d'équipe bleu et rose, retours de score
+                            flottants et effets de particules.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Scoring system with non-linear multipliers based on hand count, color
+                            variety and consecutive streaks.</span>
+                        <span class="lang-cn">评分系统：包含手牌数量、颜色多样性及连续出牌加成的非线性计分引擎。</span>
+                        <span class="lang-fr">Système de score à multiplicateurs non linéaires (nombre de cartes,
+                            variété des couleurs, séries consécutives).</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Interactive mechanics: shake-to-draw (accelerometer), team freezing
+                            effects and random "Virus" events.</span>
+                        <span class="lang-cn">交互机制：摇一摇摸牌（加速度计）、全队冰冻特效及随机发生的“病毒”事件。</span>
+                        <span class="lang-fr">Mécaniques interactives : secouer pour piocher (accéléromètre), gel
+                            d'équipe et événements « Virus » aléatoires.</span>
+                    </li>
+                </ul>
+            </article>
+
+            <aside class="detail__card">
+                <h2 class="detail__h">
+                    <span class="lang-en">Project info</span>
+                    <span class="lang-cn">项目信息</span>
+                    <span class="lang-fr">Fiche projet</span>
+                </h2>
+                <dl class="detail__facts">
+                    <div>
+                        <dt>
+                            <span class="lang-en">Category</span>
+                            <span class="lang-cn">分类</span>
+                            <span class="lang-fr">Catégorie</span>
+                        </dt>
+                        <dd>
+                            <span class="lang-en">School (team project)</span>
+                            <span class="lang-cn">校内（团队项目）</span>
+                            <span class="lang-fr">Scolaire (projet en équipe)</span>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>
+                            <span class="lang-en">Stack</span>
+                            <span class="lang-cn">技术栈</span>
+                            <span class="lang-fr">Technologies</span>
+                        </dt>
+                        <dd>Vue 3, Node.js, Socket.io</dd>
+                    </div>
+                    <div>
+                        <dt>
+                            <span class="lang-en">Players</span>
+                            <span class="lang-cn">玩法</span>
+                            <span class="lang-fr">Joueurs</span>
+                        </dt>
+                        <dd>
+                            <span class="lang-en">Two teams, QR-code join, AI bots</span>
+                            <span class="lang-cn">两队对战，扫码加入，AI 机器人</span>
+                            <span class="lang-fr">Deux équipes, accès par QR code, bots IA</span>
+                        </dd>
+                    </div>
+                </dl>
+
+                <div class="detail__links">
+                    <a class="detail__link" href="https://github.com/yassine9-1/neon_uno" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="lang-en">GitHub</span>
+                        <span class="lang-cn">GitHub</span>
+                        <span class="lang-fr">GitHub</span>
+                    </a>
+                    <a class="detail__link" href="index.html#projects">
+                        <span class="lang-en">&larr; All projects</span>
+                        <span class="lang-cn">&larr; 全部项目</span>
+                        <span class="lang-fr">&larr; Tous les projets</span>
+                    </a>
+                    <a class="detail__link" href="index.html#contact">
+                        <span class="lang-en">Get in touch</span>
+                        <span class="lang-cn">联系我</span>
+                        <span class="lang-fr">Me contacter</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <section class="detail__gallery">
+            <h2 class="detail__h">
+                <span class="lang-en">Project gallery</span>
+                <span class="lang-cn">项目展示</span>
+                <span class="lang-fr">Galerie du projet</span>
+            </h2>
+            <div class="detail__shots">
+                <img class="detail__shot" src="assets/neon_uno_preview.png" alt="NEON-UNO game interface">
+            </div>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
