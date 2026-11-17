@@ -4,6 +4,13 @@ function setLanguage(lang) {
     // Update HTML lang attribute (this triggers the CSS)
     document.documentElement.lang = lang;
 
+    // Update Document Title based on language
+    if (lang === 'cn') {
+        document.title = "作品集 - 唐颢宸";
+    } else {
+        document.title = "Portfolio - Haochen";
+    }
+
     // Update active state in switcher
     document.querySelectorAll('.language-switcher a').forEach(link => {
         link.classList.remove('active');

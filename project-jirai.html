@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Haochen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="name">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>
+                        <span class="lang-en">Haochen TANG</span>
+                        <span class="lang-cn">唐颢宸</span>
+                        <span class="lang-fr">Haochen TANG</span>
+                    </h1>
+                </a>
+                <p>
+                    <span class="lang-en">Computer Scientist / Developer</span>
+                    <span class="lang-cn">计算机科学 / 开发者</span>
+                    <span class="lang-fr">Informaticien / Développeur</span>
+                </p>
+            </div>
+            <div class="header-actions">
+                <nav class="language-switcher">
+                    <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+                    <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                    <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                </nav>
+                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <a href="index.html" class="back-button">
+                &larr;
+                <span class="lang-en">Back to Home</span>
+                <span class="lang-cn">返回主页</span>
+                <span class="lang-fr">Retour à l'accueil</span>
+            </a>
+
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+                <span class="lang-en">VRCX-jirai Edition</span>
+                <span class="lang-cn">VRCX 优化版 - 地雷Edition</span>
+                <span class="lang-fr">VRCX-jirai Edition</span>
+            </h1>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+                <span>Electron</span>
+                <span>SQLite</span>
+                <span>Social Analytics</span>
+                <span>VRChat</span>
+            </div>
+
+            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem;">
+                    <span class="lang-en">VRCX-jirai is a modified branch of the popular VRChat assistant VRCX, specifically designed to enhance social data visualization and relationship tracking. It aims to provide deep insights into co-presence history and social dynamics within the VRChat community.</span>
+                    <span class="lang-cn">VRCX-jirai 是著名 VRChat 辅助软件 VRCX 的魔改分支，专为增强社交数据可视化和关系追踪而设计。该版本旨在深入挖掘用户间的共存历史，并直观展示社交圈态势。</span>
+                    <span class="lang-fr">VRCX-jirai est une branche modifiée de l'assistant VRCX pour VRChat, conçue pour améliorer la visualisation des données sociales et le suivi des relations.</span>
+                </p>
+
+                <p style="margin-bottom: 1.5rem;">
+                    <strong>GitHub:</strong> <a href="https://github.com/FuLuTang/VRCX-jirai" target="_blank">https://github.com/FuLuTang/VRCX-jirai</a>
+                </p>
+
+                <h3>
+                    <span class="lang-en">Key Features</span>
+                    <span class="lang-cn">核心功能</span>
+                    <span class="lang-fr">Fonctionnalités Clés</span>
+                </h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li>
+                        <span class="lang-en"><strong>Two-Person Relationship Query:</strong> Analyze every instance where two selected friends were in the same room.</span>
+                        <span class="lang-cn"><strong>双人关系查询：</strong> 一键分析任意两个好友共同处于同一房间的详尽历史。</span>
+                        <span class="lang-fr"><strong>Requête de relation entre deux personnes :</strong> Analyse chaque instance où deux amis étaient dans la même pièce.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><strong>Bio Diff View:</strong> Git-style interface to track changes in user biographies over time.</span>
+                        <span class="lang-cn"><strong>简介差异追踪：</strong> 类似 Git Diff 的界面，实时捕捉好友简介的细微变动。</span>
+                        <span class="lang-fr"><strong>Vue Bio Diff :</strong> Interface de style Git pour suivre les modifications des biographies.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><strong>Mutual Friend Graph Enhancement:</strong> Better visualization and manual connection management for social circles.</span>
+                        <span class="lang-cn"><strong>关系网增强：</strong> 优化的共同好友关系图，支持手动标记隐藏关系。</span>
+                        <span class="lang-fr"><strong>Amélioration du graphe d'amis mutuels.</strong></span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><strong>Status Distribution Charts:</strong> Visual breakdown of online time spent in various statuses (Green/Blue/Yellow/Red).</span>
+                        <span class="lang-cn"><strong>灯色时长统计：</strong> 直观统计并展示用户在线期间各种灯色的时间占比分布。</span>
+                        <span class="lang-fr"><strong>Graphiques de distribution d'état.</strong></span>
+                    </li>
+                </ul>
+
+                <h3>
+                    <span class="lang-en">Project Preview</span>
+                    <span class="lang-cn">项目预览</span>
+                    <span class="lang-fr">Aperçu du Projet</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem;">
+                    <img src="assets/vrcx_jirai_preview.png" alt="VRCX-jirai Interface"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+    <script src="js/theme.js"></script>
+    <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
+        <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+            <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+            <feComponentTransfer in="turbulence" result="mapped">
+                <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+                <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+                <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+            </feComponentTransfer>
+            <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+            <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+                <fePointLight x="-200" y="-200" z="300" />
+            </feSpecularLighting>
+            <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+            <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+</body>
+
+</html>

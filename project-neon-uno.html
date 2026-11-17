@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Haochen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="name">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>
+                        <span class="lang-en">Haochen TANG</span>
+                        <span class="lang-cn">唐颢宸</span>
+                        <span class="lang-fr">Haochen TANG</span>
+                    </h1>
+                </a>
+                <p>
+                    <span class="lang-en">Computer Scientist / Developer</span>
+                    <span class="lang-cn">计算机科学 / 开发者</span>
+                    <span class="lang-fr">Informaticien / Développeur</span>
+                </p>
+            </div>
+            <div class="header-actions">
+                <nav class="language-switcher">
+                    <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+                    <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                    <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                </nav>
+                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <a href="index.html" class="back-button">
+                &larr;
+                <span class="lang-en">Back to Home</span>
+                <span class="lang-cn">返回主页</span>
+                <span class="lang-fr">Retour à l'accueil</span>
+            </a>
+
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+                <span class="lang-en">NEON-UNO</span>
+                <span class="lang-cn">霓虹 UNO</span>
+                <span class="lang-fr">NEON-UNO</span>
+            </h1>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+                <span>Vue.js 3</span>
+                <span>Socket.io</span>
+                <span>Node.js</span>
+                <span>Game Engine</span>
+            </div>
+
+            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem;">
+                    <span class="lang-en">NEON-UNO is a massive multiplayer colocalized card game inspired by the classic UNO. Designed for social gatherings, it uses a large screen (projector or monitor) as the common game arena while players use their own smartphones as individual controllers.</span>
+                    <span class="lang-cn">NEON-UNO 是一款受经典 UNO 启发的超大规模多人共玩卡牌游戏。专为线下社交聚会设计，它利用大屏幕（投影仪或显示器）作为公共竞技场，而玩家则使用自己的智能手机作为个人游戏手柄。</span>
+                    <span class="lang-fr">NEON-UNO est un jeu de cartes multijoueur colocalisé inspiré du UNO classique. Les joueurs utilisent leur smartphone comme manette pour interagir avec un écran géant partagé.</span>
+                </p>
+
+                <p style="margin-bottom: 1.5rem;">
+                    <strong>GitHub:</strong> <a href="https://github.com/yassine9-1/neon_uno" target="_blank">https://github.com/yassine9-1/neon_uno</a>
+                </p>
+
+                <h3>
+                    <span class="lang-en">Key Features</span>
+                    <span class="lang-cn">核心功能</span>
+                    <span class="lang-fr">Fonctionnalités Clés</span>
+                </h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li>
+                        <span class="lang-en"><strong>Colocalized Experience:</strong> Scan a QR code to join. Zero latency real-time interaction powered by Socket.io.</span>
+                        <span class="lang-cn"><strong>线下同步体验：</strong> 扫码即刻加入，基于 Socket.io 的零延迟实时交互。</span>
+                        <span class="lang-fr"><strong>Expérience colocalisée :</strong> Rejoignez en scannant un QR code. Interaction temps réel via Socket.io.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><strong>Neon Aesthetics:</strong> Vibrant visual design with blue and pink team themes, floating score feedback, and particle effects.</span>
+                        <span class="lang-cn"><strong>霓虹视觉：</strong> 活力四射的蓝粉团队主题设计，包含漂浮分数反馈与粒子特效。</span>
+                        <span class="lang-fr"><strong>Esthétique Néon :</strong> Design visuel vibrant avec des thèmes d'équipe bleu et rose.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><strong>Complex Scoring System:</strong> Non-linear float-based multipliers considering hand count, color variety, and consecutive streaks.</span>
+                        <span class="lang-cn"><strong>复杂评分系统：</strong> 包含手牌数量、颜色多样性及连续出牌加成的非线性浮点计分引擎。</span>
+                        <span class="lang-fr"><strong>Système de score complexe :</strong> Multiplicateurs non linéaires basés sur plusieurs facteurs.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><strong>Interactive Mechanics:</strong> Shake-to-draw (accelerometer), team freezing effects, and random "Virus" events.</span>
+                        <span class="lang-cn"><strong>交互机制：</strong> 摇一摇摸牌（加速度计）、全队冰冻特效及随机发生的“病毒”事件。</span>
+                        <span class="lang-fr"><strong>Mécaniques interactives :</strong> Secouez pour piocher (accéléromètre), effets de gel d'équipe.</span>
+                    </li>
+                </ul>
+
+                <h3>
+                    <span class="lang-en">Project Preview</span>
+                    <span class="lang-cn">项目预览</span>
+                    <span class="lang-fr">Aperçu du Projet</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem;">
+                    <img src="assets/neon_uno_preview.png" alt="Neon Uno Interface"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+    <script src="js/theme.js"></script>
+    <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
+        <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+            <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+            <feComponentTransfer in="turbulence" result="mapped">
+                <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+                <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+                <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+            </feComponentTransfer>
+            <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+            <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+                <fePointLight x="-200" y="-200" z="300" />
+            </feSpecularLighting>
+            <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+            <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+</body>
+
+</html>
