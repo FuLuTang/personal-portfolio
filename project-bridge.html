@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Haochen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="name">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>
+                        <span class="lang-en">Haochen TANG</span>
+                        <span class="lang-cn">唐颢宸</span>
+                        <span class="lang-fr">Haochen TANG</span>
+                    </h1>
+                </a>
+                <p>
+                    <span class="lang-en">Computer Scientist / Developer</span>
+                    <span class="lang-cn">计算机科学 / 开发者</span>
+                    <span class="lang-fr">Informaticien / Développeur</span>
+                </p>
+            </div>
+            <div class="header-actions">
+                <nav class="language-switcher">
+                    <a href="#" onclick="setLanguage('en'); return false;">EN</a>
+                    <a href="#" onclick="setLanguage('cn'); return false;">中文</a>
+                    <a href="#" onclick="setLanguage('fr'); return false;">FR</a>
+                </nav>
+                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <a href="index.html" class="back-button">
+                &larr;
+                <span class="lang-en">Back to Home</span>
+                <span class="lang-cn">返回主页</span>
+                <span class="lang-fr">Retour à l'accueil</span>
+            </a>
+
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+                <span class="lang-en">Bridge Bidding Assistant</span>
+                <span class="lang-cn">桥牌叫牌辅助系统</span>
+                <span class="lang-fr">Assistant d'Enchères au Bridge</span>
+            </h1>
+
+            <div class="project-tags" style="margin-bottom: 2rem;">
+                <span>Vue 3</span>
+                <span>Vite</span>
+                <span>LLM Agent</span>
+                <span>Team of 9</span>
+            </div>
+
+            <article style="background: var(--surface-color); padding: 2rem; border-radius: 12px; line-height: 1.8;">
+                <p style="margin-bottom: 1.5rem;">
+                    <span class="lang-en">University team project (9 students) building a bridge bidding assistant. I was the front-end lead.</span>
+                    <span class="lang-cn">大学团队项目（9 人），开发桥牌叫牌辅助系统。我担任前端负责人。</span>
+                    <span class="lang-fr">Projet universitaire en équipe (9 étudiants) : un assistant d'enchères au bridge. J'étais responsable du front-end.</span>
+                </p>
+
+                <h3>
+                    <span class="lang-en">My Contributions</span>
+                    <span class="lang-cn">我的工作</span>
+                    <span class="lang-fr">Mes Contributions</span>
+                </h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li>
+                        <span class="lang-en">Set up the front-end base with Vue 3 + Vite.</span>
+                        <span class="lang-cn">使用 Vue 3 + Vite 搭建前端基础架构。</span>
+                        <span class="lang-fr">Mise en place de la base front-end en Vue 3 + Vite.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Defined the deal JSON format together with the backend team.</span>
+                        <span class="lang-cn">与后端共同约定牌局（deal）JSON 数据格式。</span>
+                        <span class="lang-fr">Définition du format JSON des donnes avec l'équipe backend.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Front/back integration and merging of the team's work.</span>
+                        <span class="lang-cn">负责前后端联调与代码合并。</span>
+                        <span class="lang-fr">Intégration front/back et fusion du travail de l'équipe.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Integration of an LLM agent into the application.</span>
+                        <span class="lang-cn">在应用中接入 LLM Agent。</span>
+                        <span class="lang-fr">Intégration d'un agent LLM dans l'application.</span>
+                    </li>
+                </ul>
+
+                <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    <span class="lang-en">Source code hosted on the university's GitLab (not public).</span>
+                    <span class="lang-cn">源码托管于学校 GitLab（未公开）。</span>
+                    <span class="lang-fr">Code source hébergé sur le GitLab de l'université (non public).</span>
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/lang.js"></script>
+    <script src="js/theme.js"></script>
+    <svg xmlns="http://www.w3.org/2000/svg" role="presentation" style="display: none; position: absolute; width: 0; height: 0; overflow: hidden;">
+        <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+            <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+            <feComponentTransfer in="turbulence" result="mapped">
+                <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+                <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+                <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+            </feComponentTransfer>
+            <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+            <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+                <fePointLight x="-200" y="-200" z="300" />
+            </feSpecularLighting>
+            <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+            <feDisplacementMap in="SourceGraphic" in2="softMap" scale="20" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+</body>
+
+</html>
