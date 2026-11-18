@@ -1,10 +1,8 @@
-/* Open-source contributions: renders data/contributions.json (refreshed daily by
-   .github/workflows/contributions.yml). No request goes to the GitHub API from
-   the visitor's browser, so there is no rate limit to hit. */
+/* Open-source contributions: one scrollable timeline built from
+   data/contributions.json (refreshed daily by .github/workflows/contributions.yml).
+   No request goes to the GitHub API from the visitor's browser. */
 (() => {
     'use strict';
-
-    const VISIBLE_PER_REPO = 4;
 
     const T = {
         merged: ['Merged', '已合并', 'Fusionnée'],
@@ -12,12 +10,10 @@
         closed: ['Closed', '未合并', 'Fermée'],
         issueOpen: ['Open', '未关闭', 'Ouverte'],
         issueClosed: ['Closed', '已关闭', 'Fermée'],
-        prs: ['pull requests', '个 PR', 'pull requests'],
+        prs: ['PRs', '个 PR', 'PR'],
         mergedStat: ['merged', '已合并', 'fusionnées'],
-        repos: ['repositories', '个仓库', 'dépôts'],
+        repos: ['repos', '个仓库', 'dépôts'],
         issues: ['issues', '个 Issue', 'issues'],
-        more: ['Show all', '展开全部', 'Tout afficher'],
-        issuesTitle: ['Issues reported', '提交的 Issue', 'Issues signalées'],
         updated: ['Updated', '更新于', 'Mis à jour le'],
         error: ['Contribution data is unavailable right now.', '贡献数据暂时无法加载。', 'Données de contribution indisponibles pour le moment.'],
     };
@@ -28,78 +24,53 @@
     const tri = ([en, zh, fr]) =>
         `<span class="lang-en">${en}</span><span class="lang-cn">${zh}</span><span class="lang-fr">${fr}</span>`;
 
-    const pill = (state, isIssue) => {
-        const key = isIssue ? (state === 'open' ? 'issueOpen' : 'issueClosed') : state;
-        return `<span class="status status--${isIssue ? 'issue-' : ''}${state}">${tri(T[key])}</span>`;
+    function statusKey(item) {
+        if (item.kind === 'issue') return item.state === 'open' ? 'issueOpen' : 'issueClosed';
+        return item.state; // merged | open | closed
+    }
+
+    const entry = (item) => {
+        const key = statusKey(item);
+        return `
+        <li class="tl__item tl__item--${key}">
+            <time class="tl__date" datetime="${esc(item.created)}">${esc(item.created)}</time>
+            <div class="tl__body">
+                <div class="tl__meta">
+                    <span class="tl__kind">${item.kind === 'pr' ? 'PR' : 'Issue'}</span>
+                    <a class="tl__repo" href="https://github.com/${esc(item.repo)}" target="_blank" rel="noopener noreferrer">${esc(item.repo)}</a>
+                    <span class="status status--${key}">${tri(T[key])}</span>
+                </div>
+                <a class="tl__title" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a>
+            </div>
+        </li>`;
     };
 
-    const row = (item, isIssue) => `
-        <li class="contrib__item">
-            ${pill(item.state, isIssue)}
-            <a class="contrib__link" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a>
-            <span class="contrib__date">#${esc(item.number)} · ${esc(item.created)}</span>
-        </li>`;
-
-    function groupByRepo(prs) {
-        const groups = new Map();
-        prs.forEach((pr) => {
-            if (!groups.has(pr.repo)) groups.set(pr.repo, []);
-            groups.get(pr.repo).push(pr);
-        });
-        // repos with the most merged PRs first, then by most recent activity
-        return [...groups.entries()].sort((a, b) => {
-            const merged = (list) => list.filter((p) => p.state === 'merged').length;
-            return merged(b[1]) - merged(a[1]) || b[1][0].created.localeCompare(a[1][0].created);
-        });
-    }
-
-    function repoCard([repo, list]) {
-        const merged = list.filter((p) => p.state === 'merged').length;
-        const shown = list.slice(0, VISIBLE_PER_REPO).map((p) => row(p, false)).join('');
-        const rest = list.slice(VISIBLE_PER_REPO).map((p) => row(p, false)).join('');
-        return `
-        <article class="contrib__repo">
-            <header class="contrib__repoHead">
-                <a class="contrib__repoName" href="https://github.com/${esc(repo)}" target="_blank" rel="noopener noreferrer">${esc(repo)}</a>
-                <span class="contrib__repoCount">${merged}/${list.length} ${tri(T.mergedStat)}</span>
-            </header>
-            <ul class="contrib__list">${shown}</ul>
-            ${rest ? `<details class="contrib__more"><summary>${tri(T.more)} (${list.length})</summary><ul class="contrib__list">${rest}</ul></details>` : ''}
-        </article>`;
-    }
-
     function render(root, data) {
-        const prs = data.prs || [];
-        const issues = data.issues || [];
-        const groups = groupByRepo(prs);
+        const prs = (data.prs || []).map((p) => ({ ...p, kind: 'pr' }));
+        const issues = (data.issues || []).map((i) => ({ ...i, kind: 'issue' }));
+        const all = [...prs, ...issues].sort((a, b) => b.created.localeCompare(a.created));
         const merged = prs.filter((p) => p.state === 'merged').length;
+        const repos = new Set(prs.map((p) => p.repo)).size;
 
         const stats = [
             [prs.length, T.prs],
             [merged, T.mergedStat],
-            [groups.length, T.repos],
+            [repos, T.repos],
             [issues.length, T.issues],
-        ].map(([n, label]) => `<div class="contrib__stat"><strong>${n}</strong><span>${tri(label)}</span></div>`).join('');
+        ].map(([n, label]) => `<span class="contrib__stat"><strong>${n}</strong> ${tri(label)}</span>`).join('');
 
         root.innerHTML = `
-            <div class="contrib__stats">${stats}</div>
-            <div class="contrib__grid">${groups.map(repoCard).join('')}</div>
-            ${issues.length ? `
-            <article class="contrib__repo contrib__repo--issues">
-                <header class="contrib__repoHead"><span class="contrib__repoName">${tri(T.issuesTitle)}</span></header>
-                <ul class="contrib__list">${issues.map((i) => `
-                    <li class="contrib__item">
-                        ${pill(i.state, true)}
-                        <a class="contrib__link" href="${esc(i.url)}" target="_blank" rel="noopener noreferrer">${esc(i.title)}</a>
-                        <span class="contrib__date">${esc(i.repo)} · ${esc(i.created)}</span>
-                    </li>`).join('')}
-                </ul>
-            </article>` : ''}
-            <p class="contrib__updated">${tri(T.updated)} ${esc(data.updated || '')} · GitHub Actions</p>`;
+            <div class="contrib__head">
+                <div class="contrib__stats">${stats}</div>
+                <span class="contrib__updated">${tri(T.updated)} ${esc(data.updated || '')}</span>
+            </div>
+            <div class="contrib__scroll" tabindex="0">
+                <ol class="tl">${all.map(entry).join('')}</ol>
+            </div>`;
 
-        // the hero shows the same headline numbers
+        // the hero shows the same headline number
         document.querySelectorAll('[data-contrib-stat]').forEach((el) => {
-            const value = { prs: prs.length, merged, repos: groups.length }[el.dataset.contribStat];
+            const value = { prs: prs.length, merged, repos }[el.dataset.contribStat];
             if (value !== undefined) el.textContent = value;
         });
     }

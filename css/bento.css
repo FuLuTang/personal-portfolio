@@ -1140,146 +1140,177 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   7b. Open-source contributions (js/contrib.js)
+   7b. Open-source contributions (js/contrib.js) — one tile, scrolls inside
    -------------------------------------------------------------------------- */
 .contrib {
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
-}
-
-.contrib__stats {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--gap);
-}
-
-.contrib__stat {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    padding: 0.85rem 1rem;
     border: 1px solid var(--line);
     border-radius: var(--r-tile);
     background-color: var(--surface);
+    overflow: hidden;
 }
 
-.contrib__stat strong {
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--forest);
+.contrib__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem 1rem;
+    padding: 0.8rem 1.1rem;
+    border-bottom: 1px solid var(--line);
+    background-color: var(--surface-2);
 }
 
-.contrib__stat span {
+.contrib__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.1rem;
+}
+
+.contrib__stat {
     font-size: 0.8rem;
     color: var(--ink-2);
 }
 
-.contrib__grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--gap);
-    align-items: start;
+.contrib__stat strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--forest);
 }
 
-.contrib__repo {
+.contrib__updated {
+    font-size: 0.72rem;
+    color: var(--ink-2);
+}
+
+/* the timeline scrolls inside the tile instead of growing the page */
+.contrib__scroll {
+    max-height: 22rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.9rem 1.1rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-2) transparent;
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 1.5rem), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 1.5rem), transparent);
+}
+
+.tl {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding: clamp(0.9rem, 1.4vw, 1.15rem);
-    border: 1px solid var(--line);
-    border-radius: var(--r-tile);
+}
+
+.tl__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 5.6rem minmax(0, 1fr);
+    gap: 0.9rem;
+    padding-bottom: 0.85rem;
+}
+
+/* vertical rail between the date column and the content */
+.tl__item::before {
+    content: "";
+    position: absolute;
+    top: 0.45rem;
+    bottom: -0.45rem;
+    left: calc(5.6rem + 0.45rem - 1px);
+    width: 2px;
+    background-color: var(--line);
+}
+
+.tl__item:last-child::before {
+    display: none;
+}
+
+/* status dot on the rail */
+.tl__item::after {
+    content: "";
+    position: absolute;
+    top: 0.32rem;
+    left: calc(5.6rem + 0.45rem - 5px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     background-color: var(--surface);
+    border: 2px solid var(--ink-2);
 }
 
-.contrib__repo--issues {
-    background-color: var(--surface-2);
+.tl__item--merged::after { border-color: #8250DF; background-color: #8250DF; }
+.tl__item--open::after,
+.tl__item--issueOpen::after { border-color: var(--forest); background-color: var(--forest); }
+.tl__item--closed::after,
+.tl__item--issueClosed::after { border-color: var(--line-2); }
+
+.tl__date {
+    padding-top: 0.08rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-2);
+    text-align: right;
+    padding-right: 0.55rem;
 }
 
-.contrib__repoHead {
+.tl__body {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.6rem;
-    padding-bottom: 0.45rem;
-    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+    padding-left: 0.55rem;
 }
 
-.contrib__repoName {
-    font-size: 0.9rem;
+.tl__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.tl__kind {
+    padding: 0.05rem 0.35rem;
+    border: 1px solid var(--line-2);
+    border-radius: 5px;
+    font-size: 0.62rem;
     font-weight: 700;
-    color: var(--ink);
+    letter-spacing: 0.05em;
+    color: var(--ink-2);
+}
+
+.tl__repo {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--ink-2);
     text-decoration: none;
     overflow-wrap: anywhere;
 }
 
-a.contrib__repoName:hover {
+.tl__repo:hover {
     color: var(--forest-deep);
     text-decoration: underline;
 }
 
-.contrib__repoCount {
-    flex: none;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--ink-2);
-}
-
-.contrib__list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.contrib__item {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    column-gap: 0.55rem;
-    align-items: baseline;
-}
-
-.contrib__link {
-    font-size: 0.84rem;
+.tl__title {
+    font-size: 0.86rem;
     font-weight: 600;
     line-height: 1.35;
     text-decoration: none;
     overflow-wrap: anywhere;
 }
 
-.contrib__link:hover {
+.tl__title:hover {
     color: var(--forest-deep);
     text-decoration: underline;
 }
 
-.contrib__date {
-    grid-column: 2;
-    font-size: 0.7rem;
-    color: var(--ink-2);
-}
-
-.contrib__more summary {
-    cursor: pointer;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--forest);
-    margin-bottom: 0.4rem;
-}
-
-.contrib__updated {
-    font-size: 0.72rem;
-    color: var(--ink-2);
-    text-align: right;
-}
-
 .status {
-    min-width: 4.6rem;
-    padding: 0.12rem 0.45rem;
+    padding: 0.08rem 0.45rem;
     border-radius: 999px;
-    font-size: 0.66rem;
+    font-size: 0.62rem;
     font-weight: 700;
     letter-spacing: 0.04em;
-    text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -1287,9 +1318,9 @@ a.contrib__repoName:hover {
 /* colour + label, never colour alone */
 .status--merged { background-color: #EDE4FB; color: #6532B8; }
 .status--open,
-.status--issue-open { background-color: var(--forest-wash); color: var(--forest-deep); }
+.status--issueOpen { background-color: var(--forest-wash); color: var(--forest-deep); }
 .status--closed,
-.status--issue-closed { background-color: var(--bg-tint); color: var(--ink-2); }
+.status--issueClosed { background-color: var(--bg-tint); color: var(--ink-2); }
 
 [data-theme="dark"] .status--merged { background-color: #2C2240; color: #C7A9F5; }
 
@@ -1368,13 +1399,6 @@ a.contrib__repoName:hover {
         grid-row: span 1;
     }
 
-    .contrib__stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .contrib__grid {
-        grid-template-columns: minmax(0, 1fr);
-    }
 }
 
 @media (max-width: 600px) {
@@ -1404,6 +1428,19 @@ a.contrib__repoName:hover {
 
     .hero__stats {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tl__item {
+        grid-template-columns: 4.6rem minmax(0, 1fr);
+        gap: 0.6rem;
+    }
+
+    .tl__item::before {
+        left: calc(4.6rem + 0.3rem - 1px);
+    }
+
+    .tl__item::after {
+        left: calc(4.6rem + 0.3rem - 5px);
     }
 
     .flow {
