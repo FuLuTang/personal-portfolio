@@ -143,6 +143,7 @@ a {
 }
 
 #projects,
+#opensource,
 #contact {
     scroll-margin-top: 4.75rem;
 }
@@ -364,8 +365,94 @@ a {
     margin-top: auto;
 }
 
-.tile--hero > .hero__panel {
+.tile--hero > :last-child {
     margin-bottom: auto;
+}
+
+/* availability pill at the top of the hero */
+.hero__avail {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.28rem 0.7rem 0.28rem 0.55rem;
+    border: 1px solid var(--hero-panel-line);
+    border-radius: 999px;
+    background-color: var(--hero-panel-bg);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--on-hero);
+}
+
+.hero__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #7EE2B8;
+    box-shadow: 0 0 0 3px rgba(126, 226, 184, 0.25);
+}
+
+/* three headline numbers */
+.hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.35rem;
+}
+
+.hero__stats > div {
+    padding: 0.55rem 0.65rem;
+    border-radius: var(--r-sm);
+    background-color: var(--hero-panel-bg);
+    border: 1px solid var(--hero-panel-line);
+}
+
+.hero__stats dt {
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--amber-soft);
+}
+
+.hero__stats dd {
+    font-size: 0.72rem;
+    line-height: 1.3;
+    color: var(--on-hero-2);
+}
+
+.hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.35rem;
+}
+
+.hero__btn {
+    padding: 0.45rem 0.95rem;
+    border: 1px solid var(--hero-panel-line);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--on-hero);
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.hero__btn:hover {
+    background-color: var(--hero-panel-bg);
+    border-color: var(--on-hero-2);
+}
+
+.hero__btn--primary {
+    background-color: var(--amber-soft);
+    border-color: var(--amber-soft);
+    color: #1C1917;
+}
+
+.hero__btn--primary:hover {
+    background-color: #F5D3A6;
+    border-color: #F5D3A6;
 }
 
 .tile__label {
@@ -583,6 +670,28 @@ a {
     height: 5px;
     border-radius: 1px;
     background-color: var(--amber);
+}
+
+/* hard skills: a fixed-width key column so each line reads as "area → stack" */
+.specs--keyed li {
+    display: grid;
+    grid-template-columns: 4.2rem minmax(0, 1fr);
+    gap: 0.4rem;
+    padding-left: 0;
+    color: var(--ink-2);
+}
+
+.specs--keyed li::before {
+    display: none;
+}
+
+.specs--keyed b {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+    padding-top: 0.12rem;
 }
 
 .roadmap {
@@ -913,6 +1022,277 @@ a {
     margin-top: auto;
 }
 
+/* "what I did" bullets on the main project tiles */
+.points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.35rem;
+}
+
+.points li {
+    position: relative;
+    padding-left: 0.95rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--ink);
+}
+
+.points li::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: 0.1rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    background-color: var(--forest);
+}
+
+/* architecture strip for tiles that have no screenshot (internship, bridge) */
+.flow {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 9.5rem;
+    padding: 1rem;
+    border-radius: var(--r-sm);
+    background-color: var(--bg-tint);
+    background-image:
+        radial-gradient(circle at 1px 1px, var(--wire-line) 1px, transparent 0);
+    background-size: 16px 16px;
+    box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.flow__col {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+}
+
+.flow__node {
+    display: flex;
+    flex-direction: column;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid var(--line-2);
+    border-radius: 8px;
+    background-color: var(--surface);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    box-shadow: var(--shadow-1);
+}
+
+.flow__node small {
+    margin-top: 0.15rem;
+    font-size: 0.66rem;
+    font-weight: 600;
+    color: var(--ink-2);
+}
+
+.flow__node--core {
+    border-color: var(--forest);
+    background-color: var(--forest-wash);
+    color: var(--forest-deep);
+}
+
+.flow__node--out {
+    border-left: 3px solid var(--amber);
+}
+
+.flow__node--muted {
+    border-style: dashed;
+    background-color: transparent;
+    box-shadow: none;
+    font-weight: 600;
+    color: var(--ink-2);
+}
+
+.flow__arrow {
+    flex: 0 0 1.4rem;
+    height: 2px;
+    position: relative;
+    background-color: var(--forest);
+}
+
+.flow__arrow::after,
+.flow__arrow--both::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+.flow__arrow::after {
+    right: -2px;
+    border-left: 7px solid var(--forest);
+}
+
+.flow__arrow--both::before {
+    left: -2px;
+    border-right: 7px solid var(--forest);
+}
+
+/* --------------------------------------------------------------------------
+   7b. Open-source contributions (js/contrib.js)
+   -------------------------------------------------------------------------- */
+.contrib {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.contrib__stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--gap);
+}
+
+.contrib__stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--r-tile);
+    background-color: var(--surface);
+}
+
+.contrib__stat strong {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--forest);
+}
+
+.contrib__stat span {
+    font-size: 0.8rem;
+    color: var(--ink-2);
+}
+
+.contrib__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap);
+    align-items: start;
+}
+
+.contrib__repo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: clamp(0.9rem, 1.4vw, 1.15rem);
+    border: 1px solid var(--line);
+    border-radius: var(--r-tile);
+    background-color: var(--surface);
+}
+
+.contrib__repo--issues {
+    background-color: var(--surface-2);
+}
+
+.contrib__repoHead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.contrib__repoName {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+a.contrib__repoName:hover {
+    color: var(--forest-deep);
+    text-decoration: underline;
+}
+
+.contrib__repoCount {
+    flex: none;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ink-2);
+}
+
+.contrib__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.contrib__item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.55rem;
+    align-items: baseline;
+}
+
+.contrib__link {
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contrib__link:hover {
+    color: var(--forest-deep);
+    text-decoration: underline;
+}
+
+.contrib__date {
+    grid-column: 2;
+    font-size: 0.7rem;
+    color: var(--ink-2);
+}
+
+.contrib__more summary {
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 0.4rem;
+}
+
+.contrib__updated {
+    font-size: 0.72rem;
+    color: var(--ink-2);
+    text-align: right;
+}
+
+.status {
+    min-width: 4.6rem;
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* colour + label, never colour alone */
+.status--merged { background-color: #EDE4FB; color: #6532B8; }
+.status--open,
+.status--issue-open { background-color: var(--forest-wash); color: var(--forest-deep); }
+.status--closed,
+.status--issue-closed { background-color: var(--bg-tint); color: var(--ink-2); }
+
+[data-theme="dark"] .status--merged { background-color: #2C2240; color: #C7A9F5; }
+
 /* --------------------------------------------------------------------------
    8. Footer
    -------------------------------------------------------------------------- */
@@ -987,6 +1367,14 @@ a {
     .project-card--lg {
         grid-row: span 1;
     }
+
+    .contrib__stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contrib__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
@@ -1012,6 +1400,27 @@ a {
        plate as well (still within 2x of the 1.19–1.34 originals) */
     .project-card--wide img {
         aspect-ratio: 4 / 3;
+    }
+
+    .hero__stats {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .flow {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .flow__arrow {
+        flex-basis: 1rem;
+        width: 2px;
+        height: 1rem;
+        align-self: center;
+    }
+
+    .flow__arrow::after,
+    .flow__arrow--both::before {
+        display: none;
     }
 }
 
