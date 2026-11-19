@@ -465,9 +465,9 @@
                     <span class="lang-fr">Projets</span>
                 </h2>
                 <p class="section__hint">
-                    <span class="lang-en">Click a tile to view project details</span>
-                    <span class="lang-cn">点击格子查看项目详情</span>
-                    <span class="lang-fr">Cliquez sur une tuile pour voir les détails</span>
+                    <span class="lang-en">Click a project to view details</span>
+                    <span class="lang-cn">点击项目查看详情</span>
+                    <span class="lang-fr">Cliquez sur un projet pour voir les détails</span>
                 </p>
 
                 <fieldset class="switcher" data-project-filter>
@@ -503,432 +503,484 @@
                 </fieldset>
             </div>
 
-            <div class="bento bento--projects" data-project-grid>
+            <div class="projects" data-project-grid>
+                <div class="feature-list" data-project-group>
 
-                <a href="project-erp-ai.html" class="project-card project-card--wide" data-category="professional" style="--i:0">
-                    <div class="flow" aria-hidden="true">
-                        <div class="flow__col">
-                            <span class="flow__node">ERP data</span>
-                            <span class="flow__node flow__node--muted">Pandas · DuckDB</span>
-                        </div>
-                        <span class="flow__arrow"></span>
-                        <div class="flow__col">
-                            <span class="flow__node flow__node--core">Agent loop<small>plan · tools · sandbox · trace</small></span>
-                            <span class="flow__node flow__node--muted">FastAPI · SSE</span>
-                        </div>
-                        <span class="flow__arrow"></span>
-                        <div class="flow__col">
-                            <span class="flow__node flow__node--out">Store diagnosis</span>
-                            <span class="flow__node flow__node--out">Pricing advice</span>
-                            <span class="flow__node flow__node--out">Support agent</span>
-                        </div>
-                    </div>
-                    <p class="project-card__kind">
-                        <span class="lang-en">
-                            Professional internship · 2026
-                        </span>
-                        <span class="lang-cn">
-                            企业实习 · 2026
-                        </span>
-                        <span class="lang-fr">
-                            Stage en entreprise · 2026
-                        </span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">
-                            ERP AI Internship
-                        </span>
-                        <span class="lang-cn">
-                            ERP AI 实习项目
-                        </span>
-                        <span class="lang-fr">
-                            Stage ERP IA
-                        </span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">
-                            Fuzhou Shangbo Software (China), May–Jul 2026. AI plugin for a live pharmacy/retail ERP.
-                        </span>
-                        <span class="lang-cn">
-                            福州商搏软件，2026 年 5–7 月。为在运营的医药零售 ERP 开发 AI 插件。
-                        </span>
-                        <span class="lang-fr">
-                            Fuzhou Shangbo Software (Chine), mai–juil. 2026. Plugin IA pour un ERP pharmacie/retail en production.
-                        </span>
-                    </p>
-                    <ul class="points">
-                        <li>
-                            <span class="lang-en">Agent framework built from scratch, no existing library</span>
-                            <span class="lang-cn">从零自研 Agent 框架，未使用现成框架</span>
-                            <span class="lang-fr">Framework d'agent écrit de zéro, sans bibliothèque</span>
-                        </li>
-                        <li>
-                            <span class="lang-en">Iterated on permissions, sandboxing and action traceability</span>
-                            <span class="lang-cn">迭代权限控制、沙箱隔离与操作可溯源</span>
-                            <span class="lang-fr">Itérations sur permissions, sandbox et traçabilité</span>
-                        </li>
-                        <li>
-                            <span class="lang-en">Deployed on Linux with Nginx + systemd</span>
-                            <span class="lang-cn">在 Linux 上用 Nginx + systemd 部署</span>
-                            <span class="lang-fr">Déploiement Linux avec Nginx + systemd</span>
-                        </li>
-                    </ul>
-                    <ul class="tags">
-                        <li>
-                            Python
-                        </li>
-                        <li>
-                            FastAPI
-                        </li>
-                        <li>
-                            AI Agent
-                        </li>
-                        <li>
-                            Linux
-                        </li>
-                    </ul>
-                </a>
-
-                <a href="project-tb.html" class="project-card project-card--wide" data-category="personal" style="--i:1">
-                    <img src="assets/tb-ai-summary_main.png"
-                        alt="Thunderbird AI mail summarizer extension panel" loading="lazy" decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">Personal · Published add-on</span>
-                        <span class="lang-cn">个人项目 · 已上架扩展</span>
-                        <span class="lang-fr">Personnel · Module publié</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">AI Chatting Mail Summarizer</span>
-                        <span class="lang-cn">邮件智能摘要助手 (AI Chatting Mail Summarizer)</span>
-                        <span class="lang-fr">AI Chatting Mail Summarizer</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">AI agent add-on for Thunderbird, published on Thunderbird Add-ons as
-                            “AI Chatting Mail Summarizer”: email summaries, unread briefings and chat.</span>
-                        <span class="lang-cn">已上架 Thunderbird 官方扩展商店（“AI Chatting Mail Summarizer”）的 AI Agent 插件：邮件摘要、未读简报与对话。</span>
-                        <span class="lang-fr">Extension agent IA pour Thunderbird, publiée sur Thunderbird Add-ons sous
-                            le nom « AI Chatting Mail Summarizer » : résumés, briefing des non-lus et chat.</span>
-                    </p>
-                    <ul class="points">
-                        <li>
-                            <span class="lang-en">Own ReAct agent loop with high / mid / low model tiers</span>
-                            <span class="lang-cn">自研 ReAct Agent 循环，高 / 中 / 低三档模型分工</span>
-                            <span class="lang-fr">Boucle ReAct maison, 3 niveaux de modèles</span>
-                        </li>
-                        <li>
-                            <span class="lang-en">Batch summaries with rate limiting, urgency scores, daily briefing</span>
-                            <span class="lang-cn">限流批量摘要、紧急度评分、每日简报</span>
-                            <span class="lang-fr">Résumés en lot limités en débit, urgence, briefing</span>
-                        </li>
-                    </ul>
-                    <ul class="tags">
-                        <li>Thunderbird</li>
-                        <li>JavaScript</li>
-                        <li>AI Agent</li>
-                    </ul>
-                </a>
-
-                <a href="project-bridge.html" class="project-card project-card--wide"
-                    data-category="school" style="--i:2">
-                    <div class="flow" aria-hidden="true">
-                        <div class="flow__col">
-                            <span class="flow__node flow__node--core">Vue 3 · Vite<small>table · card input · 3D deal</small></span>
-                        </div>
-                        <span class="flow__arrow flow__arrow--both"></span>
-                        <div class="flow__col">
-                            <span class="flow__node">Deal JSON<small>N · E · S · W</small></span>
-                        </div>
-                        <span class="flow__arrow flow__arrow--both"></span>
-                        <div class="flow__col">
-                            <span class="flow__node">FastAPI</span>
-                            <span class="flow__node flow__node--muted">Bidding engine · DDS</span>
-                            <span class="flow__node flow__node--muted">LLM agent</span>
+                <a href="project-erp-ai.html" class="project-card project-card--feature" data-category="professional" style="--i:0">
+                    <div class="project-card__media">
+                        <div class="flow" aria-hidden="true">
+                            <div class="flow__col">
+                                <span class="flow__node">ERP data</span>
+                                <span class="flow__node flow__node--muted">Pandas · DuckDB</span>
+                            </div>
+                            <span class="flow__arrow"></span>
+                            <div class="flow__col">
+                                <span class="flow__node flow__node--core">Agent loop<small>plan · tools · sandbox · trace</small></span>
+                                <span class="flow__node flow__node--muted">FastAPI · SSE</span>
+                            </div>
+                            <span class="flow__arrow"></span>
+                            <div class="flow__col">
+                                <span class="flow__node flow__node--out">Store diagnosis</span>
+                                <span class="flow__node flow__node--out">Pricing advice</span>
+                                <span class="flow__node flow__node--out">Support agent</span>
+                            </div>
                         </div>
                     </div>
-                    <p class="project-card__kind">
-                        <span class="lang-en">School · Team of 9</span>
-                        <span class="lang-cn">校内项目 · 9 人团队</span>
-                        <span class="lang-fr">Scolaire · Équipe de 9</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">Bridge Bidding Assistant</span>
-                        <span class="lang-cn">桥牌叫牌辅助系统</span>
-                        <span class="lang-fr">Assistant d'Enchères au Bridge</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">Front-end lead: Vue 3 + Vite base, deal JSON format agreed with the
-                            backend, front/back integration and LLM agent integration.</span>
-                        <span class="lang-cn">担任前端负责人：Vue 3 + Vite 前端基础、与后端约定牌局 JSON 格式、前后端联调与 LLM Agent 接入。</span>
-                        <span class="lang-fr">Responsable front-end : base Vue 3 + Vite, format JSON des donnes défini
-                            avec le backend, intégration front/back et intégration d'un agent LLM.</span>
-                    </p>
-                    <ul class="points">
-                        <li>
-                            <span class="lang-en">Card-by-card deal input that auto-completes the last hand</span>
-                            <span class="lang-cn">逐张选牌录入，自动补全最后一手</span>
-                            <span class="lang-fr">Saisie carte par carte, dernière main complétée seule</span>
-                        </li>
-                        <li>
-                            <span class="lang-en">Scrum sprints with demos to the product owner</span>
-                            <span class="lang-cn">Scrum 冲刺，定期向产品负责人演示</span>
-                            <span class="lang-fr">Sprints Scrum avec démos au product owner</span>
-                        </li>
-                    </ul>
-                    <ul class="tags">
-                        <li>Vue 3</li>
-                        <li>Vite</li>
-                        <li>FastAPI</li>
-                        <li>LLM Agent</li>
-                    </ul>
+                    <div class="project-card__text">
+                        <p class="project-card__kind">
+                            <span class="lang-en">
+                                Professional internship · 2026
+                            </span>
+                            <span class="lang-cn">
+                                企业实习 · 2026
+                            </span>
+                            <span class="lang-fr">
+                                Stage en entreprise · 2026
+                            </span>
+                        </p>
+                        <h3 class="project-card__title">
+                            <span class="lang-en">
+                                ERP AI Internship
+                            </span>
+                            <span class="lang-cn">
+                                ERP AI 实习项目
+                            </span>
+                            <span class="lang-fr">
+                                Stage ERP IA
+                            </span>
+                        </h3>
+                        <p class="project-card__body">
+                            <span class="lang-en">
+                                Fuzhou Shangbo Software (China), May–Jul 2026. AI plugin for a live pharmacy/retail ERP.
+                            </span>
+                            <span class="lang-cn">
+                                福州商搏软件，2026 年 5–7 月。为在运营的医药零售 ERP 开发 AI 插件。
+                            </span>
+                            <span class="lang-fr">
+                                Fuzhou Shangbo Software (Chine), mai–juil. 2026. Plugin IA pour un ERP pharmacie/retail en production.
+                            </span>
+                        </p>
+                        <ul class="points">
+                            <li>
+                                <span class="lang-en">Agent framework built from scratch, no existing library</span>
+                                <span class="lang-cn">从零自研 Agent 框架，未使用现成框架</span>
+                                <span class="lang-fr">Framework d'agent écrit de zéro, sans bibliothèque</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Iterated on permissions, sandboxing and action traceability</span>
+                                <span class="lang-cn">迭代权限控制、沙箱隔离与操作可溯源</span>
+                                <span class="lang-fr">Itérations sur permissions, sandbox et traçabilité</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Deployed on Linux with Nginx + systemd</span>
+                                <span class="lang-cn">在 Linux 上用 Nginx + systemd 部署</span>
+                                <span class="lang-fr">Déploiement Linux avec Nginx + systemd</span>
+                            </li>
+                        </ul>
+                        <ul class="tags">
+                            <li>
+                                Python
+                            </li>
+                            <li>
+                                FastAPI
+                            </li>
+                            <li>
+                                AI Agent
+                            </li>
+                            <li>
+                                Linux
+                            </li>
+                        </ul>
+                    </div>
                 </a>
 
-                <a href="project-neon-uno.html" class="project-card project-card--wide" data-category="school"
-                    style="--i:3">
-                    <img src="assets/neon_uno_preview.png" alt="NEON-UNO multiplayer card game interface"
-                        loading="lazy" decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">School · Team project</span>
-                        <span class="lang-cn">校内项目 · 团队</span>
-                        <span class="lang-fr">Scolaire · Projet en équipe</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">NEON-UNO</span>
-                        <span class="lang-cn">霓虹 UNO</span>
-                        <span class="lang-fr">NEON-UNO</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">Players join by QR code and play simultaneously in two teams on a
-                            projector main screen, with AI bots at several difficulty levels.</span>
-                        <span class="lang-cn">玩家扫码加入，在投影主屏上分两队同时出牌，并提供多种难度的 AI 机器人。</span>
-                        <span class="lang-fr">Les joueurs rejoignent par QR code et jouent simultanément en deux équipes
-                            sur un écran projeté, avec des bots IA de plusieurs niveaux.</span>
-                    </p>
-                    <ul class="points">
-                        <li>
-                            <span class="lang-en">Top committer: 11 merged PRs (Vue 3 migration, lobby, AI players)</span>
-                            <span class="lang-cn">提交最多：11 个 PR 被合并（迁移 Vue 3、大厅、AI 玩家）</span>
-                            <span class="lang-fr">11 PR fusionnées (migration Vue 3, lobby, joueurs IA)</span>
-                        </li>
-                        <li>
-                            <span class="lang-en">AI tiers: random, heuristic, 2-step lookahead</span>
-                            <span class="lang-cn">AI 三档：随机、启发式、两步前瞻</span>
-                            <span class="lang-fr">IA : aléatoire, heuristique, anticipation à 2 coups</span>
-                        </li>
-                    </ul>
-                    <ul class="tags">
-                        <li>Vue 3</li>
-                        <li>Node.js</li>
-                        <li>Socket.io</li>
-                    </ul>
+                <a href="project-tb.html" class="project-card project-card--feature" data-category="personal" style="--i:1">
+                    <div class="project-card__media">
+                        <img src="assets/tb-ai-summary_main.png"
+                            alt="Thunderbird AI mail summarizer extension panel" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card__text">
+                        <p class="project-card__kind">
+                            <span class="lang-en">Personal · Published add-on</span>
+                            <span class="lang-cn">个人项目 · 已上架扩展</span>
+                            <span class="lang-fr">Personnel · Module publié</span>
+                        </p>
+                        <h3 class="project-card__title">
+                            <span class="lang-en">AI Chatting Mail Summarizer</span>
+                            <span class="lang-cn">邮件智能摘要助手 (AI Chatting Mail Summarizer)</span>
+                            <span class="lang-fr">AI Chatting Mail Summarizer</span>
+                        </h3>
+                        <p class="project-card__body">
+                            <span class="lang-en">AI agent add-on for Thunderbird, published on Thunderbird Add-ons as
+                                “AI Chatting Mail Summarizer”: email summaries, unread briefings and chat.</span>
+                            <span class="lang-cn">已上架 Thunderbird 官方扩展商店（“AI Chatting Mail Summarizer”）的 AI Agent 插件：邮件摘要、未读简报与对话。</span>
+                            <span class="lang-fr">Extension agent IA pour Thunderbird, publiée sur Thunderbird Add-ons sous
+                                le nom « AI Chatting Mail Summarizer » : résumés, briefing des non-lus et chat.</span>
+                        </p>
+                        <ul class="points">
+                            <li>
+                                <span class="lang-en">Own ReAct agent loop with high / mid / low model tiers</span>
+                                <span class="lang-cn">自研 ReAct Agent 循环，高 / 中 / 低三档模型分工</span>
+                                <span class="lang-fr">Boucle ReAct maison, 3 niveaux de modèles</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Batch summaries with rate limiting, urgency scores, daily briefing</span>
+                                <span class="lang-cn">限流批量摘要、紧急度评分、每日简报</span>
+                                <span class="lang-fr">Résumés en lot limités en débit, urgence, briefing</span>
+                            </li>
+                        </ul>
+                        <ul class="tags">
+                            <li>Thunderbird</li>
+                            <li>JavaScript</li>
+                            <li>AI Agent</li>
+                        </ul>
+                    </div>
                 </a>
 
-                <a href="project-ios.html" class="project-card project-card--lg" data-category="personal"
-                    style="--i:4">
-                    <img src="assets/task_ios_4categories.webp"
-                        alt="iOS task app interface showing four urgency and importance categories" loading="lazy"
-                        decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">Personal</span>
-                        <span class="lang-cn">个人项目</span>
-                        <span class="lang-fr">Personnel</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">FourQuadrants (iOS)</span>
-                        <span class="lang-cn">FourQuadrants 四象限任务管理 (iOS)</span>
-                        <span class="lang-fr">FourQuadrants (iOS)</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">SwiftUI task manager with Urgency/Importance classification.</span>
-                        <span class="lang-cn">使用 SwiftUI 开发的任务管理工具（紧急/重要分类）。</span>
-                        <span class="lang-fr">Outil de gestion des tâches (Urgence/Importance) en SwiftUI.</span>
-                    </p>
-                    <ul class="tags">
-                        <li>SwiftUI</li>
-                        <li>iOS</li>
-                        <li>Productivity</li>
-                    </ul>
+                <a href="project-bridge.html" class="project-card project-card--feature" data-category="school" style="--i:2">
+                    <div class="project-card__media">
+                        <div class="flow" aria-hidden="true">
+                            <div class="flow__col">
+                                <span class="flow__node flow__node--core">Vue 3 · Vite<small>table · card input · 3D deal</small></span>
+                            </div>
+                            <span class="flow__arrow flow__arrow--both"></span>
+                            <div class="flow__col">
+                                <span class="flow__node">Deal JSON<small>N · E · S · W</small></span>
+                            </div>
+                            <span class="flow__arrow flow__arrow--both"></span>
+                            <div class="flow__col">
+                                <span class="flow__node">FastAPI</span>
+                                <span class="flow__node flow__node--muted">Bidding engine · DDS</span>
+                                <span class="flow__node flow__node--muted">LLM agent</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card__text">
+                        <p class="project-card__kind">
+                            <span class="lang-en">School · Team of 9</span>
+                            <span class="lang-cn">校内项目 · 9 人团队</span>
+                            <span class="lang-fr">Scolaire · Équipe de 9</span>
+                        </p>
+                        <h3 class="project-card__title">
+                            <span class="lang-en">Bridge Bidding Assistant</span>
+                            <span class="lang-cn">桥牌叫牌辅助系统</span>
+                            <span class="lang-fr">Assistant d'Enchères au Bridge</span>
+                        </h3>
+                        <p class="project-card__body">
+                            <span class="lang-en">Front-end lead: Vue 3 + Vite base, deal JSON format agreed with the
+                                backend, front/back integration and LLM agent integration.</span>
+                            <span class="lang-cn">担任前端负责人：Vue 3 + Vite 前端基础、与后端约定牌局 JSON 格式、前后端联调与 LLM Agent 接入。</span>
+                            <span class="lang-fr">Responsable front-end : base Vue 3 + Vite, format JSON des donnes défini
+                                avec le backend, intégration front/back et intégration d'un agent LLM.</span>
+                        </p>
+                        <ul class="points">
+                            <li>
+                                <span class="lang-en">Card-by-card deal input that auto-completes the last hand</span>
+                                <span class="lang-cn">逐张选牌录入，自动补全最后一手</span>
+                                <span class="lang-fr">Saisie carte par carte, dernière main complétée seule</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Scrum sprints with demos to the product owner</span>
+                                <span class="lang-cn">Scrum 冲刺，定期向产品负责人演示</span>
+                                <span class="lang-fr">Sprints Scrum avec démos au product owner</span>
+                            </li>
+                        </ul>
+                        <ul class="tags">
+                            <li>Vue 3</li>
+                            <li>Vite</li>
+                            <li>FastAPI</li>
+                            <li>LLM Agent</li>
+                        </ul>
+                    </div>
                 </a>
 
-                <a href="project-jirai.html" class="project-card" data-category="personal" style="--i:5">
-                    <img src="assets/vrcx_jirai_preview.png" alt="VRCX-jirai relationship tracking interface"
-                        loading="lazy" decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">Personal</span>
-                        <span class="lang-cn">个人项目</span>
-                        <span class="lang-fr">Personnel</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">VRCX-jirai Edition</span>
-                        <span class="lang-cn">VRCX 优化版 - 地雷Edition</span>
-                        <span class="lang-fr">VRCX-jirai Edition</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">Enhanced VRCX with relationship tracking, co-presence analysis, and
-                            Git-style bio diffs.</span>
-                        <span class="lang-cn">面向“视奸”优化的 VRCX 魔改版，支持双人关系查询与简介差异追踪。</span>
-                        <span class="lang-fr">Version optimisée de VRCX avec suivi des relations et analyse de
-                            co-présence.</span>
-                    </p>
-                    <ul class="tags">
-                        <li>Electron</li>
-                        <li>SQLite</li>
-                    </ul>
+                <a href="project-neon-uno.html" class="project-card project-card--feature" data-category="school" style="--i:3">
+                    <div class="project-card__media">
+                        <img src="assets/neon_uno_preview.png" alt="NEON-UNO multiplayer card game interface"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-card__text">
+                        <p class="project-card__kind">
+                            <span class="lang-en">School · Team project</span>
+                            <span class="lang-cn">校内项目 · 团队</span>
+                            <span class="lang-fr">Scolaire · Projet en équipe</span>
+                        </p>
+                        <h3 class="project-card__title">
+                            <span class="lang-en">NEON-UNO</span>
+                            <span class="lang-cn">霓虹 UNO</span>
+                            <span class="lang-fr">NEON-UNO</span>
+                        </h3>
+                        <p class="project-card__body">
+                            <span class="lang-en">Players join by QR code and play simultaneously in two teams on a
+                                projector main screen, with AI bots at several difficulty levels.</span>
+                            <span class="lang-cn">玩家扫码加入，在投影主屏上分两队同时出牌，并提供多种难度的 AI 机器人。</span>
+                            <span class="lang-fr">Les joueurs rejoignent par QR code et jouent simultanément en deux équipes
+                                sur un écran projeté, avec des bots IA de plusieurs niveaux.</span>
+                        </p>
+                        <ul class="points">
+                            <li>
+                                <span class="lang-en">Top committer: 11 merged PRs (Vue 3 migration, lobby, AI players)</span>
+                                <span class="lang-cn">提交最多：11 个 PR 被合并（迁移 Vue 3、大厅、AI 玩家）</span>
+                                <span class="lang-fr">11 PR fusionnées (migration Vue 3, lobby, joueurs IA)</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">AI tiers: random, heuristic, 2-step lookahead</span>
+                                <span class="lang-cn">AI 三档：随机、启发式、两步前瞻</span>
+                                <span class="lang-fr">IA : aléatoire, heuristique, anticipation à 2 coups</span>
+                            </li>
+                        </ul>
+                        <ul class="tags">
+                            <li>Vue 3</li>
+                            <li>Node.js</li>
+                            <li>Socket.io</li>
+                        </ul>
+                    </div>
                 </a>
+                </div>
 
-                <a href="project-rpg.html" class="project-card project-card--wide" data-category="school"
-                    style="--i:6">
-                    <img src="assets/2DGame_gameing.webp" alt="2D RPG game running with the player and enemies"
-                        loading="lazy" decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">School</span>
-                        <span class="lang-cn">校内项目</span>
-                        <span class="lang-fr">Scolaire</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">2D RPG Game</span>
-                        <span class="lang-cn">2D RPG 游戏</span>
-                        <span class="lang-fr">Jeu Vidéo RPG 2D</span>
+                <div class="project-group" data-project-group>
+                    <h3 class="projects__sub">
+                        <span class="lang-en">More projects</span>
+                        <span class="lang-cn">其他项目</span>
+                        <span class="lang-fr">Autres projets</span>
                     </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">C++/SDL2 game engine with rendering, enemy logic, and dynamic
-                            camera.</span>
-                        <span class="lang-cn">自主开发的 C++/SDL2 游戏引擎，实现渲染、敌人逻辑和动态相机。</span>
-                        <span class="lang-fr">Développement autonome d'un RPG 2D en C++/SDL2 (moteur, logique,
-                            caméra).</span>
-                    </p>
-                    <ul class="tags">
-                        <li>C++</li>
-                        <li>SDL2</li>
-                        <li>Game Engine</li>
-                    </ul>
-                </a>
+                    <div class="project-list">
 
-                <a href="project-subtitle.html" class="project-card project-card--wide" data-category="personal"
-                    style="--i:7">
-                    <img src="assets/SubtitleTool_p1.jpg" alt="Subtitle tool main window" loading="lazy"
-                        decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">Personal</span>
-                        <span class="lang-cn">个人项目</span>
-                        <span class="lang-fr">Personnel</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">Subtitle Tool</span>
-                        <span class="lang-cn">字幕处理工具</span>
-                        <span class="lang-fr">Outil de Sous-titres</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">Converts and translates LRC/SRT subtitles for audio and video.</span>
-                        <span class="lang-cn">LRC/SRT 字幕的格式转换与翻译工具。</span>
-                        <span class="lang-fr">Conversion et traduction de sous-titres LRC/SRT.</span>
-                    </p>
-                    <ul class="tags">
-                        <li>Python</li>
-                        <li>Tkinter</li>
-                    </ul>
-                </a>
+                    <a href="project-ios.html" class="project-card project-card--row" data-category="personal" style="--i:4">
+                        <div class="project-card__thumb">
+                            <img src="assets/task_ios_4categories.webp"
+                            alt="iOS task app interface showing four urgency and importance categories" loading="lazy"
+                            decoding="async">
+                        </div>
+                        <div class="project-card__text">
+                            <p class="project-card__kind">
+                                <span class="lang-en">Personal</span>
+                                <span class="lang-cn">个人项目</span>
+                                <span class="lang-fr">Personnel</span>
+                            </p>
+                            <h3 class="project-card__title">
+                                <span class="lang-en">FourQuadrants (iOS)</span>
+                                <span class="lang-cn">FourQuadrants 四象限任务管理 (iOS)</span>
+                                <span class="lang-fr">FourQuadrants (iOS)</span>
+                            </h3>
+                            <p class="project-card__body">
+                                <span class="lang-en">SwiftUI task manager with Urgency/Importance classification.</span>
+                                <span class="lang-cn">使用 SwiftUI 开发的任务管理工具（紧急/重要分类）。</span>
+                                <span class="lang-fr">Outil de gestion des tâches (Urgence/Importance) en SwiftUI.</span>
+                            </p>
+                            <ul class="tags">
+                                <li>SwiftUI</li>
+                                <li>iOS</li>
+                                <li>Productivity</li>
+                            </ul>
+                        </div>
+                    </a>
 
-                <a href="project-uiux.html" class="project-card project-card--lg" data-category="school"
-                    style="--i:8">
-                    <img src="assets/StudentResidence_penpot.jpg"
-                        alt="Student residence management interface prototype in Penpot" loading="lazy"
-                        decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">School</span>
-                        <span class="lang-cn">校内项目</span>
-                        <span class="lang-fr">Scolaire</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">UI/UX Design</span>
-                        <span class="lang-cn">UI/UX 设计</span>
-                        <span class="lang-fr">Conception IHM/UX</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">Student residence management interface using Personas and Figma /
-                            Penpot.</span>
-                        <span class="lang-cn">学生公寓管理界面原型设计，使用 Personas 和 Figma / Penpot。</span>
-                        <span class="lang-fr">Prototypage pour gestion de résidences étudiantes (Personas,
-                            Figma / Penpot).</span>
-                    </p>
-                    <ul class="tags">
-                        <li>Figma / Penpot</li>
-                        <li>Personas</li>
-                    </ul>
-                </a>
+                    <a href="project-jirai.html" class="project-card project-card--row" data-category="personal" style="--i:5">
+                        <div class="project-card__thumb">
+                            <img src="assets/vrcx_jirai_preview.png" alt="VRCX-jirai relationship tracking interface"
+                            loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-card__text">
+                            <p class="project-card__kind">
+                                <span class="lang-en">Personal</span>
+                                <span class="lang-cn">个人项目</span>
+                                <span class="lang-fr">Personnel</span>
+                            </p>
+                            <h3 class="project-card__title">
+                                <span class="lang-en">VRCX-jirai Edition</span>
+                                <span class="lang-cn">VRCX 优化版 - 地雷Edition</span>
+                                <span class="lang-fr">VRCX-jirai Edition</span>
+                            </h3>
+                            <p class="project-card__body">
+                                <span class="lang-en">Enhanced VRCX with relationship tracking, co-presence analysis, and
+                                    Git-style bio diffs.</span>
+                                <span class="lang-cn">面向“视奸”优化的 VRCX 魔改版，支持双人关系查询与简介差异追踪。</span>
+                                <span class="lang-fr">Version optimisée de VRCX avec suivi des relations et analyse de
+                                    co-présence.</span>
+                            </p>
+                            <ul class="tags">
+                                <li>Electron</li>
+                                <li>SQLite</li>
+                            </ul>
+                        </div>
+                    </a>
 
-                <a href="project-db.html" class="project-card" data-category="school" style="--i:9">
-                    <img src="assets/db_cdm.webp" alt="Conceptual data model of the real estate database"
-                        loading="lazy" decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">School</span>
-                        <span class="lang-cn">校内项目</span>
-                        <span class="lang-fr">Scolaire</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">Real Estate DB</span>
-                        <span class="lang-cn">房产管理数据库</span>
-                        <span class="lang-fr">Base de Données</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">Conceptual data model and SQL for real-estate management.</span>
-                        <span class="lang-cn">房产管理的概念数据模型与 SQL 实现。</span>
-                        <span class="lang-fr">Modèle conceptuel et SQL pour la gestion immobilière.</span>
-                    </p>
-                    <ul class="tags">
-                        <li>SQLite</li>
-                        <li>SQL</li>
-                    </ul>
-                </a>
+                    <a href="project-rpg.html" class="project-card project-card--row" data-category="school" style="--i:6">
+                        <div class="project-card__thumb">
+                            <img src="assets/2DGame_gameing.webp" alt="2D RPG game running with the player and enemies"
+                            loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-card__text">
+                            <p class="project-card__kind">
+                                <span class="lang-en">School</span>
+                                <span class="lang-cn">校内项目</span>
+                                <span class="lang-fr">Scolaire</span>
+                            </p>
+                            <h3 class="project-card__title">
+                                <span class="lang-en">2D RPG Game</span>
+                                <span class="lang-cn">2D RPG 游戏</span>
+                                <span class="lang-fr">Jeu Vidéo RPG 2D</span>
+                            </h3>
+                            <p class="project-card__body">
+                                <span class="lang-en">C++/SDL2 game engine with rendering, enemy logic, and dynamic
+                                    camera.</span>
+                                <span class="lang-cn">自主开发的 C++/SDL2 游戏引擎，实现渲染、敌人逻辑和动态相机。</span>
+                                <span class="lang-fr">Développement autonome d'un RPG 2D en C++/SDL2 (moteur, logique,
+                                    caméra).</span>
+                            </p>
+                            <ul class="tags">
+                                <li>C++</li>
+                                <li>SDL2</li>
+                                <li>Game Engine</li>
+                            </ul>
+                        </div>
+                    </a>
 
-                <a href="project-web.html" class="project-card" data-category="school" style="--i:10">
-                    <img src="assets/website.webp" alt="Tourism website home page layout" loading="lazy"
-                        decoding="async">
-                    <p class="project-card__kind">
-                        <span class="lang-en">School</span>
-                        <span class="lang-cn">校内项目</span>
-                        <span class="lang-fr">Scolaire</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">Tourism Website</span>
-                        <span class="lang-cn">旅游网站前端</span>
-                        <span class="lang-fr">Intégration Web</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">Front-end of a tourism website in HTML5 / CSS3.</span>
-                        <span class="lang-cn">用 HTML5 / CSS3 实现的旅游网站前端。</span>
-                        <span class="lang-fr">Front-end d'un site touristique en HTML5 / CSS3.</span>
-                    </p>
-                    <ul class="tags">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                    </ul>
-                </a>
+                    <a href="project-subtitle.html" class="project-card project-card--row" data-category="personal" style="--i:7">
+                        <div class="project-card__thumb">
+                            <img src="assets/SubtitleTool_p1.jpg" alt="Subtitle tool main window" loading="lazy"
+                            decoding="async">
+                        </div>
+                        <div class="project-card__text">
+                            <p class="project-card__kind">
+                                <span class="lang-en">Personal</span>
+                                <span class="lang-cn">个人项目</span>
+                                <span class="lang-fr">Personnel</span>
+                            </p>
+                            <h3 class="project-card__title">
+                                <span class="lang-en">Subtitle Tool</span>
+                                <span class="lang-cn">字幕处理工具</span>
+                                <span class="lang-fr">Outil de Sous-titres</span>
+                            </h3>
+                            <p class="project-card__body">
+                                <span class="lang-en">Converts and translates LRC/SRT subtitles for audio and video.</span>
+                                <span class="lang-cn">LRC/SRT 字幕的格式转换与翻译工具。</span>
+                                <span class="lang-fr">Conversion et traduction de sous-titres LRC/SRT.</span>
+                            </p>
+                            <ul class="tags">
+                                <li>Python</li>
+                                <li>Tkinter</li>
+                            </ul>
+                        </div>
+                    </a>
 
-                <a href="project-unity.html" class="project-card project-card--wire"
-                    data-category="personal" style="--i:11">
-                    <span class="wire" aria-hidden="true"></span>
-                    <p class="project-card__kind">
-                        <span class="lang-en">Personal</span>
-                        <span class="lang-cn">个人项目</span>
-                        <span class="lang-fr">Personnel</span>
-                    </p>
-                    <h3 class="project-card__title">
-                        <span class="lang-en">3D Scenography</span>
-                        <span class="lang-cn">3D 场景设计</span>
-                        <span class="lang-fr">Scénographie 3D (Unity)</span>
-                    </h3>
-                    <p class="project-card__body">
-                        <span class="lang-en">Interactive Unity scene with C# and Shaders.</span>
-                        <span class="lang-cn">Unity 交互式场景，包含 C# 编程和 Shader 基础。</span>
-                        <span class="lang-fr">Création de scène interactive sur Unity avec C# et Shaders.</span>
-                    </p>
-                    <ul class="tags">
-                        <li>Unity</li>
-                        <li>C#</li>
-                        <li>Shaders</li>
-                    </ul>
-                </a>
+                    <a href="project-uiux.html" class="project-card project-card--row" data-category="school" style="--i:8">
+                        <div class="project-card__thumb">
+                            <img src="assets/StudentResidence_penpot.jpg"
+                            alt="Student residence management interface prototype in Penpot" loading="lazy"
+                            decoding="async">
+                        </div>
+                        <div class="project-card__text">
+                            <p class="project-card__kind">
+                                <span class="lang-en">School</span>
+                                <span class="lang-cn">校内项目</span>
+                                <span class="lang-fr">Scolaire</span>
+                            </p>
+                            <h3 class="project-card__title">
+                                <span class="lang-en">UI/UX Design</span>
+                                <span class="lang-cn">UI/UX 设计</span>
+                                <span class="lang-fr">Conception IHM/UX</span>
+                            </h3>
+                            <p class="project-card__body">
+                                <span class="lang-en">Student residence management interface using Personas and Figma /
+                                    Penpot.</span>
+                                <span class="lang-cn">学生公寓管理界面原型设计，使用 Personas 和 Figma / Penpot。</span>
+                                <span class="lang-fr">Prototypage pour gestion de résidences étudiantes (Personas,
+                                    Figma / Penpot).</span>
+                            </p>
+                            <ul class="tags">
+                                <li>Figma / Penpot</li>
+                                <li>Personas</li>
+                            </ul>
+                        </div>
+                    </a>
 
+                    <a href="project-db.html" class="project-card project-card--row" data-category="school" style="--i:9">
+                        <div class="project-card__thumb">
+                            <img src="assets/db_cdm.webp" alt="Conceptual data model of the real estate database"
+                            loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-card__text">
+                            <p class="project-card__kind">
+                                <span class="lang-en">School</span>
+                                <span class="lang-cn">校内项目</span>
+                                <span class="lang-fr">Scolaire</span>
+                            </p>
+                            <h3 class="project-card__title">
+                                <span class="lang-en">Real Estate DB</span>
+                                <span class="lang-cn">房产管理数据库</span>
+                                <span class="lang-fr">Base de Données</span>
+                            </h3>
+                            <p class="project-card__body">
+                                <span class="lang-en">Conceptual data model and SQL for real-estate management.</span>
+                                <span class="lang-cn">房产管理的概念数据模型与 SQL 实现。</span>
+                                <span class="lang-fr">Modèle conceptuel et SQL pour la gestion immobilière.</span>
+                            </p>
+                            <ul class="tags">
+                                <li>SQLite</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="project-web.html" class="project-card project-card--row" data-category="school" style="--i:10">
+                        <div class="project-card__thumb">
+                            <img src="assets/website.webp" alt="Tourism website home page layout" loading="lazy"
+                            decoding="async">
+                        </div>
+                        <div class="project-card__text">
+                            <p class="project-card__kind">
+                                <span class="lang-en">School</span>
+                                <span class="lang-cn">校内项目</span>
+                                <span class="lang-fr">Scolaire</span>
+                            </p>
+                            <h3 class="project-card__title">
+                                <span class="lang-en">Tourism Website</span>
+                                <span class="lang-cn">旅游网站前端</span>
+                                <span class="lang-fr">Intégration Web</span>
+                            </h3>
+                            <p class="project-card__body">
+                                <span class="lang-en">Front-end of a tourism website in HTML5 / CSS3.</span>
+                                <span class="lang-cn">用 HTML5 / CSS3 实现的旅游网站前端。</span>
+                                <span class="lang-fr">Front-end d'un site touristique en HTML5 / CSS3.</span>
+                            </p>
+                            <ul class="tags">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="project-unity.html" class="project-card project-card--row" data-category="personal" style="--i:11">
+                        <div class="project-card__thumb project-card__thumb--wire">
+                            <span class="wire" aria-hidden="true"></span>
+                        </div>
+                        <div class="project-card__text">
+                            <p class="project-card__kind">
+                                <span class="lang-en">Personal</span>
+                                <span class="lang-cn">个人项目</span>
+                                <span class="lang-fr">Personnel</span>
+                            </p>
+                            <h3 class="project-card__title">
+                                <span class="lang-en">3D Scenography</span>
+                                <span class="lang-cn">3D 场景设计</span>
+                                <span class="lang-fr">Scénographie 3D (Unity)</span>
+                            </h3>
+                            <p class="project-card__body">
+                                <span class="lang-en">Interactive Unity scene with C# and Shaders.</span>
+                                <span class="lang-cn">Unity 交互式场景，包含 C# 编程和 Shader 基础。</span>
+                                <span class="lang-fr">Création de scène interactive sur Unity avec C# et Shaders.</span>
+                            </p>
+                            <ul class="tags">
+                                <li>Unity</li>
+                                <li>C#</li>
+                                <li>Shaders</li>
+                            </ul>
+                        </div>
+                    </a>
+                    </div>
+                </div>
             </div>
         </section>
 
