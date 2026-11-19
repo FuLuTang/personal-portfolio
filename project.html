@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project — Haochen Tang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bento.css">
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+
+<body id="top">
+
+    <header class="rail">
+        <div class="rail__inner">
+            <a class="rail__brand" href="index.html">
+                <span class="lang-en">Haochen TANG</span>
+                <span class="lang-cn">唐 颢宸</span>
+                <span class="lang-fr">Haochen TANG</span>
+            </a>
+
+            <nav class="rail__nav" aria-label="Project navigation">
+                <a href="index.html#projects">
+                    <span class="lang-en">&larr; All projects</span>
+                    <span class="lang-cn">&larr; 全部项目</span>
+                    <span class="lang-fr">&larr; Tous les projets</span>
+                </a>
+            </nav>
+
+            <div class="rail__actions">
+                <nav class="language-switcher" aria-label="Language selection">
+                    <a href="#" data-language="en" hreflang="en">EN</a>
+                    <a href="#" data-language="zh" hreflang="zh">中文</a>
+                    <a href="#" data-language="fr" hreflang="fr">FR</a>
+                </nav>
+                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- filled by js/project.js from content/projects/<p>/<lang>.md -->
+    <main class="shell detail" data-project-detail aria-busy="true"></main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/project.js"></script>
+</body>
+
+</html>

@@ -245,3 +245,117 @@
         aspect-ratio: 3 / 2;
     }
 }
+
+/* --------------------------------------------------------------------------
+   Markdown-rendered detail pages (project.html + js/project.js)
+   -------------------------------------------------------------------------- */
+.detail__lang {
+    display: contents;
+}
+
+/* paragraphs before the first heading read as the lead */
+.detail__md > p:not(h2 ~ p) {
+    font-size: clamp(1rem, 1.15vw, 1.08rem);
+    line-height: 1.75;
+    color: var(--ink);
+    text-wrap: pretty;
+}
+
+.detail__md p {
+    line-height: 1.7;
+    color: var(--ink-2);
+}
+
+.detail__md p + p {
+    margin-top: 0.8rem;
+}
+
+.detail__md h2 {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+    margin: 1.7rem 0 0.7rem;
+}
+
+.detail__md > h2:first-child {
+    margin-top: 0;
+}
+
+.detail__md h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.5rem;
+}
+
+.detail__md ul {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.detail__md ul li {
+    position: relative;
+    padding-left: 1.05rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+}
+
+.detail__md ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    background: var(--amber);
+}
+
+.detail__md ol {
+    display: grid;
+    gap: 0.5rem;
+    padding-left: 1.2rem;
+    color: var(--ink-2);
+}
+
+.detail__md strong {
+    color: var(--ink);
+}
+
+.detail__md a {
+    color: var(--forest);
+}
+
+.detail__md code {
+    padding: 0.08rem 0.35rem;
+    border-radius: 5px;
+    background: var(--bg-tint);
+    font-size: 0.88em;
+}
+
+.detail__md pre {
+    margin: 0.8rem 0;
+    padding: 0.9rem 1rem;
+    overflow-x: auto;
+    border-radius: var(--r-sm);
+    background: var(--bg-tint);
+}
+
+.detail__md pre code {
+    padding: 0;
+    background: none;
+}
+
+.detail__md img {
+    max-width: 100%;
+    border-radius: var(--r-sm);
+}
+
+.detail__md blockquote {
+    margin: 0.8rem 0;
+    padding-left: 0.9rem;
+    border-left: 3px solid var(--line-2);
+    color: var(--ink-2);
+}
