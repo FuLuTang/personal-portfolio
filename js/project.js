@@ -3,7 +3,8 @@
    hero, facts, links and gallery, Markdown body for the story. All three
    languages are rendered up front into .lang-* wrappers, so the language
    switcher keeps working through the same CSS as the rest of the site.
-   A missing language file falls back to English. */
+   A missing language file falls back to English; a file that can't be read
+   locally is fetched from GitHub instead (see load below). */
 (() => {
     'use strict';
 
@@ -92,9 +93,18 @@
         </div>`;
     }
 
-    const load = (slug, lang) =>
-        fetch(`content/projects/${slug}/${lang}.md`, { cache: 'no-cache' })
-            .then((r) => (r.ok ? r.text() : Promise.reject(r.status)));
+    // Same-site copy first (the deployed site, or your local files under a local
+    // server). If that fails — e.g. the page was opened by double-clicking the
+    // file, where browsers block fetch — fall back to the pushed copy on GitHub.
+    const RAW = 'https://raw.githubusercontent.com/FuLuTang/personal-portfolio/main/';
+
+    const get = (url) =>
+        fetch(url, { cache: 'no-cache' }).then((r) => (r.ok ? r.text() : Promise.reject(r.status)));
+
+    const load = (slug, lang) => {
+        const path = `content/projects/${slug}/${lang}.md`;
+        return get(path).catch(() => get(RAW + path));
+    };
 
     async function init() {
         const root = document.querySelector('[data-project-detail]');
