@@ -1,12 +1,18 @@
 ---
 title: UI/UX Design
-kind: School project
+kind: School
 tags: Figma / Penpot, Personas, Prototyping
 facts:
   Category: School
   Stack: Figma / Penpot
 gallery:
-  - ![UI/UX Design in Penpot](assets/StudentResidence_penpot.jpg)
+  - ![UI/UX Design in Penpot](StudentResidence_penpot.jpg)
+category: school
+featured: false
+order: 9
+summary: Student residence management interface using Personas and Figma / Penpot.
+cover:
+  - StudentResidence_penpot.jpg
 ---
 
 I prototyped a user interface for managing student residences. This process utilized standard UX methodologies, including the creation of Personas to understand user needs, and using Figma / Penpot for high-fidelity prototyping.

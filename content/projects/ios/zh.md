@@ -9,9 +9,13 @@ facts:
 links:
   - [GitHub](https://github.com/FuLuTang/FourQuadrants)
 gallery:
-  - ![Task app showing the four urgency and importance categories](assets/task_ios_4categories.webp)
-  - ![Task app ranking view](assets/task_ios_classement.webp)
-  - ![SwiftUI source code of the task app](assets/task_ios_code.webp)
+  - ![Task app showing the four urgency and importance categories](task_ios_4categories.webp)
+  - ![Task app ranking view](task_ios_classement.webp)
+  - ![SwiftUI source code of the task app](task_ios_code.webp)
+category: personal
+featured: false
+order: 5
+summary: 使用 SwiftUI 开发的任务管理工具（紧急/重要分类）。
 ---
 
 这是一款任务管理软件。它根据紧急程度和重要性将任务分为 4 类，从而更高效地执行任务。该软件完全由我使用 Apple 的 SwiftUI 开发。该项目增强了我在用户界面 (UI) 设计、前端开发和数据结构设计方面的技能。计划在 AppStore 上发布。

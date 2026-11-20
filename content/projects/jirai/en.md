@@ -1,6 +1,6 @@
 ---
 title: VRCX-jirai Edition
-kind: Personal project
+kind: Personal
 tags: Electron, SQLite, Social Analytics, VRChat
 facts:
   Category: Personal
@@ -9,7 +9,13 @@ facts:
 links:
   - [GitHub](https://github.com/FuLuTang/VRCX-jirai)
 gallery:
-  - ![VRCX-jirai interface](assets/vrcx_jirai_preview.png)
+  - ![VRCX-jirai interface](vrcx_jirai_preview.png)
+category: personal
+featured: false
+order: 6
+summary: Enhanced VRCX with relationship tracking, co-presence analysis, and Git-style bio diffs.
+cover:
+  - vrcx_jirai_preview.png
 ---
 
 VRCX-jirai is a modified branch of the popular VRChat assistant VRCX, specifically designed to enhance social data visualization and relationship tracking. It aims to provide deep insights into co-presence history and social dynamics within the VRChat community.

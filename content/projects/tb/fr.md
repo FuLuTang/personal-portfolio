@@ -1,6 +1,6 @@
 ---
 title: AI Chatting Mail Summarizer
-kind: Projet personnel
+kind: Personnel · Module publié
 tags: Thunderbird, JavaScript, AI Integration, AI Agent
 facts:
   Catégorie: Personnel
@@ -10,9 +10,16 @@ links:
   - [GitHub](https://github.com/FuLuTang/tb-ai-summary)
   - [Modules Thunderbird](https://addons.thunderbird.net/thunderbird/addon/ai-chatting-mail-summarizer/)
 gallery:
-  - ![Main Interface](assets/tb-ai-summary_main.png)
-  - ![Briefing Feature](assets/tb-ai-summary_briefing.png)
-  - ![Settings Page](assets/tb-ai-summary_setting.png)
+  - ![Main Interface](tb-ai-summary_main.png)
+  - ![Briefing Feature](tb-ai-summary_briefing.png)
+  - ![Settings Page](tb-ai-summary_setting.png)
+category: personal
+featured: true
+order: 2
+summary: Extension agent IA pour Thunderbird, publiée sur Thunderbird Add-ons sous le nom « AI Chatting Mail Summarizer » : résumés, briefing des non-lus et chat.
+points:
+  - Boucle ReAct maison, 3 niveaux de modèles
+  - Résumés en lot limités en débit, urgence, briefing
 ---
 
 Cette extension Thunderbird exploite l'API WebExtension et JavaScript asynchrone avancé pour intégrer des LLMs (par OpenAI ou les API des autres fournisseurs) directement dans le client de messagerie. L'architecture comprend un backend modulaire pour gérer les requêtes IA et un frontend réactif pour une interaction utilisateur en temps réel.

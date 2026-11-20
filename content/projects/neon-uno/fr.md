@@ -1,6 +1,6 @@
 ---
 title: NEON-UNO
-kind: Projet universitaire en équipe
+kind: Scolaire · Projet en équipe
 tags: Vue 3, Node.js, Socket.io, AI Bots
 facts:
   Catégorie: Scolaire (projet en équipe)
@@ -9,7 +9,14 @@ facts:
 links:
   - [GitHub](https://github.com/yassine9-1/neon_uno)
 gallery:
-  - ![NEON-UNO game interface](assets/neon_uno_preview.png)
+  - ![NEON-UNO game interface](neon_uno_preview.png)
+category: school
+featured: true
+order: 4
+summary: Les joueurs rejoignent par QR code et jouent simultanément en deux équipes sur un écran projeté, avec des bots IA de plusieurs niveaux.
+points:
+  - 11 PR fusionnées (migration Vue 3, lobby, joueurs IA)
+  - IA : aléatoire, heuristique, anticipation à 2 coups
 ---
 
 NEON-UNO est un jeu de cartes multijoueur colocalisé inspiré du UNO classique. Conçu pour les rassemblements, il utilise un grand écran (projecteur ou moniteur) comme arène commune, tandis que les joueurs utilisent leur smartphone comme manette.

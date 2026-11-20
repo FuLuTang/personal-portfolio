@@ -1,6 +1,6 @@
 ---
 title: FourQuadrants (iOS)
-kind: Personal project
+kind: Personal
 tags: SwiftUI, iOS, Productivity
 facts:
   Category: Personal
@@ -9,9 +9,17 @@ facts:
 links:
   - [GitHub](https://github.com/FuLuTang/FourQuadrants)
 gallery:
-  - ![Task app showing the four urgency and importance categories](assets/task_ios_4categories.webp)
-  - ![Task app ranking view](assets/task_ios_classement.webp)
-  - ![SwiftUI source code of the task app](assets/task_ios_code.webp)
+  - ![Task app showing the four urgency and importance categories](task_ios_4categories.webp)
+  - ![Task app ranking view](task_ios_classement.webp)
+  - ![SwiftUI source code of the task app](task_ios_code.webp)
+category: personal
+featured: false
+order: 5
+summary: SwiftUI task manager with Urgency/Importance classification.
+cover:
+  - task_ios_4categories.webp
+  - task_ios_classement.webp
+  - task_ios_code.webp
 ---
 
 This is a task management software. It allows tasks to be executed more efficiently by classifying them into 4 categories according to their urgency and importance. This software was developed entirely by myself using Apple's SwiftUI. This project reinforced my skills in User Interface (UI) design, front-end development, and data structure design. A publication on the AppStore is planned.

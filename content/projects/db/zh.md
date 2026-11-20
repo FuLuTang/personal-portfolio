@@ -6,7 +6,11 @@ facts:
   分类: 校内
   技术栈: SQLite, SQL, Data Modeling
 gallery:
-  - ![Database Preview](assets/db_cdm.webp)
+  - ![Database Preview](db_cdm.webp)
+category: school
+featured: false
+order: 10
+summary: 房产管理的概念数据模型与 SQL 实现。
 ---
 
 这是一个用于房地产管理系统的数据库。它涉及业主、客户、代理商、合同和请求。该项目是与一名同学合作完成的。它让我巩固了数据结构设计和使用 SQLite 进行基础数据库开发的技能。

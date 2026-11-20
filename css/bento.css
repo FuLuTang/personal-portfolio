@@ -992,64 +992,139 @@ a {
     color: var(--ink-2);
 }
 
+/* the smaller projects: uniform upright cards, picture on top */
 .project-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14.5rem), 1fr));
+    gap: var(--gap);
 }
 
-.project-card--row {
-    flex-direction: row;
-    align-items: center;
-    gap: 0.9rem;
-    padding: 0.5rem 0.9rem 0.5rem 0.5rem;
-}
-
-.project-card--row:hover {
-    transform: translateY(-2px);
+.project-card--tile {
+    padding: 0.6rem;
 }
 
 .project-card__thumb {
     position: relative;
-    flex: 0 0 7.5rem;
+    width: 100%;
     aspect-ratio: 4 / 3;
-    overflow: hidden;
     border-radius: var(--r-sm);
-}
-
-.project-card__thumb img {
-    height: 100%;
+    background-color: var(--bg-tint);
 }
 
 .project-card__thumb--wire {
-    background-color: var(--bg-tint);
+    overflow: hidden;
     box-shadow: inset 0 0 0 1px var(--line);
 }
 
-.project-card--row .project-card__text {
-    gap: 0.25rem;
+.project-card--tile .project-card__text {
+    flex: 1 1 auto;
+    gap: 0.35rem;
+    padding: 0.35rem 0.25rem 0.2rem;
 }
 
-.project-card--row .project-card__kind {
-    padding: 0.1rem 0.4rem;
-    font-size: 0.62rem;
-}
-
-.project-card--row .project-card__title {
-    font-size: 0.95rem;
-}
-
-.project-card--row .project-card__body {
+.project-card--tile .project-card__body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     overflow: hidden;
-    font-size: 0.8rem;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
-.project-card--row .tags {
-    margin-top: 0.1rem;
+.project-card--tile .tags {
+    margin-top: auto;
+    padding-top: 0.2rem;
+}
+
+/* ---- photo stack: the card's images as a small pile of photos, each at its
+   natural aspect ratio. js/home-projects.js positions every photo (offset,
+   angle, scale, z-order) from the pointer position; CSS only animates. ---- */
+.stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    isolation: isolate;
+    touch-action: pan-y;
+}
+
+.project-card .stack__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-width: 62%;
+    max-height: 78%;
+    aspect-ratio: auto;
+    object-fit: initial;
+    padding: 4px;
+    border-radius: 9px;
+    background-color: var(--surface);
+    box-shadow:
+        0 0 0 1px var(--line-2),
+        0 10px 22px -14px rgba(28, 25, 23, 0.55);
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 60%;
+    transition:
+        transform 0.5s cubic-bezier(0.2, 0.9, 0.25, 1.18),
+        opacity 0.3s ease,
+        box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.project-card .stack__img.is-active {
+    box-shadow:
+        0 0 0 1px var(--line-2),
+        0 22px 40px -18px rgba(28, 25, 23, 0.6);
+}
+
+.stack--thumb .stack__img {
+    max-width: 68%;
+    max-height: 76%;
+    padding: 3px;
+    border-radius: 7px;
+}
+
+.stack__ticks {
+    position: absolute;
+    bottom: 0.2rem;
+    left: 50%;
+    z-index: 99;
+    display: flex;
+    gap: 4px;
+    padding: 4px 6px;
+    border-radius: 999px;
+    background-color: rgba(28, 25, 23, 0.5);
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.project-card:hover .stack__ticks {
+    opacity: 1;
+}
+
+.stack__ticks i {
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.45);
+    transition: background-color 0.12s ease;
+}
+
+.stack__ticks i.is-active {
+    background-color: #fff;
+}
+
+.stack--thumb .stack__ticks {
+    bottom: 0.3rem;
+    gap: 2px;
+    padding: 2px 4px;
+}
+
+.stack--thumb .stack__ticks i {
+    width: 7px;
+    height: 2px;
 }
 
 /* 3D Scenography has no screenshot: a CSS-drawn perspective grid stands in */
@@ -1467,9 +1542,6 @@ a {
         grid-row: span 1;
     }
 
-    .project-list {
-        grid-template-columns: minmax(0, 1fr);
-    }
 
 }
 
@@ -1503,7 +1575,12 @@ a {
         height: auto;
     }
 
-    .project-card__media img {
+    .project-card__media .stack,
+    .project-card__media .flow {
+        height: auto;
+    }
+
+    .project-card__media .stack {
         aspect-ratio: 4 / 3;
     }
 
@@ -1512,9 +1589,6 @@ a {
         padding: 0 0.35rem 0.35rem;
     }
 
-    .project-card__thumb {
-        flex-basis: 5.5rem;
-    }
 
     .hero__stats {
         grid-template-columns: minmax(0, 1fr);

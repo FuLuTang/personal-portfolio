@@ -6,7 +6,11 @@ facts:
   分类: 校内
   技术栈: Figma / Penpot
 gallery:
-  - ![UI/UX Design in Penpot](assets/StudentResidence_penpot.jpg)
+  - ![UI/UX Design in Penpot](StudentResidence_penpot.jpg)
+category: school
+featured: false
+order: 9
+summary: 学生公寓管理界面原型设计，使用 Personas 和 Figma / Penpot。
 ---
 
 我为学生公寓管理系统制作了用户界面原型。该过程采用了标准的 UX 方法论，包括创建用户画像（Personas）以理解用户需求，并使用 Figma / Penpot 进行高保真原型设计。

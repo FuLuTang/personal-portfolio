@@ -1,6 +1,6 @@
 ---
 title: Assistant d'Enchères au Bridge
-kind: Projet universitaire en équipe · Responsable front-end
+kind: Scolaire · Équipe de 9
 tags: Vue 3, Vite, LLM Agent, Team of 9
 facts:
   Catégorie: Scolaire (équipe de 9)
@@ -8,6 +8,13 @@ facts:
   Technologies: Vue 3, Vite, JSON, LLM Agent
   Code source: Hébergé sur le GitLab de l'université (non public)
 plate: Captures non publiées
+category: school
+featured: true
+order: 3
+summary: Responsable front-end : base Vue 3 + Vite, format JSON des donnes défini avec le backend, intégration front/back et intégration d'un agent LLM.
+points:
+  - Saisie carte par carte, dernière main complétée seule
+  - Sprints Scrum avec démos au product owner
 ---
 
 Projet universitaire en équipe (9 étudiants) : un assistant d'enchères au bridge. J'étais responsable du front-end.
