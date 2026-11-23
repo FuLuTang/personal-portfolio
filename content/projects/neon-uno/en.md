@@ -2,6 +2,11 @@
 title: NEON-UNO
 kind: School · Team project
 tags: Vue 3, Node.js, Socket.io, AI Bots
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 3
+  fullstack: 1
+  xr: 3
+  ai: 5
 facts:
   Category: School (team project)
   Stack: Vue 3, Node.js, Socket.io
@@ -10,9 +15,6 @@ links:
   - [GitHub](https://github.com/yassine9-1/neon_uno)
 gallery:
   - ![NEON-UNO game interface](neon_uno_preview.png)
-category: school
-featured: true
-order: 4
 summary: Players join by QR code and play simultaneously in two teams on a projector main screen, with AI bots at several difficulty levels.
 points:
   - Top committer: 11 merged PRs (Vue 3 migration, lobby, AI players)

@@ -7,9 +7,6 @@ facts:
   Technologies: Unity, C#
   Statut: Publié sur le VRChat Creator Center
 plate: UNITY · C#
-category: personal
-featured: false
-order: 12
 summary: Création de scène interactive sur Unity avec C# et Shaders.
 ---
 

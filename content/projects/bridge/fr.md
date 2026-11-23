@@ -8,9 +8,6 @@ facts:
   Technologies: Vue 3, Vite, JSON, LLM Agent
   Code source: Hébergé sur le GitLab de l'université (non public)
 plate: Captures non publiées
-category: school
-featured: true
-order: 3
 summary: Responsable front-end : base Vue 3 + Vite, format JSON des donnes défini avec le backend, intégration front/back et intégration d'un agent LLM.
 points:
   - Saisie carte par carte, dernière main complétée seule

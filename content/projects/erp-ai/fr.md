@@ -13,9 +13,6 @@ facts:
   Statut: Modules déployés pendant le stage ; tarification au stade de prototype
 links:
   - [Code public sur GitHub](https://github.com/FuLuTang/AI-Store-Analysis-System)
-category: professional
-featured: true
-order: 1
 card_title: Stage ERP IA
 summary: Fuzhou Shangbo Software (Chine), mai–juil. 2026. Plugin IA pour un ERP pharmacie/retail en production.
 points:

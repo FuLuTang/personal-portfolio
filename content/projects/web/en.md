@@ -2,15 +2,15 @@
 title: Tourism Website
 kind: School
 tags: HTML5, CSS3, Responsive
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 11
+  fullstack: 8
 facts:
   Category: School
   Stack: HTML5, CSS3
 gallery:
   - ![Website Preview](website.webp)
   - ![Website Code](website_code.webp)
-category: school
-featured: false
-order: 11
 summary: Front-end of a tourism website in HTML5 / CSS3.
 cover:
   - website.webp

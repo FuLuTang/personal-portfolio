@@ -9,9 +9,6 @@ gallery:
   - ![Gameplay](2DGame_gameing.webp)
   - ![Game Over Screen](2DGame_gameover.webp)
   - ![Code Snippet](2DGame_code.webp)
-category: school
-featured: false
-order: 7
 summary: 自主开发的 C++/SDL2 游戏引擎，实现渲染、敌人逻辑和动态相机。
 ---
 

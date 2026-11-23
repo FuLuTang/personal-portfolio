@@ -7,9 +7,6 @@ facts:
   技术栈: Figma / Penpot
 gallery:
   - ![UI/UX Design in Penpot](StudentResidence_penpot.jpg)
-category: school
-featured: false
-order: 9
 summary: 学生公寓管理界面原型设计，使用 Personas 和 Figma / Penpot。
 ---
 

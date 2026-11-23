@@ -13,9 +13,6 @@ facts:
   状态: 实习期间已部署模块；价格推荐仍属原型
 links:
   - [GitHub 公开源码](https://github.com/FuLuTang/AI-Store-Analysis-System)
-category: professional
-featured: true
-order: 1
 card_title: ERP AI 实习项目
 summary: 福州商搏软件，2026 年 5–7 月。为在运营的医药零售 ERP 开发 AI 插件。
 points:

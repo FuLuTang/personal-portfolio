@@ -2,6 +2,9 @@
 title: FourQuadrants (iOS)
 kind: Personal
 tags: SwiftUI, iOS, Productivity
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 9
+  fullstack: 6
 facts:
   Category: Personal
   Stack: SwiftUI, iOS
@@ -12,9 +15,6 @@ gallery:
   - ![Task app showing the four urgency and importance categories](task_ios_4categories.webp)
   - ![Task app ranking view](task_ios_classement.webp)
   - ![SwiftUI source code of the task app](task_ios_code.webp)
-category: personal
-featured: false
-order: 5
 summary: SwiftUI task manager with Urgency/Importance classification.
 cover:
   - task_ios_4categories.webp

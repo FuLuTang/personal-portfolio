@@ -8,9 +8,6 @@ facts:
 gallery:
   - ![Website Preview](website.webp)
   - ![Website Code](website_code.webp)
-category: school
-featured: false
-order: 11
 card_title: Intégration Web
 summary: Front-end d'un site touristique en HTML5 / CSS3.
 ---

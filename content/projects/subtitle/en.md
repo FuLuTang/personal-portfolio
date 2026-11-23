@@ -2,15 +2,15 @@
 title: Subtitle Tool
 kind: Personal
 tags: Python, Tkinter, AI API
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 8
+  ai: 4
 facts:
   Category: Personal
   Stack: Python, Tkinter, AI API
 gallery:
   - ![Subtitle Tool Screenshot 1](SubtitleTool_p1.jpg)
   - ![Subtitle Tool Screenshot 2](SubtitleTool_p2.jpg)
-category: personal
-featured: false
-order: 8
 summary: Converts and translates LRC/SRT subtitles for audio and video.
 cover:
   - SubtitleTool_p1.jpg

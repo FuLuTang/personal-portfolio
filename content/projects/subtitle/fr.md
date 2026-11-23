@@ -8,9 +8,6 @@ facts:
 gallery:
   - ![Subtitle Tool Screenshot 1](SubtitleTool_p1.jpg)
   - ![Subtitle Tool Screenshot 2](SubtitleTool_p2.jpg)
-category: personal
-featured: false
-order: 8
 card_title: Outil de Sous-titres
 summary: Conversion et traduction de sous-titres LRC/SRT.
 ---

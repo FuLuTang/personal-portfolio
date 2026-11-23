@@ -10,9 +10,6 @@ links:
   - [GitHub](https://github.com/FuLuTang/VRCX-jirai)
 gallery:
   - ![VRCX-jirai interface](vrcx_jirai_preview.png)
-category: personal
-featured: false
-order: 6
 summary: Version optimisée de VRCX avec suivi des relations et analyse de co-présence.
 ---
 

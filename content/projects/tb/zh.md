@@ -13,9 +13,6 @@ gallery:
   - ![Main Interface](tb-ai-summary_main.png)
   - ![Briefing Feature](tb-ai-summary_briefing.png)
   - ![Settings Page](tb-ai-summary_setting.png)
-category: personal
-featured: true
-order: 2
 summary: 已上架 Thunderbird 官方扩展商店（“AI Chatting Mail Summarizer”）的 AI Agent 插件：邮件摘要、未读简报与对话。
 points:
   - 自研 ReAct Agent 循环，高 / 中 / 低三档模型分工

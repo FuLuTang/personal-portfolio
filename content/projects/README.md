@@ -39,12 +39,12 @@ content/projects/<项目名>/
 title: 项目全名                      # 详情页大标题
 card_title: 短标题                   # 可选，首页卡片用
 kind: 个人项目 · 2026                # 类型标签
-category: personal                  # professional | school | personal，对应首页筛选
-featured: true                      # true = 首页大卡片（左右交替），false = 下面的紧凑列表
-order: 5                            # 首页排序，小的在前
 tags: Python, FastAPI, AI Agent
+focus:                              # 首页「您关注哪个方面？」：这个项目出现在哪些方向里，数字是排名
+  all: 3                            # all = 综合；fullstack = 全栈；ai = AI；xr = XR/游戏/具身智能
+  ai: 1                             # 排名 1–3 = 大卡片，其余是下面的小卡片；不写的方向就不显示
 summary: 首页卡片上的一句话简介
-points:                             # 只在 featured 卡片上显示
+points:                             # 只在大卡片上显示
   - 要点一
   - 要点二
 facts:                              # 详情页右侧「项目信息」
@@ -66,7 +66,7 @@ flow_arrows: both                   # 可选，箭头双向
 ---
 ```
 
-- `category`、`featured`、`order`、`tags`、`cover`、`gallery` 这些和语言无关的字段，只写在 en.md 里就行。
+- `focus`、`tags`、`cover`、`gallery` 这些和语言无关的字段，只写在 en.md 里就行。
 - zh.md / fr.md 里只需要写要翻译的字段（title、kind、summary、points、facts……），没写的都从 en.md 取。正文没写也用英文的。
 - `flow` 每一项是一列，同一列里的多个框用 `;` 隔开，`{}` 里是小字，末尾 `(core)` / `(out)` / `(muted)` 是样式。
 

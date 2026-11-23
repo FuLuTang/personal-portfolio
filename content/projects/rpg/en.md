@@ -2,6 +2,9 @@
 title: 2D RPG Game
 kind: School
 tags: C++, SDL2, Game Engine
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 6
+  xr: 2
 facts:
   Category: School
   Stack: C++, SDL2, Game Engine
@@ -9,9 +12,6 @@ gallery:
   - ![Gameplay](2DGame_gameing.webp)
   - ![Game Over Screen](2DGame_gameover.webp)
   - ![Code Snippet](2DGame_code.webp)
-category: school
-featured: false
-order: 7
 summary: C++/SDL2 game engine with rendering, enemy logic, and dynamic camera.
 cover:
   - 2DGame_gameing.webp

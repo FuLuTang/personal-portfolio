@@ -13,9 +13,6 @@ gallery:
   - ![Main Interface](tb-ai-summary_main.png)
   - ![Briefing Feature](tb-ai-summary_briefing.png)
   - ![Settings Page](tb-ai-summary_setting.png)
-category: personal
-featured: true
-order: 2
 summary: Extension agent IA pour Thunderbird, publiée sur Thunderbird Add-ons sous le nom « AI Chatting Mail Summarizer » : résumés, briefing des non-lus et chat.
 points:
   - Boucle ReAct maison, 3 niveaux de modèles

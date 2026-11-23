@@ -2,6 +2,10 @@
 title: AI Chatting Mail Summarizer
 kind: Personal · Published add-on
 tags: Thunderbird, JavaScript, AI Integration, AI Agent
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 2
+  ai: 2
+  fullstack: 5
 facts:
   Category: Personal
   Stack: Thunderbird, JavaScript, AI Integration
@@ -13,9 +17,6 @@ gallery:
   - ![Main Interface](tb-ai-summary_main.png)
   - ![Briefing Feature](tb-ai-summary_briefing.png)
   - ![Settings Page](tb-ai-summary_setting.png)
-category: personal
-featured: true
-order: 2
 summary: AI agent add-on for Thunderbird, published on Thunderbird Add-ons as “AI Chatting Mail Summarizer”: email summaries, unread briefings and chat.
 points:
   - Own ReAct agent loop with high / mid / low model tiers

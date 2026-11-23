@@ -7,9 +7,6 @@ facts:
   Technologies: Figma / Penpot
 gallery:
   - ![UI/UX Design in Penpot](StudentResidence_penpot.jpg)
-category: school
-featured: false
-order: 9
 summary: Prototypage pour gestion de résidences étudiantes (Personas, Figma / Penpot).
 ---
 

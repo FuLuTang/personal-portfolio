@@ -12,9 +12,6 @@ gallery:
   - ![Task app showing the four urgency and importance categories](task_ios_4categories.webp)
   - ![Task app ranking view](task_ios_classement.webp)
   - ![SwiftUI source code of the task app](task_ios_code.webp)
-category: personal
-featured: false
-order: 5
 summary: Outil de gestion des tâches (Urgence/Importance) en SwiftUI.
 ---
 

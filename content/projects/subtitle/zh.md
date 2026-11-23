@@ -8,9 +8,6 @@ facts:
 gallery:
   - ![Subtitle Tool Screenshot 1](SubtitleTool_p1.jpg)
   - ![Subtitle Tool Screenshot 2](SubtitleTool_p2.jpg)
-category: personal
-featured: false
-order: 8
 summary: LRC/SRT 字幕的格式转换与翻译工具。
 ---
 

@@ -8,9 +8,6 @@ facts:
 gallery:
   - ![Website Preview](website.webp)
   - ![Website Code](website_code.webp)
-category: school
-featured: false
-order: 11
 summary: 用 HTML5 / CSS3 实现的旅游网站前端。
 ---
 

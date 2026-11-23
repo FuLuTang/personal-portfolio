@@ -1,26 +1,38 @@
 /* Home page project cards, generated from content/projects/<slug>/*.md
    (see js/projects-data.js). Card fields in the front matter:
-     category: professional | school | personal     featured: true | false
-     order: number (ascending)                       card_title: optional shorter title
-     summary: one line                               points: list (featured cards)
+     focus: map of focus -> rank, e.g.  "  ai: 1"   (all | fullstack | ai | xr)
+            a project shows only in the focuses it lists; rank 1-3 = big card
+     card_title: optional shorter title               summary: one line
+     points: list (big cards)                         kind: small source label
      cover: list of images for the card (default: the gallery)
      flow: list of columns for a diagram instead of images, flow_arrows: both
    Images on a card are fanned out like photos from left to right: moving the
-   pointer (or a finger) across them pulls photo 1..n to the front. */
+   pointer (or a finger) across them pulls photo 1..n to the front.
+   js/home.js calls HomeProjects.render(focus) when the visitor picks a focus. */
 (() => {
     'use strict';
 
     const P = window.Projects;
     const inline = (s) => marked.parseInline(String(s || ''));
+    const BIG = 3;
 
     // one span per language; the stylesheet shows the current one
     const tri = (project, pick) =>
         P.LANGS.map(([lang, cls]) => `<span class="${cls}">${pick(project[lang].meta)}</span>`).join('');
 
+    // "focus:" map -> { all: 3, ai: 1 }
+    function ranks(meta) {
+        const out = {};
+        (Array.isArray(meta.focus) ? meta.focus : []).forEach((pair) => {
+            if (Array.isArray(pair)) out[pair[0]] = Number(pair[1]) || 99;
+        });
+        return out;
+    }
+
     /* ---------- media ---------- */
-    function stack(slug, images, size) {
+    function stack(images, size) {
         if (!images.length) return '';
-        const imgs = images.map(({ alt, src }, i) =>
+        const imgs = images.map(({ alt, src }) =>
             `<img class="stack__img" src="${P.esc(src)}" alt="${P.esc(alt)}" loading="lazy" decoding="async">`).join('');
         const ticks = images.length > 1
             ? `<span class="stack__ticks" aria-hidden="true">${images.map(() => '<i></i>').join('')}</span>`
@@ -40,10 +52,12 @@
         return `<div class="flow" aria-hidden="true">${cols.join(arrow)}</div>`;
     }
 
+    // no screenshot: a perspective grid stands in
+    const wire = '<div class="wire" aria-hidden="true"><span></span></div>';
+
     function images(project) {
         const meta = project.en.meta;
         const cover = P.list(meta.cover);
-        // alt text from the gallery in the viewer's language would need 3 stacks; English alt is enough here
         const gallery = P.list(meta.gallery).map((g) => P.image(project.slug, g));
         if (!cover.length) return gallery;
         return cover.map((c) => {
@@ -54,42 +68,45 @@
     }
 
     /* ---------- cards ---------- */
-    function card(project, i) {
+    const MORE = '<span class="lang-en">Read more</span><span class="lang-cn">看详情</span><span class="lang-fr">Voir le détail</span>';
+
+    function card(project, i, big) {
         const { slug } = project;
         const meta = project.en.meta;
-        const featured = P.truthy(meta.featured);
         const pics = images(project);
         const flowCols = P.list(meta.flow);
         const title = (m) => inline(m.card_title || m.title);
         const tags = P.tags(meta.tags).map((t) => `<li>${P.esc(t)}</li>`).join('');
+        const num = String(i + 1).padStart(2, '0');
 
         const text = `
-            <p class="project-card__kind">${tri(project, (m) => inline(m.kind))}</p>
-            <h3 class="project-card__title">${tri(project, title)}</h3>
-            <p class="project-card__body">${tri(project, (m) => inline(m.summary))}</p>
-            ${featured ? P.LANGS.map(([lang, cls]) => {
+            <p class="card__kind"><span class="card__num">${num}</span>${tri(project, (m) => inline(m.kind))}</p>
+            <h3 class="card__title">${tri(project, title)}</h3>
+            <p class="card__body">${tri(project, (m) => inline(m.summary))}</p>
+            ${big ? P.LANGS.map(([lang, cls]) => {
                 const pts = P.list(project[lang].meta.points);
                 return pts.length ? `<ul class="points ${cls}">${pts.map((p) => `<li>${inline(p)}</li>`).join('')}</ul>` : '';
             }).join('') : ''}
-            <ul class="tags">${tags}</ul>`;
+            <ul class="tags">${tags}</ul>
+            ${big ? `<span class="card__more">${MORE}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>` : ''}`;
 
         const href = `project.html?p=${encodeURIComponent(slug)}`;
-        const attrs = `href="${href}" data-category="${P.esc(meta.category || 'personal')}" style="--i:${i}"`;
+        const attrs = `href="${href}" data-reveal style="--d:${Math.min(i, 6) * 70}ms"`;
 
-        if (featured) {
-            const media = pics.length ? stack(slug, pics, 'feature')
-                : flowCols.length ? flow(flowCols, meta.flow_arrows) : '';
-            return `<a class="project-card project-card--feature" ${attrs}>
-                <div class="project-card__media">${media}</div>
-                <div class="project-card__text">${text}</div>
+        if (big) {
+            const media = pics.length ? stack(pics, 'feature')
+                : flowCols.length ? flow(flowCols, meta.flow_arrows) : wire;
+            return `<a class="card card--big${i % 2 ? ' is-flipped' : ''}" ${attrs}>
+                <div class="card__media">${media}</div>
+                <div class="card__text">${text}</div>
+                <span class="corners" aria-hidden="true"></span>
             </a>`;
         }
-        const thumb = pics.length
-            ? `<div class="project-card__thumb">${stack(slug, pics, 'thumb')}</div>`
-            : '<div class="project-card__thumb project-card__thumb--wire"><span class="wire" aria-hidden="true"></span></div>';
-        return `<a class="project-card project-card--tile" ${attrs}>
-            ${thumb}
-            <div class="project-card__text">${text}</div>
+        const thumb = pics.length ? stack(pics, 'thumb') : wire;
+        return `<a class="card card--tile" ${attrs}>
+            <div class="card__thumb">${thumb}</div>
+            <div class="card__text">${text}</div>
+            <span class="corners" aria-hidden="true"></span>
         </a>`;
     }
 
@@ -98,8 +115,8 @@
        each at its natural size and a slight angle. Photo i sits roughly where
        the pointer has to be to pick it: moving the pointer (or a finger dragged
        sideways) pulls that photo to the front, the others stay in their slots
-       behind it, stacked by distance. Hovering also tilts the front photo
-       toward the pointer. */
+       behind it, stacked by distance. Hovering also grows the front photo to
+       fill the box and tilts it toward the pointer. */
     const ANGLES = [-4, 3, -2.2, 4.2, -3, 2.4, -4.6, 2.8];
     const LIFT = [2.5, -3, 3.5, -2, 3, -3.5, 2, -2.5];   // small vertical jitter, % of own height
 
@@ -142,6 +159,8 @@
 
     function bindStacks(root) {
         root.querySelectorAll('[data-stack]').forEach((el) => {
+            if (el.dataset.bound) return;
+            el.dataset.bound = '1';
             const count = el.querySelectorAll('.stack__img').length;
             let active = 0;
             const redraw = () => layout(el, active);
@@ -149,7 +168,6 @@
             // slot positions depend on each photo's rendered width
             el.querySelectorAll('.stack__img').forEach((img) => { if (!img.complete) img.addEventListener('load', redraw); });
             if (window.ResizeObserver) new ResizeObserver(redraw).observe(el);
-            if (count < 2) return;
 
             const move = (event) => {
                 const box = el.getBoundingClientRect();
@@ -169,29 +187,39 @@
     }
 
     /* ---------- page ---------- */
-    async function init() {
+    let loaded = null;
+    const load = () => (loaded = loaded || P.listSlugs()
+        .then((slugs) => Promise.all(slugs.map((s) => P.loadProject(s).catch(() => null))))
+        .then((list) => list.filter(Boolean)));
+
+    async function render(focus) {
         const grid = document.querySelector('[data-project-grid]');
         if (!grid) return;
         const featuredList = grid.querySelector('[data-featured-list]');
         const otherList = grid.querySelector('[data-other-list]');
-
+        grid.setAttribute('aria-busy', 'true');
         try {
-            const slugs = await P.listSlugs();
-            const projects = (await Promise.all(slugs.map((s) => P.loadProject(s).catch(() => null)))).filter(Boolean);
-            projects.sort((a, b) => (Number(a.en.meta.order) || 999) - (Number(b.en.meta.order) || 999) || a.slug.localeCompare(b.slug));
-
-            const featured = projects.filter((p) => P.truthy(p.en.meta.featured));
-            const others = projects.filter((p) => !P.truthy(p.en.meta.featured));
-            featuredList.innerHTML = featured.map(card).join('');
-            otherList.innerHTML = others.map((p, i) => card(p, featured.length + i)).join('');
+            const projects = (await load())
+                .map((p) => ({ p, rank: ranks(p.en.meta)[focus] }))
+                .filter((x) => x.rank !== undefined)
+                .sort((a, b) => a.rank - b.rank || a.p.slug.localeCompare(b.p.slug));
+            const big = projects.filter((x) => x.rank <= BIG).map((x) => x.p);
+            const rest = projects.filter((x) => x.rank > BIG).map((x) => x.p);
+            featuredList.innerHTML = big.map((p, i) => card(p, i, true)).join('');
+            otherList.innerHTML = rest.map((p, i) => card(p, big.length + i, false)).join('');
             bindStacks(grid);
         } catch (_) {
             featuredList.innerHTML = P.LANGS.map(([, cls], i) =>
-                `<p class="tile__body ${cls}">${['Projects could not be loaded.', '项目加载失败。', 'Impossible de charger les projets.'][i]}</p>`).join('');
+                `<p class="${cls}">${['Projects could not be loaded.', '项目加载失败。', 'Impossible de charger les projets.'][i]}</p>`).join('');
+            otherList.innerHTML = '';
         }
         grid.removeAttribute('aria-busy');
-        if (window.refreshProjectFilter) window.refreshProjectFilter();
+        document.dispatchEvent(new CustomEvent('projects:rendered'));
     }
 
-    document.addEventListener('DOMContentLoaded', init);
+    window.HomeProjects = { render, bindStacks };
+    document.addEventListener('DOMContentLoaded', () => {
+        bindStacks(document);   // the hero's photo fan
+        load();                 // start fetching before a focus is picked
+    });
 })();

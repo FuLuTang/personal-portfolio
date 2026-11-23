@@ -2,14 +2,14 @@
 title: Real Estate DB
 kind: School
 tags: SQLite, SQL, Data Modeling
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 10
+  fullstack: 7
 facts:
   Category: School
   Stack: SQLite, SQL, Data Modeling
 gallery:
   - ![Database Preview](db_cdm.webp)
-category: school
-featured: false
-order: 10
 summary: Conceptual data model and SQL for real-estate management.
 cover:
   - db_cdm.webp

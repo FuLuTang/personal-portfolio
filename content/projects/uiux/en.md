@@ -2,14 +2,14 @@
 title: UI/UX Design
 kind: School
 tags: Figma / Penpot, Personas, Prototyping
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 12
+  fullstack: 9
 facts:
   Category: School
   Stack: Figma / Penpot
 gallery:
   - ![UI/UX Design in Penpot](StudentResidence_penpot.jpg)
-category: school
-featured: false
-order: 9
 summary: Student residence management interface using Personas and Figma / Penpot.
 cover:
   - StudentResidence_penpot.jpg

@@ -2,6 +2,10 @@
 title: ERP AI · Retail Analysis & Assistance
 kind: Professional internship · 2026
 tags: Python, FastAPI, AI Agent, ERP, Linux
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 1
+  ai: 1
+  fullstack: 2
 facts:
   Period: 6 May – 25 July 2026
   Role: Full-stack AI developer intern
@@ -13,9 +17,6 @@ facts:
   Status: Modules deployed during the internship; pricing remains a prototype
 links:
   - [Public source code on GitHub](https://github.com/FuLuTang/AI-Store-Analysis-System)
-category: professional
-featured: true
-order: 1
 card_title: ERP AI Internship
 summary: Fuzhou Shangbo Software (China), May–Jul 2026. AI plugin for a live pharmacy/retail ERP.
 points:

@@ -7,9 +7,6 @@ facts:
   Technologies: SQLite, SQL, Data Modeling
 gallery:
   - ![Database Preview](db_cdm.webp)
-category: school
-featured: false
-order: 10
 card_title: Base de Données
 summary: Modèle conceptuel et SQL pour la gestion immobilière.
 ---

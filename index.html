@@ -1,545 +1,358 @@
 <!DOCTYPE html>
 <html lang="en" data-title-en="Haochen Tang — Portfolio" data-title-zh="唐颢宸 — 作品集" data-title-fr="Haochen Tang — Portfolio">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haochen Tang — Portfolio</title>
+    <meta name="description" content="Haochen TANG — BUT Informatique student (IUT d'Orsay). AI agents, full-stack, XR / real-time 3D.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bento.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
 </head>
-
 <body id="top">
+    <div class="progress" aria-hidden="true"><span data-progress></span></div>
 
-    <header class="rail">
-        <div class="rail__inner">
-            <a class="rail__brand" href="#top">
-                <span class="lang-en">Haochen TANG</span>
-                <span class="lang-cn">唐 颢宸</span>
-                <span class="lang-fr">Haochen TANG</span>
+    <header class="bar">
+        <div class="bar__inner">
+            <a class="bar__brand" href="#top">
+                <span class="bar__mark" aria-hidden="true">HT</span>
+                <span class="lang-en">Haochen TANG</span><span class="lang-cn">唐颢宸</span><span class="lang-fr">Haochen TANG</span>
             </a>
-
-            <nav class="rail__nav" aria-label="Section navigation">
-                <a href="#projects">
-                    <span class="lang-en">Projects</span>
-                    <span class="lang-cn">项目</span>
-                    <span class="lang-fr">Projets</span>
-                </a>
-                <a href="#opensource">
-                    <span class="lang-en">Open source</span>
-                    <span class="lang-cn">开源贡献</span>
-                    <span class="lang-fr">Open source</span>
-                </a>
-                <a href="#contact">
-                    <span class="lang-en">Contact</span>
-                    <span class="lang-cn">联系</span>
-                    <span class="lang-fr">Contact</span>
-                </a>
+            <nav class="bar__nav" aria-label="Section navigation">
+                <a href="#focus"><span class="lang-en">Focus</span><span class="lang-cn">方向</span><span class="lang-fr">Profil</span></a>
+                <a href="#work"><span class="lang-en">Projects</span><span class="lang-cn">项目</span><span class="lang-fr">Projets</span></a>
+                <a href="#contact"><span class="lang-en">Contact</span><span class="lang-cn">联系</span><span class="lang-fr">Contact</span></a>
             </nav>
-
-            <div class="rail__actions">
-                <nav class="language-switcher" aria-label="Language selection">
+            <div class="bar__actions">
+                <nav class="lang" aria-label="Language selection">
                     <a href="#" data-language="en" hreflang="en">EN</a>
                     <a href="#" data-language="zh" hreflang="zh">中文</a>
                     <a href="#" data-language="fr" hreflang="fr">FR</a>
                 </nav>
-                <button id="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"></button>
+                <button id="theme-toggle" class="icon-btn" type="button" data-theme-toggle aria-label="Switch to dark mode"></button>
             </div>
         </div>
     </header>
 
-    <main class="shell">
+    <main class="page">
 
-        <!-- ============ Bento 01 — identity matrix ============ -->
-        <section class="section" aria-label="Introduction">
-            <div class="bento bento--profile">
-
-                <article class="tile tile--hero" style="--i:0">
-                    <p class="hero__avail">
-                        <span class="hero__dot" aria-hidden="true"></span>
-                        <span class="lang-en">Open to an internship · from 18 Jan 2027 · 15–16 weeks</span>
-                        <span class="lang-cn">寻找实习 · 2027 年 1 月 18 日起 · 15–16 周</span>
-                        <span class="lang-fr">Recherche un stage · dès le 18 janv. 2027 · 15–16 semaines</span>
-                    </p>
-                    <p class="tile__label tile__label--onDark">
-                        <span class="lang-en">Portfolio</span>
-                        <span class="lang-cn">作品集</span>
-                        <span class="lang-fr">Portfolio</span>
-                    </p>
-                    <h1 class="hero__name">
-                        <span class="lang-en">Haochen TANG</span>
-                        <span class="lang-cn">唐 颢宸</span>
-                        <span class="lang-fr">Haochen TANG</span>
-                    </h1>
-                    <p class="hero__role">
-                        <span class="lang-en">Computer Scientist / Developer</span>
-                        <span class="lang-cn">计算机科学 / 开发者</span>
-                        <span class="lang-fr">Informaticien / Développeur</span>
-                    </p>
-                    <hr class="hero__rule">
-                    <div class="hero__panel">
-                        <ul class="hero__facts">
-                            <li>
-                                <span class="lang-en">IUT d'Orsay — Université Paris-Saclay</span>
-                                <span class="lang-cn">奥赛 IUT — 巴黎萨克雷大学</span>
-                                <span class="lang-fr">IUT d'Orsay — Université Paris-Saclay</span>
-                            </li>
-                            <li>
-                                <span class="lang-en">BUT Informatique (Bachelor of Technology in Computer Science), 3rd year (in progress)</span>
-                                <span class="lang-cn">计算机科学技术学士 BUT Informatique，三年级（在读）</span>
-                                <span class="lang-fr">BUT Informatique, 3e année (en cours)</span>
-                            </li>
-                            <li>
-                                <span class="lang-en">Direction: AI applications, LLM agents, backend &amp; application development</span>
-                                <span class="lang-cn">方向：AI 应用、大模型智能体（LLM Agent）、后端与应用开发</span>
-                                <span class="lang-fr">Orientation : applications d'IA, agents LLM, développement backend et applicatif</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <dl class="hero__stats">
-                        <div>
-                            <dt data-contrib-stat="merged">16</dt>
-                            <dd>
-                                <span class="lang-en">merged PRs in other repos</span>
-                                <span class="lang-cn">个 PR 被他人仓库合并</span>
-                                <span class="lang-fr">PR fusionnées ailleurs</span>
-                            </dd>
-                        </div>
-                        <div>
-                            <dt>1</dt>
-                            <dd>
-                                <span class="lang-en">add-on on Thunderbird store</span>
-                                <span class="lang-cn">个插件上架 Thunderbird</span>
-                                <span class="lang-fr">module sur le store Thunderbird</span>
-                            </dd>
-                        </div>
-                        <div>
-                            <dt>3</dt>
-                            <dd>
-                                <span class="lang-en">AI services built in internship</span>
-                                <span class="lang-cn">个实习中开发的 AI 服务</span>
-                                <span class="lang-fr">services IA développés en stage</span>
-                            </dd>
-                        </div>
-                    </dl>
-                    <div class="hero__cta">
-                        <a class="hero__btn hero__btn--primary" href="mailto:tanghaochen0506@hotmail.com">
-                            <span class="lang-en">Email me</span>
-                            <span class="lang-cn">发邮件</span>
-                            <span class="lang-fr">M'écrire</span>
-                        </a>
-                        <a class="hero__btn" href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a class="hero__btn" href="https://www.linkedin.com/in/haochen-tang-fulu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    </div>
-                </article>
-
-                <article class="tile tile--wide" style="--i:1">
-                    <h2 class="tile__title">
-                        <span class="lang-en">Profile</span>
-                        <span class="lang-cn">个人简介</span>
-                        <span class="lang-fr">Profil</span>
-                    </h2>
-                    <p class="tile__body tile__body--strong">
-                        <span class="lang-en">Third-year BUT Informatique student who builds things end to end. In my
-                            2026 internship I designed an LLM agent framework from scratch inside a live pharmacy/retail
-                            ERP (FastAPI, sandboxed tools, traceable actions). On my own time I ship tools people use: a
-                            Thunderbird AI add-on on the official store and PRs merged into other people's
-                            projects.</span>
-                        <span class="lang-cn">计算机 BUT 三年级学生，习惯把东西从头做到能用。2026 年实习时，在一个正在运营的医药零售 ERP 里从零设计了 LLM Agent 框架（FastAPI、沙箱化的工具调用、操作可溯源）。课余做别人真的会用的工具：上架 Thunderbird 官方商店的 AI 插件，以及被其他开源项目合并的 PR。</span>
-                        <span class="lang-fr">Étudiant en 3e année de BUT Informatique, j'aime mener un projet jusqu'au
-                            bout. Lors de mon stage 2026, j'ai conçu de zéro un framework d'agent LLM dans un ERP
-                            pharmacie/retail en production (FastAPI, outils en sandbox, actions traçables). En dehors,
-                            je publie des outils utilisés : une extension IA sur le store officiel de Thunderbird et
-                            des PR fusionnées dans d'autres projets.</span>
-                    </p>
-                </article>
-
-                <article class="tile" style="--i:2">
-                    <h2 class="tile__title">
-                        <span class="lang-en">Education</span>
-                        <span class="lang-cn">教育经历</span>
-                        <span class="lang-fr">Formation</span>
-                    </h2>
-                    <ul class="stack">
-                        <li class="stack__row">
-                            <span class="stack__meta">
-                                <span class="lang-en">2024 – 2027</span>
-                                <span class="lang-cn">2024 – 2027</span>
-                                <span class="lang-fr">2024 – 2027</span>
-                            </span>
-                            <span class="stack__main">
-                                <span class="lang-en">IUT d'Orsay — Université Paris-Saclay</span>
-                                <span class="lang-cn">奥赛 IUT — 巴黎萨克雷大学</span>
-                                <span class="lang-fr">IUT d'Orsay — Université Paris-Saclay</span>
-                            </span>
-                            <span class="stack__sub">
-                                <span class="lang-en">BUT Informatique — 3rd year (in progress)</span>
-                                <span class="lang-cn">BUT Informatique（计算机科学技术学士）— 三年级（在读）</span>
-                                <span class="lang-fr">BUT Informatique — 3e année (en cours)</span>
-                            </span>
-                        </li>
-                        <li class="stack__row">
-                            <span class="stack__meta">2023</span>
-                            <span class="stack__main">
-                                <span class="lang-en">Tianjin Yao Hua JiaCheng International High School</span>
-                                <span class="lang-cn">天津耀华嘉诚国际中学</span>
-                                <span class="lang-fr">Lycée international Yao Hua JiaCheng de Tianjin</span>
-                            </span>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="tile" style="--i:3">
-                    <h2 class="tile__title">
-                        <span class="lang-en">Languages</span>
-                        <span class="lang-cn">语言能力</span>
-                        <span class="lang-fr">Langues</span>
-                    </h2>
-                    <dl class="levels">
-                        <div class="levels__row">
-                            <dt>
-                                <span class="lang-en">French</span>
-                                <span class="lang-cn">法语</span>
-                                <span class="lang-fr">Français</span>
-                            </dt>
-                            <dd>B2</dd>
-                        </div>
-                        <div class="levels__row">
-                            <dt>
-                                <span class="lang-en">English</span>
-                                <span class="lang-cn">英语</span>
-                                <span class="lang-fr">Anglais</span>
-                            </dt>
-                            <dd>B2</dd>
-                        </div>
-                        <div class="levels__row">
-                            <dt>
-                                <span class="lang-en">Chinese</span>
-                                <span class="lang-cn">中文</span>
-                                <span class="lang-fr">Chinois</span>
-                            </dt>
-                            <dd>
-                                <span class="lang-en">Native</span>
-                                <span class="lang-cn">母语</span>
-                                <span class="lang-fr">Maternelle</span>
-                            </dd>
-                        </div>
-                    </dl>
-                </article>
-
-                <article class="tile tile--wide" style="--i:4">
-                    <h2 class="tile__title">
-                        <span class="lang-en">Ambitions</span>
-                        <span class="lang-cn">职业抱负</span>
-                        <span class="lang-fr">Ambitions</span>
-                    </h2>
-                    <p class="tile__body">
-                        <span class="lang-en">My main goal is to work in software development, especially on AI
-                            applications and LLM agents, as well as backend and application development. In the long
-                            term, I would like to participate in innovative projects, or even manage a small development
-                            team.</span>
-                        <span class="lang-cn">我的主要目标是从事软件开发工作，特别是 AI 应用与大模型智能体（LLM Agent），以及后端与应用开发。从长远来看，我希望参与创新项目，甚至领导一个小型开发团队。</span>
-                        <span class="lang-fr">Mon objectif principal est de travailler dans le développement logiciel,
-                            notamment sur les applications d'IA et les agents LLM, ainsi que le développement backend et
-                            applicatif. À long terme, je voudrais participer à des projets innovants, ou même gérer une
-                            petite équipe de développement.</span>
-                    </p>
-                </article>
-
-                <article class="tile tile--tall" style="--i:5">
-                    <p class="tile__label">
-                        <span class="lang-en">Toolbox</span>
-                        <span class="lang-cn">技能专长</span>
-                        <span class="lang-fr">Compétences</span>
-                    </p>
-                    <h2 class="tile__title">Hard</h2>
-                    <ul class="specs specs--keyed">
-                        <li><b>AI</b> LLM apps, agents, tool calling, MCP, RAG</li>
-                        <li><b>Backend</b> Python (FastAPI, Pandas), Node.js, Java, C++, PHP</li>
-                        <li><b>Front</b> Vue 3, JavaScript, HTML/CSS</li>
-                        <li><b>Data</b> SQL, PL/SQL, SQLite, DuckDB</li>
-                        <li><b>Apps</b> SwiftUI (iOS), .NET, Unity (C#)</li>
-                        <li><b>Ops</b> Git, Linux, Nginx, systemd</li>
-                    </ul>
-                    <h2 class="tile__title tile__title--spaced">Soft</h2>
-                    <ul class="specs">
-                        <li>
-                            <span class="lang-en">Teamwork &amp; Git</span>
-                            <span class="lang-cn">团队协作 &amp; Git</span>
-                            <span class="lang-fr">Travail en groupe avec GIT</span>
-                        </li>
-                        <li>
-                            <span class="lang-en">Project Management</span>
-                            <span class="lang-cn">项目管理</span>
-                            <span class="lang-fr">Gestion de projets</span>
-                        </li>
-                        <li>
-                            <span class="lang-en">Rigorous &amp; Methodical</span>
-                            <span class="lang-cn">严谨 &amp; 有条理</span>
-                            <span class="lang-fr">Rigoureux et méthodique</span>
-                        </li>
-                        <li>
-                            <span class="lang-en">Client Requirements Analysis</span>
-                            <span class="lang-cn">客户需求分析</span>
-                            <span class="lang-fr">Recueil de besoins client</span>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="tile tile--tall tile--tinted" style="--i:6">
-                    <p class="tile__label">
-                        <span class="lang-en">Roadmap</span>
-                        <span class="lang-cn">职业规划</span>
-                        <span class="lang-fr">Parcours</span>
-                    </p>
-                    <ol class="roadmap">
-                        <li class="roadmap__item">
-                            <span class="roadmap__date">
-                                <span class="lang-en">Long term</span>
-                                <span class="lang-cn">长期目标</span>
-                                <span class="lang-fr">À long terme</span>
-                            </span>
-                            <span class="roadmap__text">
-                                <span class="lang-en">Start a Software Company</span>
-                                <span class="lang-cn">创办软件公司</span>
-                                <span class="lang-fr">Débuter une entreprise de logiciels</span>
-                            </span>
-                        </li>
-                        <li class="roadmap__item">
-                            <span class="roadmap__date">2030 – 2035</span>
-                            <span class="roadmap__text">
-                                <span class="lang-en">Work &amp; Gain Experience</span>
-                                <span class="lang-cn">工作积累经验</span>
-                                <span class="lang-fr">Travailler, acquérir de l'expérience</span>
-                            </span>
-                        </li>
-                        <li class="roadmap__item">
-                            <span class="roadmap__date">2027 – 2029</span>
-                            <span class="roadmap__text">
-                                <span class="lang-en">Master's in Computer Science</span>
-                                <span class="lang-cn">计算机科学硕士</span>
-                                <span class="lang-fr">Obtenir un master en informatique</span>
-                            </span>
-                        </li>
-                    </ol>
-                    <p class="tile__body tile__body--small tile__body--foot">
-                        <span class="lang-en">My career goal is to become an expert in software development and
-                            technology project management. After obtaining a master's degree in computer science, I
-                            wish to create my own software company, specializing in innovative solutions to facilitate
-                            daily life and professional activities.</span>
-                        <span class="lang-cn">我的职业目标是成为软件开发和技术项目管理方面的专家。在获得计算机科学硕士学位后，我希望创办自己的软件公司，专注于开发便利日常生活和商业活动的创新解决方案。</span>
-                        <span class="lang-fr">Mon objectif de carrière est de devenir un expert en développement
-                            logiciel et en gestion de projets technologiques. Après avoir obtenu un master en
-                            informatique, je souhaite créer ma propre entreprise de logiciels, spécialisée dans des
-                            solutions innovantes pour faciliter la vie quotidienne et les activités
-                            professionnelles.</span>
-                    </p>
-                </article>
-
-                <article class="tile tile--wide" style="--i:7">
-                    <h2 class="tile__title">
-                        <span class="lang-en">Interests</span>
-                        <span class="lang-cn">兴趣爱好</span>
-                        <span class="lang-fr">Centres d'Intérêt</span>
-                    </h2>
-                    <ul class="stack stack--tight">
-                        <li class="stack__row">
-                            <span class="stack__main">
-                                <span class="lang-en">Sports</span>
-                                <span class="lang-cn">体育</span>
-                                <span class="lang-fr">Sportifs</span>
-                            </span>
-                            <span class="stack__sub">
-                                <span class="lang-en">Cycling, Taekwondo</span>
-                                <span class="lang-cn">自行车, 跆拳道</span>
-                                <span class="lang-fr">Cyclisme, Taekwondo</span>
-                            </span>
-                        </li>
-                        <li class="stack__row">
-                            <span class="stack__main">
-                                <span class="lang-en">Artistic</span>
-                                <span class="lang-cn">艺术</span>
-                                <span class="lang-fr">Artistiques</span>
-                            </span>
-                            <span class="stack__sub">
-                                <span class="lang-en">Photography, Video Editing, Digital Art</span>
-                                <span class="lang-cn">摄影, 视频剪辑, 数字绘画</span>
-                                <span class="lang-fr">Photographie, Montage vidéo, Dessin numérique</span>
-                            </span>
-                        </li>
-                        <li class="stack__row">
-                            <span class="stack__main">
-                                <span class="lang-en">Other</span>
-                                <span class="lang-cn">其他</span>
-                                <span class="lang-fr">Autres</span>
-                            </span>
-                            <span class="stack__sub">
-                                <span class="lang-en">3D Modeling, Circuit Design, Music, Video Games</span>
-                                <span class="lang-cn">3D建模, 电路设计, 音乐, 电子游戏</span>
-                                <span class="lang-fr">Modélisation 3D, Conception de circuits, Musique, Jeux
-                                    vidéo</span>
-                            </span>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="tile tile--wide" id="contact" style="--i:8">
-                    <h2 class="tile__title">
-                        <span class="lang-en">Contact</span>
-                        <span class="lang-cn">联系我</span>
-                        <span class="lang-fr">Contact</span>
-                    </h2>
-                    <ul class="links">
-                        <li>
-                            <a class="links__item" href="mailto:tanghaochen0506@hotmail.com"> <!-- dsh-skip-sensitive -->
-                                <span class="links__key">
-                                    <span class="lang-en">Email</span>
-                                    <span class="lang-cn">邮箱</span>
-                                    <span class="lang-fr">E-mail</span>
-                                </span>
-                                <span class="links__value">tanghaochen0506@hotmail.com</span> <!-- dsh-skip-sensitive -->
-                            </a>
-                        </li>
-                        <li>
-                            <a class="links__item" href="https://github.com/FuLuTang" target="_blank"
-                                rel="noopener noreferrer" title="Visit GitHub Profile">
-                                <span class="links__key">GitHub</span>
-                                <span class="links__value">github.com/FuLuTang</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="links__item" href="https://www.linkedin.com/in/haochen-tang-fulu/" target="_blank"
-                                rel="noopener noreferrer" title="Visit LinkedIn Profile">
-                                <span class="links__key">LinkedIn</span>
-                                <span class="links__value">linkedin.com/in/haochen-tang-fulu</span>
-                            </a>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="tile tile--wide" style="--i:9">
-                    <h2 class="tile__title">
-                        <span class="lang-en">GitHub Activity</span>
-                        <span class="lang-cn">GitHub 活跃度</span>
-                        <span class="lang-fr">Activité GitHub</span>
-                    </h2>
-                    <a class="chart" href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer"
-                        title="Visit GitHub Profile">
-                        <img src="https://ghchart.rshah.org/1F6F5C/FuLuTang"
-                            alt="FuLuTang's GitHub contribution calendar" loading="lazy" decoding="async">
+        <!-- ================= hero ================= -->
+        <section class="hero" aria-label="Introduction">
+            <div class="hero__text">
+                <p class="pill" data-reveal>
+                    <span class="pill__dot" aria-hidden="true"></span>
+                    <span class="lang-en">Open to an internship · from 18 Jan 2027 · 15–16 weeks</span>
+                    <span class="lang-cn">寻找实习 · 2027 年 1 月 18 日起 · 15–16 周</span>
+                    <span class="lang-fr">Recherche un stage · dès le 18 janv. 2027 · 15–16 semaines</span>
+                </p>
+                <h1 class="hero__name" aria-label="Haochen TANG">
+                    <span class="hero__line" aria-hidden="true"><span>Haochen</span></span>
+                    <span class="hero__line" aria-hidden="true"><span>TANG<i class="hero__dot">.</i></span></span>
+                </h1>
+                <p class="hero__cn lang-cn" aria-hidden="true">唐 颢宸</p>
+                <p class="hero__intro" data-reveal>
+                    <span class="lang-en">Third-year BUT Informatique student at IUT d'Orsay (Université Paris-Saclay). I like taking things from zero to something people use: in my internship I built an LLM agent framework inside a live ERP; on my own time I ship tools people actually install.</span>
+                    <span class="lang-cn">计算机 BUT 三年级，在奥赛 IUT（巴黎萨克雷大学）。喜欢把东西从零做到真的有人用：实习时在线上运行的 ERP 里从零搭了 LLM Agent 框架，课余做别人真的会装来用的工具。</span>
+                    <span class="lang-fr">Étudiant en 3e année de BUT Informatique à l'IUT d'Orsay (Université Paris-Saclay). J'aime mener un projet de zéro jusqu'à l'usage réel : en stage, j'ai construit un framework d'agent LLM dans un ERP en production ; à côté, je publie des outils que des gens installent.</span>
+                </p>
+                <div class="hero__cta" data-reveal>
+                    <a class="btn btn--solid" href="mailto:tanghaochen0506@hotmail.com">
+                        <span class="lang-en">Email me</span><span class="lang-cn">发邮件</span><span class="lang-fr">M'écrire</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
-                </article>
+                    <a class="btn" href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="btn" href="https://www.linkedin.com/in/haochen-tang-fulu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
 
+            <div class="hero__media" data-parallax>
+                <div class="stack stack--hero" data-stack>
+                    <img class="stack__img" src="content/projects/erp-ai/price-estimation.jpg" alt="ERP AI — price estimation" decoding="async">
+                    <img class="stack__img" src="content/projects/neon-uno/neon_uno_preview.png" alt="NEON-UNO" decoding="async">
+                    <img class="stack__img" src="content/projects/tb/tb-ai-summary_main.png" alt="Thunderbird AI add-on" decoding="async">
+                    <img class="stack__img" src="content/projects/rpg/2DGame_gameing.webp" alt="2D RPG engine" decoding="async">
+                </div>
+                <!-- rotating stamp -->
+                <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+                    <defs><path id="stamp-circle" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
+                    <text><textPath href="#stamp-circle">OPEN TO WORK · STAGE 2027 · PARIS-SACLAY ·</textPath></text>
+                    <path class="stamp__star" d="M60 44v32M44 60h32M48.7 48.7l22.6 22.6M71.3 48.7 48.7 71.3"/>
+                </svg>
+                <span class="hero__caption mono" aria-hidden="true">fig.01 — <span class="lang-en">hover to flip through</span><span class="lang-cn">移动鼠标翻看</span><span class="lang-fr">survolez pour feuilleter</span></span>
             </div>
         </section>
 
-        <!-- ============ Open-source contributions (data/contributions.json, refreshed daily) ============ -->
-        <section class="section" id="opensource" aria-labelledby="opensource-heading">
-            <div class="section__head">
-                <h2 class="section__title" id="opensource-heading">
-                    <span class="lang-en">GitHub Contributions</span>
-                    <span class="lang-cn">GitHub 贡献</span>
-                    <span class="lang-fr">Contributions GitHub</span>
-                </h2>
-                <p class="section__hint">
-                    <span class="lang-en">Pull requests and issues I opened in other people's repositories</span>
-                    <span class="lang-cn">我在他人仓库中提交的 PR 与 Issue</span>
-                    <span class="lang-fr">Pull requests et issues ouvertes dans les dépôts d'autres personnes</span>
-                </p>
+        <!-- tech marquee (decorative) -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span>Python</span><i>✳</i><span>FastAPI</span><i>✳</i><span>LLM Agents</span><i>✳</i><span>MCP</span><i>✳</i><span>Vue 3</span><i>✳</i><span>Node.js</span><i>✳</i><span>Unity · C#</span><i>✳</i><span>Shaders</span><i>✳</i><span>SwiftUI</span><i>✳</i><span>Linux</span><i>✳</i>
+                <span>Python</span><i>✳</i><span>FastAPI</span><i>✳</i><span>LLM Agents</span><i>✳</i><span>MCP</span><i>✳</i><span>Vue 3</span><i>✳</i><span>Node.js</span><i>✳</i><span>Unity · C#</span><i>✳</i><span>Shaders</span><i>✳</i><span>SwiftUI</span><i>✳</i><span>Linux</span><i>✳</i>
             </div>
-            <div class="contrib" data-contrib aria-live="polite">
-                <noscript>
-                    <a class="links__value" href="https://github.com/pulls?q=author%3AFuLuTang+-user%3AFuLuTang+is%3Apr">github.com/pulls?q=author:FuLuTang</a>
-                </noscript>
+        </div>
+
+        <!-- ================= facts (belong to no particular focus) ================= -->
+        <section class="facts" aria-label="Basics" id="contact">
+            <div class="facts__cell" data-reveal>
+                <span class="label"><span class="lang-en">Studying</span><span class="lang-cn">在读</span><span class="lang-fr">Formation</span></span>
+                <p><span class="lang-en">BUT Informatique, 3rd year</span><span class="lang-cn">BUT Informatique 三年级</span><span class="lang-fr">BUT Informatique, 3e année</span><br>
+                   <small><span class="lang-en">IUT d'Orsay · Paris-Saclay</span><span class="lang-cn">奥赛 IUT · 巴黎萨克雷大学</span><span class="lang-fr">IUT d'Orsay · Paris-Saclay</span></small></p>
+            </div>
+            <div class="facts__cell" data-reveal>
+                <span class="label"><span class="lang-en">Languages</span><span class="lang-cn">语言</span><span class="lang-fr">Langues</span></span>
+                <p><span class="lang-en">French B2 · English B2</span><span class="lang-cn">法语 B2 · 英语 B2</span><span class="lang-fr">Français B2 · Anglais B2</span><br>
+                   <small><span class="lang-en">Chinese — native</span><span class="lang-cn">中文 母语</span><span class="lang-fr">Chinois — maternelle</span></small></p>
+            </div>
+            <div class="facts__cell" data-reveal>
+                <span class="label"><span class="lang-en">Based in</span><span class="lang-cn">所在地</span><span class="lang-fr">Basé à</span></span>
+                <p>Massy (91), France<br>
+                   <small><span class="lang-en">On-site or hybrid</span><span class="lang-cn">可现场 / 混合办公</span><span class="lang-fr">Sur site ou hybride</span></small></p>
+            </div>
+            <div class="facts__cell" data-reveal>
+                <span class="label"><span class="lang-en">Contact</span><span class="lang-cn">联系</span><span class="lang-fr">Contact</span></span>
+                <p><a class="u" href="mailto:tanghaochen0506@hotmail.com">tanghaochen0506@hotmail.com</a><br>
+                   <small><a class="u" href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer">GitHub</a> · <a class="u" href="https://www.linkedin.com/in/haochen-tang-fulu/" target="_blank" rel="noopener noreferrer">LinkedIn</a></small></p>
+            </div>
+            <div class="facts__cell facts__cell--wide" data-reveal>
+                <span class="label"><span class="lang-en">Off screen</span><span class="lang-cn">课余</span><span class="lang-fr">Hors écran</span></span>
+                <p><span class="lang-en">Cycling, taekwondo, photography, video editing, digital art, 3D modelling, circuit design, music, video games</span><span class="lang-cn">骑行、跆拳道、摄影、视频剪辑、数字绘画、3D 建模、电路设计、音乐、电子游戏</span><span class="lang-fr">Cyclisme, taekwondo, photographie, montage vidéo, dessin numérique, modélisation 3D, électronique, musique, jeux vidéo</span></p>
             </div>
         </section>
 
-        <!-- ============ Bento 02 — project matrix ============ -->
-        <section class="section" id="projects" aria-labelledby="projects-heading">
-            <div class="section__head">
-                <h2 class="section__title" id="projects-heading">
-                    <span class="lang-en">Projects</span>
-                    <span class="lang-cn">项目经验</span>
-                    <span class="lang-fr">Projets</span>
-                </h2>
-                <p class="section__hint">
-                    <span class="lang-en">Click a project to view details</span>
-                    <span class="lang-cn">点击项目查看详情</span>
-                    <span class="lang-fr">Cliquez sur un projet pour voir les détails</span>
-                </p>
-
-                <fieldset class="switcher" data-project-filter>
-                    <legend class="switcher__legend">
-                        <span class="lang-en">Choose project category</span>
-                        <span class="lang-cn">选择项目类别</span>
-                        <span class="lang-fr">Choisir une catégorie de projet</span>
-                    </legend>
-                    <label class="switcher__option">
-                        <input class="switcher__input" type="radio" name="filter" value="all" checked>
-                        <span class="lang-en">All</span>
-                        <span class="lang-cn">全部</span>
-                        <span class="lang-fr">Tous</span>
-                    </label>
-                    <label class="switcher__option">
-                        <input class="switcher__input" type="radio" name="filter" value="professional">
-                        <span class="lang-en">Internship</span>
-                        <span class="lang-cn">实习</span>
-                        <span class="lang-fr">Stage</span>
-                    </label>
-                    <label class="switcher__option">
-                        <input class="switcher__input" type="radio" name="filter" value="school">
-                        <span class="lang-en">School</span>
-                        <span class="lang-cn">校内</span>
-                        <span class="lang-fr">Scolaire</span>
-                    </label>
-                    <label class="switcher__option">
-                        <input class="switcher__input" type="radio" name="filter" value="personal">
-                        <span class="lang-en">Personal</span>
-                        <span class="lang-cn">个人</span>
-                        <span class="lang-fr">Personnel</span>
-                    </label>
-                </fieldset>
-            </div>
-
-            <!-- cards are generated by js/home-projects.js from content/projects/<slug>/*.md -->
-            <div class="projects" data-project-grid aria-busy="true">
-                <div class="feature-list" data-project-group data-featured-list></div>
-
-                <div class="project-group" data-project-group>
-                    <h3 class="projects__sub">
-                        <span class="lang-en">More projects</span>
-                        <span class="lang-cn">其他项目</span>
-                        <span class="lang-fr">Autres projets</span>
-                    </h3>
-                    <div class="project-list" data-other-list></div>
+        <!-- ================= open source (shown to everyone) ================= -->
+        <section class="oss" id="opensource" aria-labelledby="gh-title">
+            <div class="gh" data-contrib data-reveal>
+                <div class="gh__stats">
+                    <div class="gh__head">
+                        <h2 class="gh__title" id="gh-title">GitHub<br><span class="lang-en">contributions</span><span class="lang-cn">社区贡献</span><span class="lang-fr">contributions</span></h2>
+                    </div>
+                    <dl class="gh__grid">
+                        <div class="gh__stat"><dt class="gh__num" data-gh-n="prs">–</dt><dd class="gh__lbl"><span class="lang-en">pull requests</span><span class="lang-cn">个 PR</span><span class="lang-fr">pull requests</span></dd></div>
+                        <div class="gh__stat"><dt class="gh__num" data-gh-n="merged">–</dt><dd class="gh__lbl"><span class="lang-en">merged</span><span class="lang-cn">已合并</span><span class="lang-fr">fusionnées</span></dd></div>
+                        <div class="gh__stat"><dt class="gh__num" data-gh-n="repos">–</dt><dd class="gh__lbl"><span class="lang-en">repositories</span><span class="lang-cn">个仓库</span><span class="lang-fr">dépôts</span></dd></div>
+                        <div class="gh__stat"><dt class="gh__num" data-gh-n="issues">–</dt><dd class="gh__lbl"><span class="lang-en">issues</span><span class="lang-cn">个 Issue</span><span class="lang-fr">issues</span></dd></div>
+                    </dl>
+                    <p class="gh__note"><span class="lang-en">Pull requests and issues in other people's repositories.</span><span class="lang-cn">在别人仓库里提的 PR 和 Issue。</span><span class="lang-fr">PR et issues dans d'autres dépôts.</span></p>
+                    <p class="gh__upd"><span data-gh-updated></span> · <a href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p>
+                </div>
+                <div class="gh__main">
+                    <a class="gh__chart" href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer">
+                        <img src="https://ghchart.rshah.org/2B44E0/FuLuTang" alt="FuLuTang's GitHub contribution calendar" loading="lazy" decoding="async">
+                    </a>
+                    <div class="gh__log" data-gh-log tabindex="0">
+                        <noscript><a class="u" href="https://github.com/pulls?q=author%3AFuLuTang+-user%3AFuLuTang+is%3Apr">github.com/pulls?q=author:FuLuTang</a></noscript>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <footer class="foot">
-            <p class="foot__line">
-                <span class="lang-en">Haochen TANG — Computer Scientist / Developer</span>
-                <span class="lang-cn">唐颢宸 — 计算机科学 / 开发者</span>
-                <span class="lang-fr">Haochen TANG — Informaticien / Développeur</span>
+        <!-- ================= focus chooser ================= -->
+        <section class="focus" id="focus" aria-labelledby="focus-heading">
+            <div class="head" data-reveal>
+                <span class="head__idx mono">01 /</span>
+                <h2 class="head__title" id="focus-heading">
+                    <span class="lang-en">What are you looking for?</span><span class="lang-cn">您关注哪个方面？</span><span class="lang-fr">Qu'est-ce qui vous intéresse ?</span>
+                </h2>
+                <p class="head__hint">
+                    <span class="lang-en">Pick one — the skills and projects below rearrange around it. You can switch any time.</span>
+                    <span class="lang-cn">选一个，下面的技能和项目会按这个方向重新排。随时可以换。</span>
+                    <span class="lang-fr">Choisissez — compétences et projets se réorganisent en conséquence. Modifiable à tout moment.</span>
+                </p>
+            </div>
+            <div class="focus__grid" role="group" aria-label="Focus" data-focus-picker>
+                <button class="focus__card" type="button" data-focus="all" aria-pressed="false" data-reveal>
+                    <span class="focus__idx mono">01</span>
+                    <span class="focus__name"><span class="lang-en">Overview</span><span class="lang-cn">综合</span><span class="lang-fr">Vue d'ensemble</span></span>
+                    <span class="focus__sub"><span class="lang-en">Everything, best first</span><span class="lang-cn">全部能力，按代表性排</span><span class="lang-fr">Tout, le meilleur d'abord</span></span>
+                    <svg class="focus__art art-all" viewBox="0 0 120 120" aria-hidden="true">
+                        <g class="a1"><rect x="12" y="14" width="42" height="42" rx="7"/><path d="M22 26h22M22 34h14"/></g>
+                        <g class="a2"><circle cx="86" cy="35" r="22"/><circle class="ac-fill" cx="86" cy="35" r="6"/></g>
+                        <g class="a3"><path d="M33 66 56 106H10z"/></g>
+                        <g class="a4"><rect x="64" y="68" width="46" height="36" rx="18"/><path d="M78 86h18"/></g>
+                        <path class="ac" d="M60 6v6M57 9h6M112 60v6M109 63h6"/>
+                    </svg>
+                </button>
+                <button class="focus__card" type="button" data-focus="fullstack" aria-pressed="false" data-reveal>
+                    <span class="focus__idx mono">02</span>
+                    <span class="focus__name"><span class="lang-en">Full-stack</span><span class="lang-cn">全栈</span><span class="lang-fr">Full-stack</span></span>
+                    <span class="focus__sub"><span class="lang-en">Database to interface</span><span class="lang-cn">从数据库到界面</span><span class="lang-fr">De la base à l'interface</span></span>
+                    <svg class="focus__art art-stack" viewBox="0 0 120 120" aria-hidden="true">
+                <g class="f-db">
+                    <path class="solid" d="M32 101v12a18 5 0 0 0 36 0v-12"/>
+                    <ellipse class="solid" cx="50" cy="101" rx="18" ry="5"/>
+                    <path d="M32 107a18 5 0 0 0 36 0"/>
+                </g>
+                <g class="f-srv">
+                    <path class="solid" d="M20 65l7-5h60l-7 5z"/>
+                    <path class="solid" d="M80 65l7-5v27l-7 5z"/>
+                    <rect class="solid" x="20" y="65" width="60" height="13" rx="1.5"/>
+                    <rect class="solid" x="20" y="79" width="60" height="13" rx="1.5"/>
+                    <circle class="ac-fill led" cx="26" cy="71.5" r="1.7"/><circle cx="31.5" cy="71.5" r="1.7"/>
+                    <circle class="ac-fill led" cx="26" cy="85.5" r="1.7"/><circle cx="31.5" cy="85.5" r="1.7"/>
+                    <path d="M38 71.5h12M38 85.5h12"/>
+                    <path d="M58 68.5v6M62 68.5v6M66 68.5v6M70 68.5v6M74 68.5v6M58 82.5v6M62 82.5v6M66 82.5v6M70 82.5v6M74 82.5v6"/>
+                </g>
+                <g class="f-ui">
+                    <g class="flat" transform="matrix(0.7 0 -0.547 0.39 44 26)">
+                        <rect class="solid" x="0" y="0" width="100" height="64" rx="4"/>
+                        <path d="M0 10h100M50 10v54"/>
+                        <circle class="ac-fill" cx="6" cy="5" r="1.8"/><circle class="ac-fill" cx="12" cy="5" r="1.8"/><circle class="ac-fill" cx="18" cy="5" r="1.8"/>
+                        <path class="ac" d="M6 19h12"/>
+                        <path d="M12 28h26M12 37h18M6 46h10M12 55h22"/>
+                        <rect x="56" y="17" width="8" height="20" rx="4"/>
+                        <rect class="ac-fill" x="68" y="17" width="8" height="20" rx="4"/>
+                        <circle cx="88" cy="25" r="7"/><path d="M88 21v4.5l3 2"/>
+                        <rect x="56" y="44" width="38" height="14" rx="2"/>
+                    </g>
+                </g>
+            </svg>
+                </button>
+                <button class="focus__card" type="button" data-focus="ai" aria-pressed="false" data-reveal>
+                    <span class="focus__idx mono">03</span>
+                    <span class="focus__name">Agent</span>
+                    <span class="focus__sub"><span class="lang-en">LLM agents in production</span><span class="lang-cn">LLM Agent 落地上线</span><span class="lang-fr">Agents LLM en production</span></span>
+                    <svg class="focus__art art-ai" viewBox="0 0 120 120" aria-hidden="true">
+                <path class="dash" d="M32 36 46 46M88 34 76 46M30 92l16-14M90 92 76 78"/>
+                <g class="t1"><path class="solid" d="M10 8h15l6 6v22H10z"/><path d="M25 8v6h6M14 20h12M14 26h9M14 32h11"/></g>
+                <g class="t2"><g transform="translate(96 22) rotate(-45) scale(1.15)">
+                    <path class="solid" d="M-14 -3H4A7.5 7.5 0 0 1 16 -6L11 -1.5V1.5L16 6A7.5 7.5 0 0 1 4 3H-14A3 3 0 0 1 -14 -3Z"/>
+                </g></g>
+                <g class="t3"><path class="solid" d="M10 90v14a12 4 0 0 0 24 0V90"/><ellipse class="solid" cx="22" cy="90" rx="12" ry="4"/></g>
+                <g class="t4"><rect class="solid" x="80" y="84" width="30" height="22" rx="3"/><path class="ac" d="M86 91l4 4-4 4M93 99h9"/></g>
+                <g class="bot">
+                    <path d="M60 44v-8"/><circle class="ac-fill" cx="60" cy="33" r="3"/>
+                    <rect class="solid" x="40" y="44" width="40" height="34" rx="9"/>
+                    <path d="M40 58h-4v8h4M80 58h4v8h-4"/>
+                    <circle class="ac-fill" cx="52" cy="58" r="3.2"/><circle class="ac-fill" cx="68" cy="58" r="3.2"/>
+                    <path d="M53 68q7 5 14 0"/>
+                </g>
+            </svg>
+                </button>
+                <button class="focus__card" type="button" data-focus="xr" aria-pressed="false" data-reveal>
+                    <span class="focus__idx mono">04</span>
+                    <span class="focus__name"><span class="lang-en">XR / Games / Embodied AI</span><span class="lang-cn">XR / 游戏 / 具身智能</span><span class="lang-fr">XR / Jeu / IA incarnée</span></span>
+                    <span class="focus__sub"><span class="lang-en">Real-time 3D &amp; interaction</span><span class="lang-cn">实时 3D 与交互</span><span class="lang-fr">3D temps réel &amp; interaction</span></span>
+                    <svg class="focus__art art-xr" viewBox="0 0 120 120" aria-hidden="true">
+                        <g class="floor"><path d="M60 74 2 118M60 74 31 118M60 74v44M60 74l29 44M60 74l58 44M24 84h72M12 97h96M2 112h116"/></g>
+                        <ellipse class="shadow" cx="60" cy="90" rx="20" ry="4"/>
+                        <g class="cube">
+                            <path class="solid" d="M60 14 84 26v26L60 64 36 52V26z"/>
+                            <path d="M36 26l24 12 24-12M60 38v26"/>
+                            <path class="ac" d="M60 14 84 26 60 38 36 26z"/>
+                        </g>
+                        <circle class="ac-fill spark" cx="98" cy="18" r="3"/>
+                        <circle class="spark2" cx="20" cy="40" r="2"/>
+                    </svg>
+                </button>
+            </div>
+<p class="focus__nudge mono" data-focus-nudge>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                <span class="lang-en">Skills and projects open up here</span>
+                <span class="lang-cn">选一个方向后，这里会展开技能和项目</span>
+                <span class="lang-fr">Compétences et projets s'affichent ici</span>
             </p>
-            <a class="foot__top" href="#top">
-                <span class="lang-en">Back to top</span>
-                <span class="lang-cn">回到顶部</span>
-                <span class="lang-fr">Retour en haut</span>
-            </a>
-        </footer>
+        </section>
 
+        <!-- ================= everything below depends on the focus ================= -->
+        <div class="reveal-area" data-focus-area hidden>
+
+            <!-- skills: one panel per focus -->
+            <section class="skills" aria-labelledby="skills-heading">
+                <div class="head">
+                    <span class="head__idx mono">02 /</span>
+                    <h2 class="head__title" id="skills-heading"><span class="lang-en">Skills</span><span class="lang-cn">技能</span><span class="lang-fr">Compétences</span></h2>
+                </div>
+
+                <div class="panel" data-panel="all">
+                    <p class="panel__pitch"><span class="lang-en">The whole picture, best first. Strongest in backend and AI; real-time 3D and games are the direction I'm deepening.</span><span class="lang-cn">全部能力和项目，按代表性排。后端和 AI 最强，实时 3D 和游戏是正在加深的方向。</span><span class="lang-fr">Vue complète, le plus représentatif d'abord. Points forts : backend et IA ; la 3D temps réel et le jeu sont la direction que j'approfondis.</span></p>
+                    <dl class="rows">
+                        <div class="rows__row"><dt>AI</dt><dd><span>LLM apps</span><span>Agents</span><span>Tool calling</span><span>MCP</span><span>RAG</span></dd></div>
+                        <div class="rows__row"><dt>Backend</dt><dd><span>Python</span><span>FastAPI</span><span>Node.js</span><span>Java</span><span>C++</span><span>PHP</span></dd></div>
+                        <div class="rows__row"><dt>Front</dt><dd><span>Vue 3</span><span>JavaScript</span><span>HTML / CSS</span></dd></div>
+                        <div class="rows__row"><dt>3D · Apps</dt><dd><span>Unity (C#)</span><span>SwiftUI</span><span>.NET</span><span>Electron</span></dd></div>
+                        <div class="rows__row"><dt>Data · Ops</dt><dd><span>SQL</span><span>SQLite</span><span>DuckDB</span><span>Git</span><span>Linux</span><span>Nginx</span></dd></div>
+                    </dl>
+                </div>
+
+                <div class="panel" data-panel="fullstack">
+                    <p class="panel__pitch"><span class="lang-en">From the database to the interface: I can build a whole application on my own and put it online.</span><span class="lang-cn">从数据库到界面，能独立把一个应用做完、部署上线。</span><span class="lang-fr">De la base de données à l'interface : je peux construire une application entière et la mettre en ligne.</span></p>
+                    <dl class="rows">
+                        <div class="rows__row"><dt>Backend</dt><dd><span>Python</span><span>FastAPI</span><span>Node.js</span><span>Socket.io</span><span>Java</span><span>PHP</span></dd></div>
+                        <div class="rows__row"><dt>Front</dt><dd><span>Vue 3</span><span>Vite</span><span>JavaScript</span><span>HTML / CSS</span></dd></div>
+                        <div class="rows__row"><dt>Data</dt><dd><span>SQL</span><span>PL/SQL</span><span>SQLite</span><span>DuckDB</span><span>Pandas</span></dd></div>
+                        <div class="rows__row"><dt>Desktop · Mobile</dt><dd><span>Electron</span><span>Tkinter</span><span>SwiftUI</span></dd></div>
+                        <div class="rows__row"><dt>Ops</dt><dd><span>Git</span><span>Linux</span><span>Nginx</span><span>systemd</span></dd></div>
+                    </dl>
+                </div>
+
+                <div class="panel" data-panel="ai">
+                    <p class="panel__pitch"><span class="lang-en">Putting language models into real business software: my own agent framework, tool calling and permissions, running on a live system.</span><span class="lang-cn">把大模型接进真实业务：自己设计 Agent 框架、工具调用和权限，跑在线上系统里。</span><span class="lang-fr">Intégrer des LLM dans un vrai logiciel métier : mon propre framework d'agent, appels d'outils et permissions, sur un système en production.</span></p>
+                    <dl class="rows">
+                        <div class="rows__row"><dt>Agents</dt><dd><span>Framework design</span><span>Tool calling</span><span>MCP</span><span>Sandboxing</span><span>Traceable actions</span></dd></div>
+                        <div class="rows__row"><dt>LLM</dt><dd><span>Prompt design</span><span>RAG</span><span>Multi-provider APIs</span></dd></div>
+                        <div class="rows__row"><dt>Engineering</dt><dd><span>Python</span><span>FastAPI</span><span>Pandas</span><span>Linux deploy</span></dd></div>
+                        <div class="rows__row"><dt>Integration</dt><dd><span>ERP APIs</span><span>Thunderbird add-on</span><span>Vue front-ends</span></dd></div>
+                    </dl>
+                </div>
+
+                <div class="panel" data-panel="xr">
+                    <p class="panel__pitch"><span class="lang-en">Real-time 3D, games and immersive interaction. Next step: combining VR/AR with agents.</span><span class="lang-cn">实时 3D、游戏和沉浸式交互。下一步：把 VR/AR 和 Agent 结合起来。</span><span class="lang-fr">3D temps réel, jeu et interaction immersive. Prochaine étape : combiner VR/AR et agents.</span></p>
+                    <dl class="rows">
+                        <div class="rows__row"><dt>Engines</dt><dd><span>Unity</span><span>C#</span><span>Shaders</span><span>C++ / SDL2</span></dd></div>
+                        <div class="rows__row"><dt>3D</dt><dd><span>3D modelling</span><span>VRChat worlds &amp; avatars</span><span>3D visualisation (course)</span></dd></div>
+                        <div class="rows__row"><dt>Interaction</dt><dd><span>Real-time multiplayer</span><span>Big screen + phone controllers</span></dd></div>
+                    </dl>
+                </div>
+
+                <dl class="stats">
+                    <div class="stats__item" data-stat="all fullstack"><dt data-contrib-stat="merged">16</dt><dd><span class="lang-en">PRs merged into other people's repos</span><span class="lang-cn">个 PR 被别人的仓库合并</span><span class="lang-fr">PR fusionnées dans d'autres dépôts</span></dd></div>
+                    <div class="stats__item" data-stat="all ai"><dt>3</dt><dd><span class="lang-en">AI services shipped during the internship</span><span class="lang-cn">个实习中上线的 AI 服务</span><span class="lang-fr">services IA livrés en stage</span></dd></div>
+                    <div class="stats__item" data-stat="all ai"><dt>1</dt><dd><span class="lang-en">add-on on the Thunderbird store</span><span class="lang-cn">个插件上架 Thunderbird 官方商店</span><span class="lang-fr">module sur le store Thunderbird</span></dd></div>
+                    <div class="stats__item" data-stat="ai"><dt>0→1</dt><dd><span class="lang-en">agent framework, built inside a live ERP</span><span class="lang-cn">在线上 ERP 里从零搭的 Agent 框架</span><span class="lang-fr">framework d'agent, dans un ERP en production</span></dd></div>
+                    <div class="stats__item" data-stat="fullstack"><dt>9</dt><dd><span class="lang-en">people on the bridge project — I owned the front end</span><span class="lang-cn">人的桥牌项目里负责前端和联调</span><span class="lang-fr">personnes sur le projet bridge — j'avais le front</span></dd></div>
+                    <div class="stats__item" data-stat="xr"><dt>2</dt><dd><span class="lang-en">games written from scratch (engine + multiplayer)</span><span class="lang-cn">个从零写的游戏（引擎 + 联机）</span><span class="lang-fr">jeux écrits de zéro (moteur + multijoueur)</span></dd></div>
+                    <div class="stats__item" data-stat="xr"><dt>3D</dt><dd><span class="lang-en">Unity scene with my own shaders</span><span class="lang-cn">自写 Shader 的 Unity 场景</span><span class="lang-fr">scène Unity avec mes shaders</span></dd></div>
+                </dl>
+            </section>
+
+            <!-- projects: cards come from content/projects/<slug>/*.md, ordered by the focus -->
+            <section class="work" id="work" aria-labelledby="work-heading">
+                <div class="head">
+                    <span class="head__idx mono">03 /</span>
+                    <h2 class="head__title" id="work-heading"><span class="lang-en">Projects</span><span class="lang-cn">项目</span><span class="lang-fr">Projets</span></h2>
+                    <p class="head__hint"><span class="lang-en">Move over the photos to flip through · click for details</span><span class="lang-cn">鼠标划过照片翻看 · 点击看详情</span><span class="lang-fr">Survolez les photos pour feuilleter · cliquez pour le détail</span></p>
+                </div>
+                <div class="projects" data-project-grid aria-busy="true">
+                    <div class="feature-list" data-featured-list></div>
+                    <div class="tile-list" data-other-list></div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ================= footer ================= -->
+        <footer class="foot">
+            <p class="foot__big">
+                <span class="lang-en">Let's build something.</span><span class="lang-cn">一起做点东西？</span><span class="lang-fr">Construisons quelque chose.</span>
+            </p>
+            <a class="foot__mail mono u" href="mailto:tanghaochen0506@hotmail.com">tanghaochen0506@hotmail.com</a>
+            <div class="foot__row">
+                <span class="mono">© 2026 Haochen TANG</span>
+                <nav aria-label="Links">
+                    <a class="u" href="https://github.com/FuLuTang" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="u" href="https://www.linkedin.com/in/haochen-tang-fulu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="u" href="#top"><span class="lang-en">Back to top</span><span class="lang-cn">回到顶部</span><span class="lang-fr">Haut de page</span></a>
+                </nav>
+            </div>
+        </footer>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
     <script src="js/lang.js"></script>
     <script src="js/theme.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
-    <script src="js/projects-data.js"></script>
-    <script src="js/filter.js"></script>
-    <script src="js/home-projects.js"></script>
     <script src="js/contrib.js"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="js/home-projects.js"></script>
+    <script src="js/home.js"></script>
 </body>
-
 </html>

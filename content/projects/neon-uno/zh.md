@@ -10,9 +10,6 @@ links:
   - [GitHub](https://github.com/yassine9-1/neon_uno)
 gallery:
   - ![NEON-UNO game interface](neon_uno_preview.png)
-category: school
-featured: true
-order: 4
 summary: 玩家扫码加入，在投影主屏上分两队同时出牌，并提供多种难度的 AI 机器人。
 points:
   - 提交最多：11 个 PR 被合并（迁移 Vue 3、大厅、AI 玩家）

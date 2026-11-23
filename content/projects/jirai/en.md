@@ -2,6 +2,10 @@
 title: VRCX-jirai Edition
 kind: Personal
 tags: Electron, SQLite, Social Analytics, VRChat
+focus:                         # which "您关注哪个方面" views show this project; number = rank (1-3 = big card)
+  all: 5
+  fullstack: 4
+  xr: 4
 facts:
   Category: Personal
   Stack: Electron, SQLite
@@ -10,9 +14,6 @@ links:
   - [GitHub](https://github.com/FuLuTang/VRCX-jirai)
 gallery:
   - ![VRCX-jirai interface](vrcx_jirai_preview.png)
-category: personal
-featured: false
-order: 6
 summary: Enhanced VRCX with relationship tracking, co-presence analysis, and Git-style bio diffs.
 cover:
   - vrcx_jirai_preview.png

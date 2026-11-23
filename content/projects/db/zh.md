@@ -7,9 +7,6 @@ facts:
   技术栈: SQLite, SQL, Data Modeling
 gallery:
   - ![Database Preview](db_cdm.webp)
-category: school
-featured: false
-order: 10
 summary: 房产管理的概念数据模型与 SQL 实现。
 ---
 

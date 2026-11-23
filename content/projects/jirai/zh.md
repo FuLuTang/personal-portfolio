@@ -10,9 +10,6 @@ links:
   - [GitHub](https://github.com/FuLuTang/VRCX-jirai)
 gallery:
   - ![VRCX-jirai interface](vrcx_jirai_preview.png)
-category: personal
-featured: false
-order: 6
 summary: 面向“视奸”优化的 VRCX 魔改版，支持双人关系查询与简介差异追踪。
 ---
 

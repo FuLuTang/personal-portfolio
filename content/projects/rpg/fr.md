@@ -9,9 +9,6 @@ gallery:
   - ![Gameplay](2DGame_gameing.webp)
   - ![Game Over Screen](2DGame_gameover.webp)
   - ![Code Snippet](2DGame_code.webp)
-category: school
-featured: false
-order: 7
 summary: Développement autonome d'un RPG 2D en C++/SDL2 (moteur, logique, caméra).
 ---
 

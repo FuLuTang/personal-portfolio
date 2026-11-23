@@ -12,9 +12,6 @@ gallery:
   - ![Task app showing the four urgency and importance categories](task_ios_4categories.webp)
   - ![Task app ranking view](task_ios_classement.webp)
   - ![SwiftUI source code of the task app](task_ios_code.webp)
-category: personal
-featured: false
-order: 5
 summary: 使用 SwiftUI 开发的任务管理工具（紧急/重要分类）。
 ---
 

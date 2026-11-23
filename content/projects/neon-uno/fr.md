@@ -10,9 +10,6 @@ links:
   - [GitHub](https://github.com/yassine9-1/neon_uno)
 gallery:
   - ![NEON-UNO game interface](neon_uno_preview.png)
-category: school
-featured: true
-order: 4
 summary: Les joueurs rejoignent par QR code et jouent simultanément en deux équipes sur un écran projeté, avec des bots IA de plusieurs niveaux.
 points:
   - 11 PR fusionnées (migration Vue 3, lobby, joueurs IA)
